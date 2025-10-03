@@ -16,6 +16,8 @@ async_fifo_subscriber.sv
 async_fifo_test.sv
 async_fifo_top.sv
 async_fifo_two_ff_sync.v
+async_fifo_virtual_sequence.sv
+async_fifo_virtual_sequencer.sv
 async_fifo_wptr_full.v
 async_fifo_write_agent.sv
 async_fifo_write_driver.sv

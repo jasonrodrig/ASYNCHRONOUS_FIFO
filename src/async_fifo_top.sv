@@ -59,8 +59,11 @@ module top;
 	end
 
 	initial begin
-		// run_test("async_fifo_regression_test");
-   	   run_test("async_fifo_test");
+		
+	//	run_test("async_fifo_write_regression_test");
+  //    run_test("async_fifo_read_regression_test");
+		run_test("async_fifo_test");
+
 		#1000 $finish;
 	end
 

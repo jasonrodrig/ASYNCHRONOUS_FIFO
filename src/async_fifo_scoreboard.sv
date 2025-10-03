@@ -22,8 +22,13 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 	logic  ref_write_full , ref_read_empty ;
 
 	// declaration for PASS and FAIL count in each testcases
-	int PASS = 0;
-	int FAIL = 0;
+	int WRITE_PASS = 0;
+	int WRITE_FAIL = 0;
+	int READ_PASS = 0;
+	int READ_FAIL = 0;
+
+	bit read_flag = 0;
+	bit write_flag = 0;
 
 	// registering the alu_scoareboard to the factory	
 	`uvm_component_utils(async_fifo_scoreboard)
@@ -66,7 +71,8 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 
 	function void report_phase(uvm_phase phase);
 		super.report_phase(phase);
-		$display("Passes = %0d | Fails = %0d", PASS, FAIL);
+		$display("WRITE_Passes = %0d | WRITE_Fails = %0d | READ_Passes = %0d | READ_Fails = %0d", 
+			        WRITE_PASS, WRITE_FAIL, READ_PASS , READ_FAIL);
 	endfunction
 
 	//--------------------------------------------------------------//
@@ -140,17 +146,28 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 
 	task async_fifo_write_reference_model(input async_fifo_write_sequence_item write_seq);
 		// reset condition
-		if(write_seq.write_rst == 0 )begin
+		//
+		if(write_seq.write_rst == 0 && write_seq.write_en == 0)begin
 			write_ptr = 'b0;
 			ref_write_full = 'b0;
+			write_flag = 1;
 		end
 
 		// write enable condition
-		else if(write_seq.write_en)begin
+		else if(write_seq.write_en == 1 && write_seq.write_rst == 1 )begin
+			write_flag = 1;
 			ref_write_full = 'bx;
 			fifo[ write_ptr[ ADDR_WIDTH - 1 : 0 ] ] = write_seq.write_data; 
 			write_ptr = write_ptr + 1 ;
 			ref_write_full = ( ( ~write_ptr[3] == read_ptr[3] ) && ( write_ptr[2:0] == read_ptr[2:0] ) ) ? 1 : 0 ;
+		  $display("wptr = %b , rptr = %b", write_ptr,read_ptr);
+		end
+
+		else begin
+      write_flag = 1;
+			ref_write_full = 'bx;
+			write_ptr = write_ptr;	
+      ref_write_full = ( ( ~write_ptr[3] == read_ptr[3] ) && ( write_ptr[2:0] == read_ptr[2:0] ) ) ? 1 : 0 ;
 		end
 
 		$display(" Reference WRITE : @ %0t \n WRITE_RST = %b | WRITE_EN = %b | WRITE_DATA = %d | WRITE_FULL = %b |",
@@ -167,18 +184,30 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 
 	task async_fifo_read_reference_model(input async_fifo_read_sequence_item read_seq);
 		// reset condition
-		if(read_seq.read_rst == 0 )begin
+		if(read_seq.read_rst == 0 && read_seq.read_en == 0 )begin
+		  read_flag = 1;
 			read_ptr = 'b0;
 			ref_read_data = 'b0;
 			ref_read_empty = 'b1;
 		end
 
 		// read enable condition
-		else if(read_seq.read_en)begin
+		else if(read_seq.read_en ==1 && read_seq.read_rst == 1 )begin
+			read_flag = 1;
 			ref_read_empty = 'bx;
 			ref_read_data  = 'bx;
 			ref_read_data = fifo[ read_ptr[ ADDR_WIDTH - 1 : 0 ] ]; 
 			read_ptr = read_ptr + 1 ;
+			ref_read_empty = ( read_ptr == write_ptr ) ? 1 : 0 ;
+			$display("wptr = %b , rptr = %b", write_ptr,read_ptr);
+		end
+
+		else begin
+			read_flag = 1;
+			ref_read_empty = 'bx;
+			ref_read_data  = 'bx;
+			ref_read_data  =  fifo[ read_ptr[ ADDR_WIDTH - 1 : 0 ] ];
+			read_ptr = read_ptr ;
 			ref_read_empty = ( read_ptr == write_ptr ) ? 1 : 0 ;
 		end
 
@@ -196,26 +225,32 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 
 	task comparision_report();
 
+		if(write_flag == 1) begin
 		if( monitor_write_results === reference_write_results ) begin
 			$display("<----------------------------- WRITE PASS ----------------------------->" );
-			PASS++;
+			WRITE_PASS++;
+			write_flag = 0;
 		end
-
 		else begin
 			$display("<----------------------------- WRITE FAIL ----------------------------->" );
-			FAIL++;	
+			WRITE_FAIL++;
+			write_flag = 0;
+		end
 		end
 
+		if(read_flag == 1)begin
 		if( monitor_read_results === reference_read_results )begin
 			$display("<----------------------------- READ PASS ----------------------------->" );
-			PASS++;
+			READ_PASS++;
+			read_flag = 0;
 		end
 
 		else begin
 			$display("<----------------------------- READ FAIL ----------------------------->" );
-			FAIL++;
+			READ_FAIL++;
+			read_flag = 0;
 		end
-
+		end
 	endtask
 
 endclass

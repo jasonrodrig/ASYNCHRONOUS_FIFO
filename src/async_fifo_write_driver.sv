@@ -15,6 +15,7 @@ class async_fifo_write_driver extends uvm_driver#(async_fifo_write_sequence_item
 	endfunction
 
 	task run_phase(uvm_phase phase);
+		@(vif.async_fifo_write_driver_cb);
 		forever begin
 			seq_item_port.get_next_item(req);
 			write_drive();

@@ -18,7 +18,8 @@ class async_fifo_read_monitor extends uvm_monitor;
 	endfunction
 
 	task run_phase(uvm_phase phase);
-		forever begin
+	@(vif.async_fifo_read_monitor_cb);
+	forever begin
 			read_monitor();
 		end
 	endtask
