@@ -1,0 +1,21 @@
+QuestaSim vlog 10.6c Compiler 2017.07 Jul 25 2017
+Start time: 19:56:54 on Oct 02,2025
+vlog -sv "+acc" "+cover" "+fcover" -l async_fifo_top.log async_fifo_top.sv 
+** Note: (vlog-2286) async_fifo_packages.sv(1): Using implicit +incdir+/tools/mentor/questasim_10.6c/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling package async_fifo_top_sv_unit
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package async_fifo_pkg
+-- Compiling module FIFO_memory
+-- Compiling module rptr_empty
+-- Compiling module wptr_full
+-- Compiling module two_ff_sync
+-- Compiling module FIFO
+-- Compiling interface async_fifo_interface
+-- Compiling package async_fifo_pkg
+-- Compiling interface async_fifo_assertions
+-- Compiling module top
+
+Top level modules:
+	top
+End time: 19:56:55 on Oct 02,2025, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0

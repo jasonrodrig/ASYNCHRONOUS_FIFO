@@ -1,0 +1,52 @@
+var g_data = {
+c10:[{dummy:0}
+,{anchor:'cvg179',items:[{s:'3',x:'FC',z:'(wclk_en && ~wfull)',c:'Y',p:'50.00',d:'0',F:'1'}
+,{}
+,{z:'wclk_en',c:'g',r:'',i:''}
+,{z:'wfull',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
+,{}
+,{n:'1',z:'wclk_en_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'wclk_en_1',h1:'1',t:'c',c1:'~wfull'}
+,{n:'3',z:'wfull_0',h1:'1',t:'c',c1:'wclk_en'}
+,{n:'4',z:'wfull_1',h1:'0',t:'c',c1:'wclk_en'}
+]}
+],
+c176:[{dummy:0}
+,{anchor:'cvg179',items:[{s:'3',x:'FC',z:'(wclk_en && ~wfull)',c:'Y',p:'50.00',d:'0',F:'1'}
+,{}
+,{z:'wclk_en',c:'g',r:'',i:''}
+,{z:'wfull',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
+,{}
+,{n:'1',z:'wclk_en_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'wclk_en_1',h1:'1',t:'c',c1:'~wfull'}
+,{n:'3',z:'wfull_0',h1:'1',t:'c',c1:'wclk_en'}
+,{n:'4',z:'wfull_1',h1:'0',t:'c',c1:'wclk_en'}
+]}
+],
+c1219:[{dummy:0}
+,{anchor:'cvg1223',cr:'m',items:[{s:'3',x:'FC',z:'((~this.write_ptr[3] == this.read_ptr[3]) && (this.write_ptr[2:0] == this.read_ptr[2:0]))',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'(~this.write_ptr[3] == this.read_ptr[3])',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
+,{z:'(this.write_ptr[2:0] == this.read_ptr[2:0])',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{}
+,{n:'1',z:'(~this.write_ptr[3] == this.read_ptr[3])_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'(~this.write_ptr[3] == this.read_ptr[3])_1',h1:'0',t:'c',c1:'(this.write_ptr[2:0] == this.read_ptr[2:0])'}
+,{n:'3',z:'(this.write_ptr[2:0] == this.read_ptr[2:0])_0',h1:'0',t:'c',c1:'(~this.write_ptr[3] == this.read_ptr[3])'}
+,{n:'4',z:'(this.write_ptr[2:0] == this.read_ptr[2:0])_1',h1:'0',t:'c',c1:'(~this.write_ptr[3] == this.read_ptr[3])'}
+]}
+],
+c1520:[{dummy:0}
+,{anchor:'cvg1524',cr:'m',items:[{s:'3',x:'FC',z:'((~this.write_ptr[3] == this.read_ptr[3]) && (this.write_ptr[2:0] == this.read_ptr[2:0]))',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'(~this.write_ptr[3] == this.read_ptr[3])',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
+,{z:'(this.write_ptr[2:0] == this.read_ptr[2:0])',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{}
+,{n:'1',z:'(~this.write_ptr[3] == this.read_ptr[3])_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'(~this.write_ptr[3] == this.read_ptr[3])_1',h1:'0',t:'c',c1:'(this.write_ptr[2:0] == this.read_ptr[2:0])'}
+,{n:'3',z:'(this.write_ptr[2:0] == this.read_ptr[2:0])_0',h1:'0',t:'c',c1:'(~this.write_ptr[3] == this.read_ptr[3])'}
+,{n:'4',z:'(this.write_ptr[2:0] == this.read_ptr[2:0])_1',h1:'0',t:'c',c1:'(~this.write_ptr[3] == this.read_ptr[3])'}
+]}
+],
+dummyEnd:0
+};
+processCondExprData(g_data);
