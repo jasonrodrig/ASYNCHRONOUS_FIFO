@@ -36,7 +36,9 @@ module top;
 		.write_data(vif.write_data),
 		.read_data(vif.read_data),
 		.write_full(vif.write_full),
-		.read_empty(vif.read_empty)
+		.read_empty(vif.read_empty),
+	  .write_ptr(dut.raddr),
+		.read_ptr(dut.waddr)
 	);
 
 	initial begin
@@ -60,10 +62,7 @@ module top;
 
 	initial begin
 		
-	//	run_test("async_fifo_write_regression_test");
-  //    run_test("async_fifo_read_regression_test");
 		run_test("async_fifo_test");
-
 		#1000 $finish;
 	end
 

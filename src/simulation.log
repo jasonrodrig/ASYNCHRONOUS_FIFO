@@ -1,5 +1,5 @@
 # vsim -vopt work.top -voptargs="+acc=npr" -assertdebug -l simulation.log -coverage -c -do "coverage save -onexit -assert -directive -cvg -codeAll coverage.ucdb; run -all; exit" 
-# Start time: 16:28:40 on Oct 04,2025
+# Start time: 19:46:59 on Oct 04,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
@@ -72,6 +72,8 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  11 | WRITE_FULL = 0 |
 #  time :                   15 | reference_write_results_stored = 00000010110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 15 ns Started: 15 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 25 
@@ -82,6 +84,8 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  11 | WRITE_FULL = 0 |
 #  time :                   25 | reference_write_results_stored = 00000010110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 25 ns Started: 25 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  read_reset_seq1 ended  ---------------------------------->
 # 
@@ -97,6 +101,10 @@
 # 
 # <----------------------------- read_reset_seq2 when rd_en = 1 started ----------------------->
 # 
+# ** Info: read_reset is valid - Assertion 3 passed
+#    Time: 30 ns Started: 30 ns  Scope: top.vif.ASSERT.read_reset_check_3 File: async_fifo_assertions.sv Line: 59
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 30 ns Started: 30 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  write_reset_seq2 when wr_en = 1 ended  ----------------------->
 #  Monitor WRITE : @ 35 
@@ -107,6 +115,8 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  11 | WRITE_FULL = 0 |
 #  time :                   35 | reference_write_results_stored = 00000010110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 35 ns Started: 35 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 45 
@@ -131,6 +141,10 @@
 # 
 # <----------------------------- read_latch_seq3 started ----------------------->
 # 
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 50 ns Started: 50 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 50 ns Started: 5 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  write_latch_seq3 ended  ----------------------->
 #  Monitor WRITE : @ 55 
@@ -141,6 +155,8 @@
 #  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA =  51 | WRITE_FULL = 0 |
 #  time :                   55 | reference_write_results_stored = 01001100110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 55 ns Started: 10 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 65 
@@ -151,6 +167,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 224 | WRITE_FULL = 0 |
 #  time :                   65 | reference_write_results_stored = 10111000000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 65 ns Started: 55 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 65 ns Started: 15 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  read_latch_seq3 ended  ----------------------->
 #  Monitor READ : @ 70 
@@ -165,6 +185,12 @@
 # 
 # <----------------------------- read_seq4 started ----------------------->
 # 
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 70 ns Started: 70 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 70 ns Started: 10 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 70 ns Started: 25 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 75 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 224 | WRITE_FULL = 0 | 
@@ -174,6 +200,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 224 | WRITE_FULL = 0 |
 #  time :                   75 | reference_write_results_stored = 10111000000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 75 ns Started: 65 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 75 ns Started: 30 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 85 
@@ -184,6 +214,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 157 | WRITE_FULL = 0 |
 #  time :                   85 | reference_write_results_stored = 11100111010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 85 ns Started: 35 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0001 , read_ptr = 0000
 #  Monitor READ : @ 90 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 1 | 
@@ -193,6 +225,10 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
 #  time :                   90 | reference_read_results_stored = 10100111010
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 90 ns Started: 30 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 90 ns Started: 45 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0001 , read_ptr = 0000
 #  Monitor WRITE : @ 95 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 220 | WRITE_FULL = 0 | 
@@ -202,6 +238,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 220 | WRITE_FULL = 0 |
 #  time :                   95 | reference_write_results_stored = 11110111000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 95 ns Started: 50 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0010 , read_ptr = 0000
 #  DUT : write_ptr = 0010 , read_ptr = 0000
 #  Monitor WRITE : @ 105 
@@ -212,6 +250,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 218 | WRITE_FULL = 0 |
 #  time :                  105 | reference_write_results_stored = 11110110100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 105 ns Started: 55 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0011 , read_ptr = 0000
 #  Monitor READ : @ 110 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 1 | 
@@ -221,6 +261,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
 #  time :                  110 | reference_read_results_stored = 10100111010
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 110 ns Started: 10 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 110 ns Started: 50 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 110 ns Started: 65 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0011 , read_ptr = 0000
 #  Monitor WRITE : @ 115 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  11 | WRITE_FULL = 0 | 
@@ -230,6 +276,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  11 | WRITE_FULL = 0 |
 #  time :                  115 | reference_write_results_stored = 11000010110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 115 ns Started: 70 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0100 , read_ptr = 0000
 #  DUT : write_ptr = 0100 , read_ptr = 0000
 #  Monitor WRITE : @ 125 
@@ -240,6 +288,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 153 | WRITE_FULL = 0 |
 #  time :                  125 | reference_write_results_stored = 11100110010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 125 ns Started: 75 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0101 , read_ptr = 0000
 #  Monitor READ : @ 130 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 1 | 
@@ -249,6 +299,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
 #  time :                  130 | reference_read_results_stored = 10100111010
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 130 ns Started: 30 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 130 ns Started: 70 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 130 ns Started: 85 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0101 , read_ptr = 0000
 #  Monitor WRITE : @ 135 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 243 | WRITE_FULL = 0 | 
@@ -258,6 +314,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 243 | WRITE_FULL = 0 |
 #  time :                  135 | reference_write_results_stored = 11111100110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 135 ns Started: 90 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0110 , read_ptr = 0000
 #  DUT : write_ptr = 0110 , read_ptr = 0000
 # <-----------------------------  write_seq4 ended  ----------------------->
@@ -269,6 +327,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
 #  time :                  145 | reference_write_results_stored = 11100101100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 145 ns Started: 95 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0111 , read_ptr = 0000
 #  Monitor READ : @ 150 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 | 
@@ -278,6 +338,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
 #  time :                  150 | reference_read_results_stored = 10100111010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 150 ns Started: 50 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Error: Assertion 7 failed - read_empty is unstable
+#    Time: 150 ns Started: 90 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 105 Expr: read_empty==$past(read_empty,1)
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 150 ns Started: 105 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0111 , read_ptr = 0000
 #  Monitor WRITE : @ 155 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
@@ -287,6 +353,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 1 |
 #  time :                  155 | reference_write_results_stored = 11100101101
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 155 ns Started: 110 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1000 , read_ptr = 0000
 #  DUT : write_ptr = 1000 , read_ptr = 0000
 #  Monitor WRITE : @ 165 
@@ -297,6 +365,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
 #  time :                  165 | reference_write_results_stored = 11100101100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 8 failed - write_full is invlaid
+#    Time: 165 ns Started: 165 ns  Scope: top.vif.ASSERT.is_write_full_check_8 File: async_fifo_assertions.sv Line: 116 Expr: write_full
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 165 ns Started: 115 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1001 , read_ptr = 0000
 #  Monitor READ : @ 170 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 | 
@@ -306,6 +378,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
 #  time :                  170 | reference_read_results_stored = 10100111010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 170 ns Started: 70 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 170 ns Started: 110 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 170 ns Started: 125 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1001 , read_ptr = 0000
 #  Monitor WRITE : @ 175 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
@@ -315,6 +393,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
 #  time :                  175 | reference_write_results_stored = 11100101100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 175 ns Started: 130 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1010 , read_ptr = 0000
 #  DUT : write_ptr = 1010 , read_ptr = 0000
 #  Monitor WRITE : @ 185 
@@ -325,6 +405,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
 #  time :                  185 | reference_write_results_stored = 11100101100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 185 ns Started: 135 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1011 , read_ptr = 0000
 #  Monitor READ : @ 190 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 | 
@@ -334,6 +416,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
 #  time :                  190 | reference_read_results_stored = 10100111010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 190 ns Started: 90 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 190 ns Started: 130 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 190 ns Started: 145 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1011 , read_ptr = 0000
 #  Monitor WRITE : @ 195 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
@@ -343,6 +431,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
 #  time :                  195 | reference_write_results_stored = 11100101100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 195 ns Started: 150 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1100 , read_ptr = 0000
 #  DUT : write_ptr = 1100 , read_ptr = 0000
 #  Monitor WRITE : @ 205 
@@ -353,6 +443,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
 #  time :                  205 | reference_write_results_stored = 11100101100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 205 ns Started: 155 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1101 , read_ptr = 0000
 #  Monitor READ : @ 210 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 | 
@@ -362,6 +454,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
 #  time :                  210 | reference_read_results_stored = 10100111010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 210 ns Started: 110 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 210 ns Started: 150 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 210 ns Started: 165 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1101 , read_ptr = 0000
 #  Monitor WRITE : @ 215 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
@@ -371,6 +469,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
 #  time :                  215 | reference_write_results_stored = 11100101100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 215 ns Started: 170 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1110 , read_ptr = 0000
 #  DUT : write_ptr = 1110 , read_ptr = 0000
 #  Monitor WRITE : @ 225 
@@ -381,6 +481,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
 #  time :                  225 | reference_write_results_stored = 11100101100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 225 ns Started: 175 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1111 , read_ptr = 0000
 # <-----------------------------  read_seq4 ended  ----------------------->
 #  Monitor READ : @ 230 
@@ -395,6 +497,12 @@
 # 
 # <----------------------------- write_seq5 started ----------------------->
 # 
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 230 ns Started: 130 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 230 ns Started: 170 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 230 ns Started: 185 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1111 , read_ptr = 0000
 #  Monitor WRITE : @ 235 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
@@ -404,6 +512,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 1 |
 #  time :                  235 | reference_write_results_stored = 11100101101
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 235 ns Started: 190 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 245 
@@ -414,6 +524,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 203 | WRITE_FULL = 1 |
 #  time :                  245 | reference_write_results_stored = 10110010111
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 4 failed - write_full is unstable
+#    Time: 245 ns Started: 235 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 72 Expr: write_full==$past(write_full,1)
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 245 ns Started: 195 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 250 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 0 | 
@@ -423,6 +537,12 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 0 |
 #  time :                  250 | reference_read_results_stored = 11100111010
 # <----------------------------- READ PASS ----------------------------->
+# ** Error: Assertion 9 failed - read_empty is invlaid
+#    Time: 250 ns Started: 250 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 127 Expr: read_empty
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 250 ns Started: 250 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 250 ns Started: 205 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0001
 #  Monitor WRITE : @ 255 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 195 | WRITE_FULL = 1 | 
@@ -432,6 +552,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 195 | WRITE_FULL = 0 |
 #  time :                  255 | reference_write_results_stored = 10110000110
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 255 ns Started: 245 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 255 ns Started: 210 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0001
 #  DUT : write_ptr = 0000 , read_ptr = 0001
 #  Monitor WRITE : @ 265 
@@ -442,6 +566,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  70 | WRITE_FULL = 0 |
 #  time :                  265 | reference_write_results_stored = 10010001100
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 265 ns Started: 255 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 265 ns Started: 215 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0001
 #  Monitor READ : @ 270 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 220 | READ_EMPTY = 0 | 
@@ -451,6 +579,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 220 | READ_EMPTY = 0 |
 #  time :                  270 | reference_read_results_stored = 11110111000
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 270 ns Started: 270 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 270 ns Started: 225 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 275 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  15 | WRITE_FULL = 1 | 
@@ -460,6 +592,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  15 | WRITE_FULL = 0 |
 #  time :                  275 | reference_write_results_stored = 10000011110
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 275 ns Started: 265 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 275 ns Started: 230 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 285 
@@ -470,6 +606,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 147 | WRITE_FULL = 0 |
 #  time :                  285 | reference_write_results_stored = 10100100110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 4 failed - write_full is unstable
+#    Time: 285 ns Started: 275 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 72 Expr: write_full==$past(write_full,1)
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 285 ns Started: 235 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 290 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 218 | READ_EMPTY = 0 | 
@@ -479,6 +619,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 218 | READ_EMPTY = 0 |
 #  time :                  290 | reference_read_results_stored = 11110110100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 290 ns Started: 290 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 290 ns Started: 245 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  Monitor WRITE : @ 295 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  51 | WRITE_FULL = 0 | 
@@ -488,6 +632,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  51 | WRITE_FULL = 0 |
 #  time :                  295 | reference_write_results_stored = 10001100110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 295 ns Started: 285 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 295 ns Started: 250 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 # <-----------------------------  write_seq5 ended  ----------------------->
@@ -499,6 +647,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
 #  time :                  305 | reference_write_results_stored = 10100011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 305 ns Started: 295 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 305 ns Started: 255 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  Monitor READ : @ 310 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  11 | READ_EMPTY = 0 | 
@@ -508,6 +660,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  11 | READ_EMPTY = 0 |
 #  time :                  310 | reference_read_results_stored = 11000010110
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 310 ns Started: 310 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 310 ns Started: 265 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0100
 #  Monitor WRITE : @ 315 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
@@ -517,6 +673,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
 #  time :                  315 | reference_write_results_stored = 10100011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 315 ns Started: 305 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 315 ns Started: 270 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0100
 #  DUT : write_ptr = 0000 , read_ptr = 0100
 #  Monitor WRITE : @ 325 
@@ -527,6 +687,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
 #  time :                  325 | reference_write_results_stored = 10100011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 325 ns Started: 315 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 325 ns Started: 275 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0100
 #  Monitor READ : @ 330 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 153 | READ_EMPTY = 0 | 
@@ -536,6 +700,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 153 | READ_EMPTY = 0 |
 #  time :                  330 | reference_read_results_stored = 11100110010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 330 ns Started: 330 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 330 ns Started: 285 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0101
 #  Monitor WRITE : @ 335 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
@@ -545,6 +713,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
 #  time :                  335 | reference_write_results_stored = 10100011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 335 ns Started: 325 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 335 ns Started: 290 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0101
 #  DUT : write_ptr = 0000 , read_ptr = 0101
 #  Monitor WRITE : @ 345 
@@ -555,6 +727,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
 #  time :                  345 | reference_write_results_stored = 10100011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 345 ns Started: 335 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 345 ns Started: 295 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0101
 #  Monitor READ : @ 350 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 243 | READ_EMPTY = 0 | 
@@ -564,6 +740,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 243 | READ_EMPTY = 0 |
 #  time :                  350 | reference_read_results_stored = 11111100110
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 350 ns Started: 350 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 350 ns Started: 305 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0110
 #  Monitor WRITE : @ 355 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
@@ -573,6 +753,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
 #  time :                  355 | reference_write_results_stored = 10100011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 355 ns Started: 345 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 355 ns Started: 310 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0110
 #  DUT : write_ptr = 0000 , read_ptr = 0110
 #  Monitor WRITE : @ 365 
@@ -583,6 +767,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
 #  time :                  365 | reference_write_results_stored = 10100011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 365 ns Started: 355 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 365 ns Started: 315 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0110
 #  Monitor READ : @ 370 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
@@ -592,6 +780,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
 #  time :                  370 | reference_read_results_stored = 11100101100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 370 ns Started: 370 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 370 ns Started: 325 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0111
 #  Monitor WRITE : @ 375 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
@@ -601,6 +793,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
 #  time :                  375 | reference_write_results_stored = 10100011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 375 ns Started: 365 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 375 ns Started: 330 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0111
 #  DUT : write_ptr = 0000 , read_ptr = 0111
 #  Monitor WRITE : @ 385 
@@ -611,6 +807,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
 #  time :                  385 | reference_write_results_stored = 10100011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 385 ns Started: 375 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 385 ns Started: 335 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0111
 # <-----------------------------  read_seq5 ended  ----------------------->
 #  Monitor READ : @ 390 
@@ -625,6 +825,10 @@
 # 
 # <----------------------------- read_seq6 started ----------------------->
 # 
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 390 ns Started: 390 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 390 ns Started: 345 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1000
 #  Monitor WRITE : @ 395 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
@@ -634,6 +838,12 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
 #  time :                  395 | reference_write_results_stored = 10100011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 8 failed - write_full is invlaid
+#    Time: 395 ns Started: 395 ns  Scope: top.vif.ASSERT.is_write_full_check_8 File: async_fifo_assertions.sv Line: 116 Expr: write_full
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 395 ns Started: 385 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 395 ns Started: 350 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1000
 #  DUT : write_ptr = 0000 , read_ptr = 1000
 #  Monitor WRITE : @ 405 
@@ -644,6 +854,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  61 | WRITE_FULL = 0 |
 #  time :                  405 | reference_write_results_stored = 11001111010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 8 failed - write_full is invlaid
+#    Time: 405 ns Started: 405 ns  Scope: top.vif.ASSERT.is_write_full_check_8 File: async_fifo_assertions.sv Line: 116 Expr: write_full
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 405 ns Started: 355 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0001 , read_ptr = 1000
 #  Monitor READ : @ 410 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
@@ -653,6 +867,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 1 |
 #  time :                  410 | reference_read_results_stored = 11100101101
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 410 ns Started: 410 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 410 ns Started: 365 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0001 , read_ptr = 1001
 #  Monitor WRITE : @ 415 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 145 | WRITE_FULL = 0 | 
@@ -662,6 +880,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 145 | WRITE_FULL = 0 |
 #  time :                  415 | reference_write_results_stored = 11100100010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 8 failed - write_full is invlaid
+#    Time: 415 ns Started: 415 ns  Scope: top.vif.ASSERT.is_write_full_check_8 File: async_fifo_assertions.sv Line: 116 Expr: write_full
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 415 ns Started: 370 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0010 , read_ptr = 1001
 #  DUT : write_ptr = 0010 , read_ptr = 1001
 #  Monitor WRITE : @ 425 
@@ -672,6 +894,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 145 | WRITE_FULL = 0 |
 #  time :                  425 | reference_write_results_stored = 11100100010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 425 ns Started: 375 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0011 , read_ptr = 1001
 #  Monitor READ : @ 430 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
@@ -681,6 +905,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
 #  time :                  430 | reference_read_results_stored = 11100101100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 430 ns Started: 430 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 430 ns Started: 385 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0011 , read_ptr = 1010
 #  Monitor WRITE : @ 435 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  46 | WRITE_FULL = 0 | 
@@ -690,6 +918,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  46 | WRITE_FULL = 0 |
 #  time :                  435 | reference_write_results_stored = 11001011100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 435 ns Started: 390 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0100 , read_ptr = 1010
 #  DUT : write_ptr = 0100 , read_ptr = 1010
 #  Monitor WRITE : @ 445 
@@ -700,6 +930,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 210 | WRITE_FULL = 0 |
 #  time :                  445 | reference_write_results_stored = 11110100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 445 ns Started: 395 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0101 , read_ptr = 1010
 #  Monitor READ : @ 450 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
@@ -709,6 +941,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
 #  time :                  450 | reference_read_results_stored = 11100101100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 450 ns Started: 450 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 450 ns Started: 405 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0101 , read_ptr = 1011
 #  Monitor WRITE : @ 455 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 208 | WRITE_FULL = 0 | 
@@ -718,6 +954,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 208 | WRITE_FULL = 0 |
 #  time :                  455 | reference_write_results_stored = 11110100000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 455 ns Started: 410 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0110 , read_ptr = 1011
 #  DUT : write_ptr = 0110 , read_ptr = 1011
 # <-----------------------------  write_seq6 ended  ----------------------->
@@ -731,6 +969,8 @@
 # <----------------------------- WRITE PASS ----------------------------->
 # <----------------------------- write_reset_seq1 started ---------------------------------->
 # 
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 465 ns Started: 415 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1011
 #  Monitor READ : @ 470 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
@@ -740,6 +980,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
 #  time :                  470 | reference_read_results_stored = 11100101100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 470 ns Started: 470 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 470 ns Started: 425 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1100
 # <-----------------------------  write_reset_seq1 ended  ---------------------------------->
 # 
@@ -751,6 +995,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  475 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 475 ns Started: 475 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 475 ns Started: 430 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1100
 #  DUT : write_ptr = 0000 , read_ptr = 1100
 #  Monitor WRITE : @ 485 
@@ -761,6 +1009,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  485 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 485 ns Started: 485 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 485 ns Started: 435 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1100
 #  Monitor READ : @ 490 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
@@ -770,6 +1022,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
 #  time :                  490 | reference_read_results_stored = 11100101100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 490 ns Started: 490 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 490 ns Started: 445 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1101
 #  Monitor WRITE : @ 495 
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
@@ -779,6 +1035,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  495 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 495 ns Started: 495 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 495 ns Started: 450 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1101
 #  DUT : write_ptr = 0000 , read_ptr = 1101
 #  Monitor WRITE : @ 505 
@@ -789,6 +1049,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  505 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 505 ns Started: 505 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 505 ns Started: 455 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1101
 #  Monitor READ : @ 510 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
@@ -798,6 +1062,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
 #  time :                  510 | reference_read_results_stored = 11100101100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 510 ns Started: 510 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 510 ns Started: 465 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1110
 #  Monitor WRITE : @ 515 
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
@@ -807,6 +1075,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  515 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 515 ns Started: 515 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 515 ns Started: 470 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1110
 #  DUT : write_ptr = 0000 , read_ptr = 1110
 #  Monitor WRITE : @ 525 
@@ -817,6 +1089,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  525 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 525 ns Started: 525 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 525 ns Started: 475 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1110
 #  Monitor READ : @ 530 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
@@ -826,6 +1102,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
 #  time :                  530 | reference_read_results_stored = 11100101100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 530 ns Started: 530 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 530 ns Started: 485 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1111
 #  Monitor WRITE : @ 535 
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
@@ -835,6 +1115,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  535 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 535 ns Started: 535 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 535 ns Started: 490 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1111
 #  DUT : write_ptr = 0000 , read_ptr = 1111
 #  Monitor WRITE : @ 545 
@@ -845,6 +1129,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  545 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 545 ns Started: 545 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 545 ns Started: 495 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1111
 # <-----------------------------  read_seq6 ended  ----------------------->
 #  Monitor READ : @ 550 
@@ -857,6 +1145,10 @@
 # <----------------------------- READ FAIL ----------------------------->
 # <----------------------------- read_reset_seq1 started ---------------------------------->
 # 
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 550 ns Started: 550 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 550 ns Started: 505 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 555 
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
@@ -866,6 +1158,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  555 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 555 ns Started: 555 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 555 ns Started: 510 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 565 
@@ -876,6 +1172,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  565 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 565 ns Started: 565 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 565 ns Started: 515 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  read_reset_seq1 ended  ---------------------------------->
 # 
@@ -891,6 +1191,12 @@
 # 
 # <----------------------------- read_seq7 started ----------------------->
 # 
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 570 ns Started: 570 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info: read_reset is valid - Assertion 3 passed
+#    Time: 570 ns Started: 570 ns  Scope: top.vif.ASSERT.read_reset_check_3 File: async_fifo_assertions.sv Line: 59
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 570 ns Started: 525 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 575 
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
@@ -900,6 +1206,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  575 | reference_write_results_stored = 00101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 575 ns Started: 575 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 575 ns Started: 530 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 585 
@@ -910,6 +1220,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  75 | WRITE_FULL = 0 |
 #  time :                  585 | reference_write_results_stored = 11010010110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 585 ns Started: 535 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0001 , read_ptr = 0000
 #  Monitor READ : @ 590 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  75 | READ_EMPTY = 1 | 
@@ -919,6 +1231,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  75 | READ_EMPTY = 0 |
 #  time :                  590 | reference_read_results_stored = 10010010110
 # <----------------------------- READ FAIL ----------------------------->
+# ** Error: Assertion 5 failed - read_latch is invlaid
+#    Time: 590 ns Started: 490 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 83 Expr: read_data==$past(read_data,1)
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 590 ns Started: 530 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 590 ns Started: 545 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0001 , read_ptr = 0000
 #  Monitor WRITE : @ 595 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  39 | WRITE_FULL = 0 | 
@@ -928,6 +1246,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  39 | WRITE_FULL = 0 |
 #  time :                  595 | reference_write_results_stored = 11001001110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 595 ns Started: 550 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0010 , read_ptr = 0000
 #  DUT : write_ptr = 0010 , read_ptr = 0000
 #  Monitor WRITE : @ 605 
@@ -938,6 +1258,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 175 | WRITE_FULL = 0 |
 #  time :                  605 | reference_write_results_stored = 11101011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 605 ns Started: 555 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 610 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  75 | READ_EMPTY = 1 | 
@@ -947,6 +1269,14 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  75 | READ_EMPTY = 0 |
 #  time :                  610 | reference_read_results_stored = 10010010110
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 610 ns Started: 610 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 610 ns Started: 510 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 610 ns Started: 550 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 610 ns Started: 565 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 615 
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  39 | WRITE_FULL = 0 | 
@@ -956,6 +1286,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  39 | WRITE_FULL = 0 |
 #  time :                  615 | reference_write_results_stored = 00001001110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 615 ns Started: 615 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 615 ns Started: 570 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 625 
@@ -966,6 +1300,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 146 | WRITE_FULL = 0 |
 #  time :                  625 | reference_write_results_stored = 11100100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 625 ns Started: 575 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0001 , read_ptr = 0000
 #  Monitor READ : @ 630 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -975,6 +1311,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  630 | reference_read_results_stored = 10100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Error: Assertion 5 failed - read_latch is invlaid
+#    Time: 630 ns Started: 530 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 83 Expr: read_data==$past(read_data,1)
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 630 ns Started: 570 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 630 ns Started: 585 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0001 , read_ptr = 0000
 #  Monitor WRITE : @ 635 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 216 | WRITE_FULL = 0 | 
@@ -984,6 +1326,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 216 | WRITE_FULL = 0 |
 #  time :                  635 | reference_write_results_stored = 11110110000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 635 ns Started: 590 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0010 , read_ptr = 0000
 #  DUT : write_ptr = 0010 , read_ptr = 0000
 #  Monitor WRITE : @ 645 
@@ -994,6 +1338,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  35 | WRITE_FULL = 0 |
 #  time :                  645 | reference_write_results_stored = 11001000110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 645 ns Started: 595 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0011 , read_ptr = 0000
 #  Monitor READ : @ 650 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 | 
@@ -1003,6 +1349,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  650 | reference_read_results_stored = 10100100100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 650 ns Started: 550 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Error: Assertion 7 failed - read_empty is unstable
+#    Time: 650 ns Started: 590 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 105 Expr: read_empty==$past(read_empty,1)
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 650 ns Started: 605 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0011 , read_ptr = 0000
 # <-----------------------------  write_seq7 ended  ----------------------->
 #  Monitor WRITE : @ 655 
@@ -1013,6 +1365,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
 #  time :                  655 | reference_write_results_stored = 11101000010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 655 ns Started: 610 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0100 , read_ptr = 0000
 #  DUT : write_ptr = 0100 , read_ptr = 0000
 #  Monitor WRITE : @ 665 
@@ -1023,6 +1377,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
 #  time :                  665 | reference_write_results_stored = 11101000010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 665 ns Started: 615 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0101 , read_ptr = 0000
 #  Monitor READ : @ 670 
 #  READ_RST = 0 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1032,6 +1388,10 @@
 #  READ_RST = 0 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 |
 #  time :                  670 | reference_read_results_stored = 00100100101
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_reset is valid - Assertion 3 passed
+#    Time: 670 ns Started: 670 ns  Scope: top.vif.ASSERT.read_reset_check_3 File: async_fifo_assertions.sv Line: 59
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 670 ns Started: 625 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0101 , read_ptr = 0000
 #  Monitor WRITE : @ 675 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
@@ -1041,6 +1401,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
 #  time :                  675 | reference_write_results_stored = 11101000010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 675 ns Started: 630 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0110 , read_ptr = 0000
 #  DUT : write_ptr = 0110 , read_ptr = 0000
 #  Monitor WRITE : @ 685 
@@ -1051,6 +1413,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
 #  time :                  685 | reference_write_results_stored = 11101000010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 685 ns Started: 635 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0111 , read_ptr = 0000
 #  Monitor READ : @ 690 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1060,6 +1424,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  690 | reference_read_results_stored = 10100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 690 ns Started: 590 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 690 ns Started: 630 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 690 ns Started: 645 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0111 , read_ptr = 0000
 #  Monitor WRITE : @ 695 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
@@ -1069,6 +1439,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 1 |
 #  time :                  695 | reference_write_results_stored = 11101000011
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 695 ns Started: 650 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1000 , read_ptr = 0000
 #  DUT : write_ptr = 1000 , read_ptr = 0000
 #  Monitor WRITE : @ 705 
@@ -1079,6 +1451,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
 #  time :                  705 | reference_write_results_stored = 11101000010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 8 failed - write_full is invlaid
+#    Time: 705 ns Started: 705 ns  Scope: top.vif.ASSERT.is_write_full_check_8 File: async_fifo_assertions.sv Line: 116 Expr: write_full
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 705 ns Started: 655 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1001 , read_ptr = 0000
 #  Monitor READ : @ 710 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1088,6 +1464,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  710 | reference_read_results_stored = 10100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 710 ns Started: 610 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 710 ns Started: 650 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 710 ns Started: 665 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1001 , read_ptr = 0000
 #  Monitor WRITE : @ 715 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
@@ -1097,6 +1479,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
 #  time :                  715 | reference_write_results_stored = 11101000010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 715 ns Started: 670 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1010 , read_ptr = 0000
 #  DUT : write_ptr = 1010 , read_ptr = 0000
 #  Monitor WRITE : @ 725 
@@ -1107,6 +1491,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
 #  time :                  725 | reference_write_results_stored = 11101000010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 725 ns Started: 675 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1011 , read_ptr = 0000
 #  Monitor READ : @ 730 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1116,6 +1502,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  730 | reference_read_results_stored = 10100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 730 ns Started: 630 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 730 ns Started: 670 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 730 ns Started: 685 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1011 , read_ptr = 0000
 #  Monitor WRITE : @ 735 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
@@ -1125,6 +1517,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
 #  time :                  735 | reference_write_results_stored = 11101000010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 735 ns Started: 690 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1100 , read_ptr = 0000
 #  DUT : write_ptr = 1100 , read_ptr = 0000
 #  Monitor WRITE : @ 745 
@@ -1135,6 +1529,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
 #  time :                  745 | reference_write_results_stored = 11101000010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 745 ns Started: 695 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1101 , read_ptr = 0000
 # <-----------------------------  read_seq7 ended  ----------------------->
 #  Monitor READ : @ 750 
@@ -1149,6 +1545,12 @@
 # 
 # <----------------------------- write_seq8 started ----------------------->
 # 
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 750 ns Started: 650 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Error: Assertion 7 failed - read_empty is unstable
+#    Time: 750 ns Started: 690 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 105 Expr: read_empty==$past(read_empty,1)
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 750 ns Started: 705 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1101 , read_ptr = 0000
 #  Monitor WRITE : @ 755 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
@@ -1158,6 +1560,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
 #  time :                  755 | reference_write_results_stored = 11101000010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 755 ns Started: 710 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1110 , read_ptr = 0000
 #  DUT : write_ptr = 1110 , read_ptr = 0000
 #  Monitor WRITE : @ 765 
@@ -1168,6 +1572,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 142 | WRITE_FULL = 0 |
 #  time :                  765 | reference_write_results_stored = 10100011100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 765 ns Started: 755 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 765 ns Started: 715 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1110 , read_ptr = 0000
 #  Monitor READ : @ 770 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 | 
@@ -1177,6 +1585,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  770 | reference_read_results_stored = 11100100100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 770 ns Started: 770 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 770 ns Started: 725 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1110 , read_ptr = 0001
 #  Monitor WRITE : @ 775 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 216 | WRITE_FULL = 0 | 
@@ -1186,6 +1598,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 216 | WRITE_FULL = 0 |
 #  time :                  775 | reference_write_results_stored = 10110110000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 775 ns Started: 765 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 775 ns Started: 730 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1110 , read_ptr = 0001
 #  DUT : write_ptr = 1110 , read_ptr = 0001
 #  Monitor WRITE : @ 785 
@@ -1196,6 +1612,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  58 | WRITE_FULL = 0 |
 #  time :                  785 | reference_write_results_stored = 10001110100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 785 ns Started: 775 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 785 ns Started: 735 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0001
 #  Monitor READ : @ 790 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 216 | READ_EMPTY = 0 | 
@@ -1205,6 +1625,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 216 | READ_EMPTY = 0 |
 #  time :                  790 | reference_read_results_stored = 11110110000
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 790 ns Started: 790 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 790 ns Started: 745 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 795 
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  39 | WRITE_FULL = 0 | 
@@ -1214,6 +1638,10 @@
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  39 | WRITE_FULL = 0 |
 #  time :                  795 | reference_write_results_stored = 00001001110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_reset is valid - Assertion 2 passed
+#    Time: 795 ns Started: 795 ns  Scope: top.vif.ASSERT.write_reset_check_2 File: async_fifo_assertions.sv Line: 48
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 795 ns Started: 750 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 805 
@@ -1224,6 +1652,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 127 | WRITE_FULL = 0 |
 #  time :                  805 | reference_write_results_stored = 10011111110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 805 ns Started: 795 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 805 ns Started: 755 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 810 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  35 | READ_EMPTY = 0 | 
@@ -1233,6 +1665,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  35 | READ_EMPTY = 0 |
 #  time :                  810 | reference_read_results_stored = 11001000110
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 810 ns Started: 810 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 810 ns Started: 765 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  Monitor WRITE : @ 815 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 118 | WRITE_FULL = 0 | 
@@ -1242,6 +1678,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 118 | WRITE_FULL = 0 |
 #  time :                  815 | reference_write_results_stored = 10011101100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 815 ns Started: 805 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 815 ns Started: 770 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  Monitor WRITE : @ 825 
@@ -1252,6 +1692,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
 #  time :                  825 | reference_write_results_stored = 10101001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 825 ns Started: 815 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 825 ns Started: 775 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  Monitor READ : @ 830 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 161 | READ_EMPTY = 0 | 
@@ -1261,6 +1705,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 161 | READ_EMPTY = 0 |
 #  time :                  830 | reference_read_results_stored = 11101000010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 830 ns Started: 830 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 830 ns Started: 785 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 835 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 220 | WRITE_FULL = 0 | 
@@ -1270,6 +1718,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 220 | WRITE_FULL = 0 |
 #  time :                  835 | reference_write_results_stored = 10110111000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 835 ns Started: 825 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 835 ns Started: 790 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 845 
@@ -1280,6 +1732,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  51 | WRITE_FULL = 0 |
 #  time :                  845 | reference_write_results_stored = 10001100110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 845 ns Started: 835 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 845 ns Started: 795 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 850 
 #  READ_RST = 0 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1289,6 +1745,12 @@
 #  READ_RST = 0 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 |
 #  time :                  850 | reference_read_results_stored = 00100100101
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 850 ns Started: 850 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info: read_reset is valid - Assertion 3 passed
+#    Time: 850 ns Started: 850 ns  Scope: top.vif.ASSERT.read_reset_check_3 File: async_fifo_assertions.sv Line: 59
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 850 ns Started: 805 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 855 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 192 | WRITE_FULL = 0 | 
@@ -1298,6 +1760,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 192 | WRITE_FULL = 0 |
 #  time :                  855 | reference_write_results_stored = 10110000000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 855 ns Started: 845 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 855 ns Started: 810 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 865 
@@ -1308,6 +1774,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 176 | WRITE_FULL = 0 |
 #  time :                  865 | reference_write_results_stored = 10101100000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 865 ns Started: 855 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 865 ns Started: 815 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 870 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1317,6 +1787,12 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  870 | reference_read_results_stored = 11100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 870 ns Started: 870 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 870 ns Started: 870 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 870 ns Started: 825 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  write_seq8 ended  ----------------------->
 #  Monitor WRITE : @ 875 
@@ -1327,6 +1803,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  875 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 875 ns Started: 865 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 875 ns Started: 830 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 885 
@@ -1337,6 +1817,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  885 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 885 ns Started: 875 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 885 ns Started: 835 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 890 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1346,6 +1830,12 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  890 | reference_read_results_stored = 11100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 890 ns Started: 890 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 890 ns Started: 890 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 890 ns Started: 845 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 895 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
@@ -1355,6 +1845,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  895 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 895 ns Started: 885 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 895 ns Started: 850 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 905 
@@ -1365,6 +1859,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  905 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 905 ns Started: 895 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 905 ns Started: 855 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 910 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1374,6 +1872,12 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  910 | reference_read_results_stored = 11100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 910 ns Started: 910 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 910 ns Started: 910 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 910 ns Started: 865 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 915 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
@@ -1383,6 +1887,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  915 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 915 ns Started: 905 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 915 ns Started: 870 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 925 
@@ -1393,6 +1901,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  925 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 925 ns Started: 915 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 925 ns Started: 875 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 930 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1402,6 +1914,12 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  930 | reference_read_results_stored = 11100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 930 ns Started: 930 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 930 ns Started: 930 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 930 ns Started: 885 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 935 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
@@ -1411,6 +1929,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  935 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 935 ns Started: 925 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 935 ns Started: 890 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 945 
@@ -1421,6 +1943,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  945 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 945 ns Started: 935 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 945 ns Started: 895 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 950 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1430,6 +1956,12 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  950 | reference_read_results_stored = 11100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 950 ns Started: 950 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 950 ns Started: 950 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 950 ns Started: 905 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 955 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
@@ -1439,6 +1971,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  955 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 955 ns Started: 945 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 955 ns Started: 910 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 965 
@@ -1449,6 +1985,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  965 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 965 ns Started: 955 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 965 ns Started: 915 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 970 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1458,6 +1998,12 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  970 | reference_read_results_stored = 11100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 970 ns Started: 970 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 970 ns Started: 970 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 970 ns Started: 925 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 975 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
@@ -1467,6 +2013,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  975 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 975 ns Started: 965 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 975 ns Started: 930 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 985 
@@ -1477,6 +2027,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  985 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 985 ns Started: 975 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 985 ns Started: 935 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 990 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
@@ -1486,6 +2040,12 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
 #  time :                  990 | reference_read_results_stored = 11100100100
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 990 ns Started: 990 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 990 ns Started: 990 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 990 ns Started: 945 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 995 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
@@ -1495,6 +2055,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                  995 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 995 ns Started: 985 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 995 ns Started: 950 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 1005 
@@ -1505,6 +2069,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
 #  time :                 1005 | reference_write_results_stored = 10001000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1005 ns Started: 995 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1005 ns Started: 955 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  read_seq8 ended  ----------------------->
 #  Monitor READ : @ 1010 
@@ -1519,6 +2087,12 @@
 # 
 # <----------------------------- write_seq9 started ----------------------->
 # 
+# ** Info: read_empty is valid - Assertion 9 passed
+#    Time: 1010 ns Started: 1010 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 125
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1010 ns Started: 1010 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1010 ns Started: 965 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 1015 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
@@ -1528,6 +2102,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 1 |
 #  time :                 1015 | reference_write_results_stored = 10001000101
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1015 ns Started: 1005 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1015 ns Started: 970 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 1025 
@@ -1538,6 +2116,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  57 | WRITE_FULL = 0 |
 #  time :                 1025 | reference_write_results_stored = 11001110010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1025 ns Started: 975 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0001 , read_ptr = 0000
 #  Monitor READ : @ 1030 
 #  READ_RST = 0 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 1 | 
@@ -1547,6 +2127,10 @@
 #  READ_RST = 0 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 1 |
 #  time :                 1030 | reference_read_results_stored = 00001110011
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_reset is valid - Assertion 3 passed
+#    Time: 1030 ns Started: 1030 ns  Scope: top.vif.ASSERT.read_reset_check_3 File: async_fifo_assertions.sv Line: 59
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1030 ns Started: 985 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0001 , read_ptr = 0000
 #  Monitor WRITE : @ 1035 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 131 | WRITE_FULL = 0 | 
@@ -1556,6 +2140,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 131 | WRITE_FULL = 0 |
 #  time :                 1035 | reference_write_results_stored = 11100000110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1035 ns Started: 990 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0010 , read_ptr = 0000
 #  DUT : write_ptr = 0010 , read_ptr = 0000
 #  Monitor WRITE : @ 1045 
@@ -1566,6 +2152,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 217 | WRITE_FULL = 0 |
 #  time :                 1045 | reference_write_results_stored = 11110110010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1045 ns Started: 995 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0011 , read_ptr = 0000
 #  Monitor READ : @ 1050 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 1 | 
@@ -1575,6 +2163,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
 #  time :                 1050 | reference_read_results_stored = 10001110010
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1050 ns Started: 950 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1050 ns Started: 990 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1050 ns Started: 1005 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0011 , read_ptr = 0000
 #  Monitor WRITE : @ 1055 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  99 | WRITE_FULL = 0 | 
@@ -1584,6 +2178,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  99 | WRITE_FULL = 0 |
 #  time :                 1055 | reference_write_results_stored = 11011000110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1055 ns Started: 1010 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0100 , read_ptr = 0000
 #  DUT : write_ptr = 0100 , read_ptr = 0000
 #  Monitor WRITE : @ 1065 
@@ -1594,6 +2190,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 120 | WRITE_FULL = 0 |
 #  time :                 1065 | reference_write_results_stored = 11011110000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1065 ns Started: 1015 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0101 , read_ptr = 0000
 #  Monitor READ : @ 1070 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 1 | 
@@ -1603,6 +2201,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
 #  time :                 1070 | reference_read_results_stored = 10001110010
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1070 ns Started: 970 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1070 ns Started: 1010 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1070 ns Started: 1025 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0101 , read_ptr = 0000
 #  Monitor WRITE : @ 1075 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  27 | WRITE_FULL = 0 | 
@@ -1612,6 +2216,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  27 | WRITE_FULL = 0 |
 #  time :                 1075 | reference_write_results_stored = 11000110110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1075 ns Started: 1030 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0110 , read_ptr = 0000
 #  DUT : write_ptr = 0110 , read_ptr = 0000
 #  Monitor WRITE : @ 1085 
@@ -1622,6 +2228,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 194 | WRITE_FULL = 0 |
 #  time :                 1085 | reference_write_results_stored = 11110000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1085 ns Started: 1035 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0111 , read_ptr = 0000
 #  Monitor READ : @ 1090 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 1 | 
@@ -1631,6 +2239,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
 #  time :                 1090 | reference_read_results_stored = 10001110010
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1090 ns Started: 990 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1090 ns Started: 1030 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1090 ns Started: 1045 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0111 , read_ptr = 0000
 #  Monitor WRITE : @ 1095 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 174 | WRITE_FULL = 0 | 
@@ -1640,6 +2254,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 174 | WRITE_FULL = 1 |
 #  time :                 1095 | reference_write_results_stored = 11101011101
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1095 ns Started: 1050 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1000 , read_ptr = 0000
 #  DUT : write_ptr = 1000 , read_ptr = 0000
 #  Monitor WRITE : @ 1105 
@@ -1650,6 +2266,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 206 | WRITE_FULL = 0 |
 #  time :                 1105 | reference_write_results_stored = 11110011100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 8 failed - write_full is invlaid
+#    Time: 1105 ns Started: 1105 ns  Scope: top.vif.ASSERT.is_write_full_check_8 File: async_fifo_assertions.sv Line: 116 Expr: write_full
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1105 ns Started: 1055 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1001 , read_ptr = 0000
 #  Monitor READ : @ 1110 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
@@ -1659,6 +2279,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
 #  time :                 1110 | reference_read_results_stored = 10001110010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1110 ns Started: 1010 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Error: Assertion 7 failed - read_empty is unstable
+#    Time: 1110 ns Started: 1050 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 105 Expr: read_empty==$past(read_empty,1)
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1110 ns Started: 1065 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1001 , read_ptr = 0000
 #  Monitor WRITE : @ 1115 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  10 | WRITE_FULL = 0 | 
@@ -1668,6 +2294,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  10 | WRITE_FULL = 0 |
 #  time :                 1115 | reference_write_results_stored = 10000010100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1115 ns Started: 1105 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1115 ns Started: 1070 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1001 , read_ptr = 0000
 #  DUT : write_ptr = 1001 , read_ptr = 0000
 #  Monitor WRITE : @ 1125 
@@ -1678,6 +2308,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 155 | WRITE_FULL = 0 |
 #  time :                 1125 | reference_write_results_stored = 10100110110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1125 ns Started: 1115 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1125 ns Started: 1075 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1001 , read_ptr = 0000
 #  Monitor READ : @ 1130 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
@@ -1687,6 +2321,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
 #  time :                 1130 | reference_read_results_stored = 10001110010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1130 ns Started: 1030 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1130 ns Started: 1070 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1130 ns Started: 1085 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1001 , read_ptr = 0000
 #  Monitor WRITE : @ 1135 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 101 | WRITE_FULL = 0 | 
@@ -1696,6 +2336,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 101 | WRITE_FULL = 0 |
 #  time :                 1135 | reference_write_results_stored = 11011001010
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1135 ns Started: 1090 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1010 , read_ptr = 0000
 #  DUT : write_ptr = 1010 , read_ptr = 0000
 #  Monitor WRITE : @ 1145 
@@ -1706,6 +2348,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  95 | WRITE_FULL = 0 |
 #  time :                 1145 | reference_write_results_stored = 11010111110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1145 ns Started: 1095 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1011 , read_ptr = 0000
 #  Monitor READ : @ 1150 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
@@ -1715,6 +2359,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
 #  time :                 1150 | reference_read_results_stored = 10001110010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1150 ns Started: 1050 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1150 ns Started: 1090 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1150 ns Started: 1105 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1011 , read_ptr = 0000
 #  Monitor WRITE : @ 1155 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 202 | WRITE_FULL = 0 | 
@@ -1724,6 +2374,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 202 | WRITE_FULL = 0 |
 #  time :                 1155 | reference_write_results_stored = 11110010100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1155 ns Started: 1110 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1100 , read_ptr = 0000
 #  DUT : write_ptr = 1100 , read_ptr = 0000
 #  Monitor WRITE : @ 1165 
@@ -1734,6 +2386,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  96 | WRITE_FULL = 0 |
 #  time :                 1165 | reference_write_results_stored = 11011000000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1165 ns Started: 1115 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1101 , read_ptr = 0000
 #  Monitor READ : @ 1170 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
@@ -1743,6 +2397,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
 #  time :                 1170 | reference_read_results_stored = 10001110010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1170 ns Started: 1070 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1170 ns Started: 1110 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1170 ns Started: 1125 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1101 , read_ptr = 0000
 #  Monitor WRITE : @ 1175 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 162 | WRITE_FULL = 0 | 
@@ -1752,6 +2412,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 162 | WRITE_FULL = 0 |
 #  time :                 1175 | reference_write_results_stored = 11101000100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1175 ns Started: 1130 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1110 , read_ptr = 0000
 #  DUT : write_ptr = 1110 , read_ptr = 0000
 #  Monitor WRITE : @ 1185 
@@ -1762,6 +2424,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 175 | WRITE_FULL = 0 |
 #  time :                 1185 | reference_write_results_stored = 11101011110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1185 ns Started: 1135 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1111 , read_ptr = 0000
 #  Monitor READ : @ 1190 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
@@ -1771,6 +2435,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
 #  time :                 1190 | reference_read_results_stored = 10001110010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1190 ns Started: 1090 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1190 ns Started: 1130 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1190 ns Started: 1145 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 1111 , read_ptr = 0000
 #  Monitor WRITE : @ 1195 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  54 | WRITE_FULL = 0 | 
@@ -1780,6 +2450,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  54 | WRITE_FULL = 1 |
 #  time :                 1195 | reference_write_results_stored = 11001101101
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1195 ns Started: 1150 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 1205 
@@ -1790,6 +2462,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  67 | WRITE_FULL = 0 |
 #  time :                 1205 | reference_write_results_stored = 11010000110
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1205 ns Started: 1155 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 1210 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
@@ -1799,6 +2473,14 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
 #  time :                 1210 | reference_read_results_stored = 10001110010
 # <----------------------------- READ PASS ----------------------------->
+# ** Error: Assertion 9 failed - read_empty is invlaid
+#    Time: 1210 ns Started: 1210 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 127 Expr: read_empty
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1210 ns Started: 1110 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1210 ns Started: 1150 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1210 ns Started: 1165 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 1215 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  28 | WRITE_FULL = 1 | 
@@ -1808,6 +2490,8 @@
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  28 | WRITE_FULL = 0 |
 #  time :                 1215 | reference_write_results_stored = 11000111000
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1215 ns Started: 1170 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 1225 
@@ -1818,6 +2502,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 101 | WRITE_FULL = 0 |
 #  time :                 1225 | reference_write_results_stored = 10011001010
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1225 ns Started: 1215 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1225 ns Started: 1175 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor READ : @ 1230 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  57 | READ_EMPTY = 0 | 
@@ -1827,6 +2515,12 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  57 | READ_EMPTY = 0 |
 #  time :                 1230 | reference_read_results_stored = 11001110010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1230 ns Started: 1230 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Error: Assertion 9 failed - read_empty is invlaid
+#    Time: 1230 ns Started: 1230 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 127 Expr: read_empty
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1230 ns Started: 1185 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0001
 #  Monitor WRITE : @ 1235 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 226 | WRITE_FULL = 1 | 
@@ -1836,6 +2530,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 226 | WRITE_FULL = 0 |
 #  time :                 1235 | reference_write_results_stored = 10111000100
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1235 ns Started: 1225 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1235 ns Started: 1190 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0001
 #  DUT : write_ptr = 0000 , read_ptr = 0001
 #  Monitor WRITE : @ 1245 
@@ -1846,6 +2544,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 227 | WRITE_FULL = 0 |
 #  time :                 1245 | reference_write_results_stored = 10111000110
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1245 ns Started: 1235 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1245 ns Started: 1195 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0001
 #  Monitor READ : @ 1250 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 131 | READ_EMPTY = 0 | 
@@ -1855,6 +2557,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 131 | READ_EMPTY = 1 |
 #  time :                 1250 | reference_read_results_stored = 11100000111
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1250 ns Started: 1250 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1250 ns Started: 1205 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1255 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  74 | WRITE_FULL = 1 | 
@@ -1864,6 +2570,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  74 | WRITE_FULL = 0 |
 #  time :                 1255 | reference_write_results_stored = 10010010100
 # <----------------------------- WRITE FAIL ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1255 ns Started: 1245 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1255 ns Started: 1210 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1265 
@@ -1874,6 +2584,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
 #  time :                 1265 | reference_write_results_stored = 10000111110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 4 failed - write_full is unstable
+#    Time: 1265 ns Started: 1255 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 72 Expr: write_full==$past(write_full,1)
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1265 ns Started: 1215 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 1270 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
@@ -1883,6 +2597,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
 #  time :                 1270 | reference_read_results_stored = 10110110011
 # <----------------------------- READ FAIL ----------------------------->
+# ** Error: Assertion 5 failed - read_latch is invlaid
+#    Time: 1270 ns Started: 1170 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 83 Expr: read_data==$past(read_data,1)
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1270 ns Started: 1210 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1270 ns Started: 1225 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1275 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  72 | WRITE_FULL = 0 | 
@@ -1892,6 +2612,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  72 | WRITE_FULL = 0 |
 #  time :                 1275 | reference_write_results_stored = 10010010000
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1275 ns Started: 1265 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1275 ns Started: 1230 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1285 
@@ -1902,6 +2626,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 110 | WRITE_FULL = 0 |
 #  time :                 1285 | reference_write_results_stored = 10011011100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1285 ns Started: 1275 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1285 ns Started: 1235 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 1290 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
@@ -1911,6 +2639,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
 #  time :                 1290 | reference_read_results_stored = 10110110011
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1290 ns Started: 1190 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1290 ns Started: 1230 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1290 ns Started: 1245 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1295 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  18 | WRITE_FULL = 0 | 
@@ -1920,6 +2654,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  18 | WRITE_FULL = 0 |
 #  time :                 1295 | reference_write_results_stored = 10000100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1295 ns Started: 1285 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1295 ns Started: 1250 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1305 
@@ -1930,6 +2668,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 211 | WRITE_FULL = 0 |
 #  time :                 1305 | reference_write_results_stored = 10110100110
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1305 ns Started: 1295 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1305 ns Started: 1255 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 1310 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
@@ -1939,6 +2681,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
 #  time :                 1310 | reference_read_results_stored = 10110110011
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1310 ns Started: 1210 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1310 ns Started: 1250 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1310 ns Started: 1265 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 # <-----------------------------  write_seq9 ended  ----------------------->
 #  Monitor WRITE : @ 1315 
@@ -1949,6 +2697,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1315 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1315 ns Started: 1305 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1315 ns Started: 1270 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1325 
@@ -1959,6 +2711,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1325 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1325 ns Started: 1315 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1325 ns Started: 1275 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 1330 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
@@ -1968,6 +2724,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
 #  time :                 1330 | reference_read_results_stored = 10110110011
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1330 ns Started: 1230 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1330 ns Started: 1270 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1330 ns Started: 1285 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1335 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -1977,6 +2739,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1335 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1335 ns Started: 1325 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1335 ns Started: 1290 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1345 
@@ -1987,6 +2753,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1345 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1345 ns Started: 1335 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1345 ns Started: 1295 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 1350 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
@@ -1996,6 +2766,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
 #  time :                 1350 | reference_read_results_stored = 10110110011
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1350 ns Started: 1250 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1350 ns Started: 1290 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1350 ns Started: 1305 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1355 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2005,6 +2781,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1355 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1355 ns Started: 1345 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1355 ns Started: 1310 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1365 
@@ -2015,6 +2795,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1365 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1365 ns Started: 1355 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1365 ns Started: 1315 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 1370 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
@@ -2024,6 +2808,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
 #  time :                 1370 | reference_read_results_stored = 10110110011
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1370 ns Started: 1270 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1370 ns Started: 1310 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1370 ns Started: 1325 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1375 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2033,6 +2823,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1375 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1375 ns Started: 1365 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1375 ns Started: 1330 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1385 
@@ -2043,6 +2837,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1385 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1385 ns Started: 1375 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1385 ns Started: 1335 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 1390 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
@@ -2052,6 +2850,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
 #  time :                 1390 | reference_read_results_stored = 10110110011
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1390 ns Started: 1290 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1390 ns Started: 1330 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1390 ns Started: 1345 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1395 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2061,6 +2865,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1395 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1395 ns Started: 1385 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1395 ns Started: 1350 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1405 
@@ -2071,6 +2879,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1405 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1405 ns Started: 1395 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1405 ns Started: 1355 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 1410 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
@@ -2080,6 +2892,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
 #  time :                 1410 | reference_read_results_stored = 10110110011
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1410 ns Started: 1310 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1410 ns Started: 1350 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1410 ns Started: 1365 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1415 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2089,6 +2907,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1415 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1415 ns Started: 1405 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1415 ns Started: 1370 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1425 
@@ -2099,6 +2921,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1425 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1425 ns Started: 1415 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1425 ns Started: 1375 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 1430 
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
@@ -2108,6 +2934,12 @@
 #  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
 #  time :                 1430 | reference_read_results_stored = 10110110011
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info: read_latch is valid - Assertion 5 passed
+#    Time: 1430 ns Started: 1330 ns  Scope: top.vif.ASSERT.read_latch_check_5 File: async_fifo_assertions.sv Line: 81
+# ** Info: read_empty is stable - Assertion 7 passed
+#    Time: 1430 ns Started: 1370 ns  Scope: top.vif.ASSERT.read_empty_stable_check_7 File: async_fifo_assertions.sv Line: 103
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1430 ns Started: 1385 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1435 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2117,6 +2949,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1435 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1435 ns Started: 1425 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1435 ns Started: 1390 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor WRITE : @ 1445 
@@ -2127,6 +2963,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1445 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1445 ns Started: 1435 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1445 ns Started: 1395 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0010
 #  Monitor READ : @ 1450 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 217 | READ_EMPTY = 0 | 
@@ -2136,6 +2976,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 217 | READ_EMPTY = 0 |
 #  time :                 1450 | reference_read_results_stored = 11110110010
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1450 ns Started: 1450 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1450 ns Started: 1405 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  Monitor WRITE : @ 1455 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2145,6 +2989,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1455 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1455 ns Started: 1445 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1455 ns Started: 1410 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  Monitor WRITE : @ 1465 
@@ -2155,6 +3003,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1465 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1465 ns Started: 1455 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1465 ns Started: 1415 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0011
 #  Monitor READ : @ 1470 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  99 | READ_EMPTY = 0 | 
@@ -2164,6 +3016,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  99 | READ_EMPTY = 0 |
 #  time :                 1470 | reference_read_results_stored = 11011000110
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1470 ns Started: 1470 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1470 ns Started: 1425 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0100
 #  Monitor WRITE : @ 1475 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2173,6 +3029,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1475 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1475 ns Started: 1465 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1475 ns Started: 1430 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0100
 #  DUT : write_ptr = 0000 , read_ptr = 0100
 #  Monitor WRITE : @ 1485 
@@ -2183,6 +3043,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1485 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1485 ns Started: 1475 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1485 ns Started: 1435 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0100
 #  Monitor READ : @ 1490 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 120 | READ_EMPTY = 0 | 
@@ -2192,6 +3056,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 120 | READ_EMPTY = 0 |
 #  time :                 1490 | reference_read_results_stored = 11011110000
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1490 ns Started: 1490 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1490 ns Started: 1445 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0101
 #  Monitor WRITE : @ 1495 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2201,6 +3069,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1495 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1495 ns Started: 1485 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1495 ns Started: 1450 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0101
 #  DUT : write_ptr = 0000 , read_ptr = 0101
 #  Monitor WRITE : @ 1505 
@@ -2211,6 +3083,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1505 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1505 ns Started: 1495 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1505 ns Started: 1455 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0101
 #  Monitor READ : @ 1510 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  27 | READ_EMPTY = 0 | 
@@ -2220,6 +3096,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  27 | READ_EMPTY = 0 |
 #  time :                 1510 | reference_read_results_stored = 11000110110
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1510 ns Started: 1510 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1510 ns Started: 1465 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0110
 #  Monitor WRITE : @ 1515 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2229,6 +3109,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1515 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1515 ns Started: 1505 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1515 ns Started: 1470 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0110
 #  DUT : write_ptr = 0000 , read_ptr = 0110
 #  Monitor WRITE : @ 1525 
@@ -2239,6 +3123,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1525 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1525 ns Started: 1515 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1525 ns Started: 1475 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0110
 #  Monitor READ : @ 1530 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 194 | READ_EMPTY = 0 | 
@@ -2248,6 +3136,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 194 | READ_EMPTY = 0 |
 #  time :                 1530 | reference_read_results_stored = 11110000100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1530 ns Started: 1530 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1530 ns Started: 1485 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0111
 #  Monitor WRITE : @ 1535 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2257,6 +3149,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1535 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1535 ns Started: 1525 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1535 ns Started: 1490 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0111
 #  DUT : write_ptr = 0000 , read_ptr = 0111
 #  Monitor WRITE : @ 1545 
@@ -2267,6 +3163,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1545 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1545 ns Started: 1535 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1545 ns Started: 1495 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 0111
 #  Monitor READ : @ 1550 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 174 | READ_EMPTY = 0 | 
@@ -2276,6 +3176,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 174 | READ_EMPTY = 0 |
 #  time :                 1550 | reference_read_results_stored = 11101011100
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1550 ns Started: 1550 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1550 ns Started: 1505 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1000
 #  Monitor WRITE : @ 1555 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2285,6 +3189,12 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1555 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 8 failed - write_full is invlaid
+#    Time: 1555 ns Started: 1555 ns  Scope: top.vif.ASSERT.is_write_full_check_8 File: async_fifo_assertions.sv Line: 116 Expr: write_full
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1555 ns Started: 1545 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1555 ns Started: 1510 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1000
 #  DUT : write_ptr = 0000 , read_ptr = 1000
 #  Monitor WRITE : @ 1565 
@@ -2295,6 +3205,12 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1565 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Error: Assertion 8 failed - write_full is invlaid
+#    Time: 1565 ns Started: 1565 ns  Scope: top.vif.ASSERT.is_write_full_check_8 File: async_fifo_assertions.sv Line: 116 Expr: write_full
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1565 ns Started: 1555 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1565 ns Started: 1515 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1000
 #  Monitor READ : @ 1570 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 206 | READ_EMPTY = 0 | 
@@ -2304,6 +3220,12 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 206 | READ_EMPTY = 0 |
 #  time :                 1570 | reference_read_results_stored = 11110011100
 # <----------------------------- READ PASS ----------------------------->
+# ** Error: Assertion 9 failed - read_empty is invlaid
+#    Time: 1570 ns Started: 1570 ns  Scope: top.vif.ASSERT.is_read_empty_check_9 File: async_fifo_assertions.sv Line: 127 Expr: read_empty
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1570 ns Started: 1570 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1570 ns Started: 1525 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1001
 #  Monitor WRITE : @ 1575 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2313,6 +3235,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1575 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1575 ns Started: 1565 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1575 ns Started: 1530 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1001
 #  DUT : write_ptr = 0000 , read_ptr = 1001
 #  Monitor WRITE : @ 1585 
@@ -2323,6 +3249,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1585 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1585 ns Started: 1575 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1585 ns Started: 1535 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1001
 #  Monitor READ : @ 1590 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 101 | READ_EMPTY = 0 | 
@@ -2332,6 +3262,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA = 101 | READ_EMPTY = 1 |
 #  time :                 1590 | reference_read_results_stored = 11011001011
 # <----------------------------- READ FAIL ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1590 ns Started: 1590 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1590 ns Started: 1545 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1010
 #  Monitor WRITE : @ 1595 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2341,6 +3275,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1595 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1595 ns Started: 1585 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1595 ns Started: 1550 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1010
 #  DUT : write_ptr = 0000 , read_ptr = 1010
 #  Monitor WRITE : @ 1605 
@@ -2351,6 +3289,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1605 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1605 ns Started: 1595 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1605 ns Started: 1555 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1010
 #  Monitor READ : @ 1610 
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  95 | READ_EMPTY = 0 | 
@@ -2360,6 +3302,10 @@
 #  READ_RST = 1 | READ_EN = 1 | READ_DATA =  95 | READ_EMPTY = 0 |
 #  time :                 1610 | reference_read_results_stored = 11010111110
 # <----------------------------- READ PASS ----------------------------->
+# ** Info:  read_data is valid - Assertion 6 passed
+#    Time: 1610 ns Started: 1610 ns  Scope: top.vif.ASSERT.data_valid_check_6 File: async_fifo_assertions.sv Line: 92
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1610 ns Started: 1565 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1011
 #  Monitor WRITE : @ 1615 
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
@@ -2369,6 +3315,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1615 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1615 ns Started: 1605 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1615 ns Started: 1570 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1011
 #  DUT : write_ptr = 0000 , read_ptr = 1011
 #  Monitor WRITE : @ 1625 
@@ -2379,6 +3329,10 @@
 #  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
 #  time :                 1625 | reference_write_results_stored = 10001100100
 # <----------------------------- WRITE PASS ----------------------------->
+# ** Info: write_full is stable - Assertion 4 passed
+#    Time: 1625 ns Started: 1615 ns  Scope: top.vif.ASSERT.write_full_stable_check_4 File: async_fifo_assertions.sv Line: 70
+# ** Info: all the signals are known - Assertion 1 passed
+#    Time: 1625 ns Started: 1575 ns  Scope: top.vif.ASSERT.isunknown_signal_check_1 File: async_fifo_assertions.sv Line: 37
 #  DUT : write_ptr = 0000 , read_ptr = 1011
 # <-----------------------------  read_seq9 ended  ----------------------->
 #  Monitor READ : @ 1630 
@@ -2411,5 +3365,5 @@
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 1630 ns  Iteration: 68  Instance: /top
 # Saving coverage database on exit...
-# End time: 16:28:45 on Oct 04,2025, Elapsed time: 0:00:05
-# Errors: 0, Warnings: 0
+# End time: 19:47:04 on Oct 04,2025, Elapsed time: 0:00:05
+# Errors: 22, Warnings: 0
