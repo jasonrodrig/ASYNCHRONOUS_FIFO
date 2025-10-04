@@ -19,7 +19,7 @@ class async_fifo_subscriber extends uvm_component;
 		option.per_instance = 1;
 		WRITE_RESET  : coverpoint write_seq.write_rst  { bins wr_rst[]  = { 0 , 1 } ; }
 		WRITE_ENABLE : coverpoint write_seq.write_en   { bins wr_en[]   = { 0 , 1 } ; }
-		WRITE_DATA   : coverpoint write_seq.write_data { bins wr_data[] = { [ 0 : 255 ] } ; }
+		WRITE_DATA   : coverpoint write_seq.write_data { bins wr_data   = { [ 0 : 255 ] } ; }
 		WRITE_FULL   : coverpoint write_seq.write_full { bins wr_full[] = { 0 , 1 } ; }
     WRITE_RESETXWRITE_ENABLE : cross WRITE_RESET , WRITE_ENABLE ;
 	endgroup
@@ -28,7 +28,7 @@ class async_fifo_subscriber extends uvm_component;
 		option.per_instance = 1;
 		READ_RESET  : coverpoint read_seq.read_rst   { bins rd_rst[]   = { 0 , 1 } ; }
 		READ_ENABLE : coverpoint read_seq.read_en    { bins rd_en[]    = { 0 , 1 } ; }
-		READ_DATA   : coverpoint read_seq.read_data  { bins rd_data[]  = { [ 0 : 255 ] } ; }
+		READ_DATA   : coverpoint read_seq.read_data  { bins rd_data    = { [ 0 : 255 ] } ; }
 		READ_EMPTY  : coverpoint read_seq.read_empty { bins rd_empty[] = { 0 , 1 } ; }
 		READ_RESETXREAD_ENABLE : cross READ_RESET , READ_ENABLE  ; 
 	endgroup

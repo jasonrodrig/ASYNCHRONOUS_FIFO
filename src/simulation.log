@@ -1,5 +1,5 @@
 # vsim -vopt work.top -voptargs="+acc=npr" -assertdebug -l simulation.log -coverage -c -do "coverage save -onexit -assert -directive -cvg -codeAll coverage.ucdb; run -all; exit" 
-# Start time: 14:55:05 on Oct 03,2025
+# Start time: 16:28:40 on Oct 04,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
@@ -59,733 +59,2342 @@
 # 
 # <----------------------------- read_reset_seq1 started ---------------------------------->
 # 
+#  DUT : write_ptr = xxxx , read_ptr = xxxx
+#  DUT : write_ptr = 0000 , read_ptr = xxxx
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+# <-----------------------------  write_reset_seq1 ended  ---------------------------------->
+# 
 #  Monitor WRITE : @ 15 
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  11 | WRITE_FULL = 0 | 
 #  time :                   15 | monitor_write_results_stored = 00000010110
+#  REF : wptr = 0000 , rptr = 0000
 #  Reference WRITE : @ 15 
 #  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  11 | WRITE_FULL = 0 |
 #  time :                   15 | reference_write_results_stored = 00000010110
 # <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
 #  Monitor WRITE : @ 25 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
-#  time :                   25 | monitor_write_results_stored = 00101001010
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  11 | WRITE_FULL = 0 | 
+#  time :                   25 | monitor_write_results_stored = 00000010110
+#  REF : wptr = 0000 , rptr = 0000
 #  Reference WRITE : @ 25 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
-#  time :                   25 | reference_write_results_stored = 00101001010
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  11 | WRITE_FULL = 0 |
+#  time :                   25 | reference_write_results_stored = 00000010110
 # <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+# <-----------------------------  read_reset_seq1 ended  ---------------------------------->
+# 
 #  Monitor READ : @ 30 
 #  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 | 
 #  time :                   30 | monitor_read_results_stored = 00xxxxxxxx1
+#  REF : wptr = 0000 , rptr = 0000
 #  Reference READ : @ 30 
 #  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 |
 #  time :                   30 | reference_read_results_stored = 00xxxxxxxx1
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 35 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 149 | WRITE_FULL = 0 | 
-#  time :                   35 | monitor_write_results_stored = 00100101010
-#  Reference WRITE : @ 35 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 149 | WRITE_FULL = 0 |
-#  time :                   35 | reference_write_results_stored = 00100101010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 45 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 210 | WRITE_FULL = 0 | 
-#  time :                   45 | monitor_write_results_stored = 00110100100
-#  Reference WRITE : @ 45 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 210 | WRITE_FULL = 0 |
-#  time :                   45 | reference_write_results_stored = 00110100100
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 50 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 | 
-#  time :                   50 | monitor_read_results_stored = 00xxxxxxxx1
-#  Reference READ : @ 50 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 |
-#  time :                   50 | reference_read_results_stored = 00xxxxxxxx1
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 55 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  87 | WRITE_FULL = 0 | 
-#  time :                   55 | monitor_write_results_stored = 00010101110
-#  Reference WRITE : @ 55 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  87 | WRITE_FULL = 0 |
-#  time :                   55 | reference_write_results_stored = 00010101110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 65 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  53 | WRITE_FULL = 0 | 
-#  time :                   65 | monitor_write_results_stored = 00001101010
-#  Reference WRITE : @ 65 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  53 | WRITE_FULL = 0 |
-#  time :                   65 | reference_write_results_stored = 00001101010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 70 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 | 
-#  time :                   70 | monitor_read_results_stored = 00xxxxxxxx1
-#  Reference READ : @ 70 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 |
-#  time :                   70 | reference_read_results_stored = 00xxxxxxxx1
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 75 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 236 | WRITE_FULL = 0 | 
-#  time :                   75 | monitor_write_results_stored = 00111011000
-#  Reference WRITE : @ 75 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 236 | WRITE_FULL = 0 |
-#  time :                   75 | reference_write_results_stored = 00111011000
-# <----------------------------- WRITE PASS ----------------------------->
-# <-----------------------------  write_reset_seq1 ended  ---------------------------------->
-# 
-#  Monitor WRITE : @ 85 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 | 
-#  time :                   85 | monitor_write_results_stored = 00111001010
-#  Reference WRITE : @ 85 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 |
-#  time :                   85 | reference_write_results_stored = 00111001010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 90 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 | 
-#  time :                   90 | monitor_read_results_stored = 00xxxxxxxx1
-#  Reference READ : @ 90 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 |
-#  time :                   90 | reference_read_results_stored = 00xxxxxxxx1
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 95 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 | 
-#  time :                   95 | monitor_write_results_stored = 00111001010
-#  Reference WRITE : @ 95 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 |
-#  time :                   95 | reference_write_results_stored = 00111001010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 105 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 | 
-#  time :                  105 | monitor_write_results_stored = 00111001010
-#  Reference WRITE : @ 105 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 |
-#  time :                  105 | reference_write_results_stored = 00111001010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 110 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 | 
-#  time :                  110 | monitor_read_results_stored = 00xxxxxxxx1
-#  Reference READ : @ 110 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 |
-#  time :                  110 | reference_read_results_stored = 00xxxxxxxx1
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 115 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 | 
-#  time :                  115 | monitor_write_results_stored = 00111001010
-#  Reference WRITE : @ 115 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 |
-#  time :                  115 | reference_write_results_stored = 00111001010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 125 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 | 
-#  time :                  125 | monitor_write_results_stored = 00111001010
-#  Reference WRITE : @ 125 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 |
-#  time :                  125 | reference_write_results_stored = 00111001010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 130 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 | 
-#  time :                  130 | monitor_read_results_stored = 00xxxxxxxx1
-#  Reference READ : @ 130 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 |
-#  time :                  130 | reference_read_results_stored = 00xxxxxxxx1
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 135 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 | 
-#  time :                  135 | monitor_write_results_stored = 00111001010
-#  Reference WRITE : @ 135 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 |
-#  time :                  135 | reference_write_results_stored = 00111001010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 145 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 | 
-#  time :                  145 | monitor_write_results_stored = 00111001010
-#  Reference WRITE : @ 145 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 |
-#  time :                  145 | reference_write_results_stored = 00111001010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 150 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 | 
-#  time :                  150 | monitor_read_results_stored = 00xxxxxxxx1
-#  Reference READ : @ 150 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 |
-#  time :                  150 | reference_read_results_stored = 00xxxxxxxx1
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 155 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 | 
-#  time :                  155 | monitor_write_results_stored = 00111001010
-#  Reference WRITE : @ 155 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 |
-#  time :                  155 | reference_write_results_stored = 00111001010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 165 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 | 
-#  time :                  165 | monitor_write_results_stored = 00111001010
-#  Reference WRITE : @ 165 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 |
-#  time :                  165 | reference_write_results_stored = 00111001010
-# <----------------------------- WRITE PASS ----------------------------->
-# <-----------------------------  read_reset_seq1 ended  ---------------------------------->
-# 
-#  Monitor READ : @ 170 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 | 
-#  time :                  170 | monitor_read_results_stored = 00xxxxxxxx1
-#  Reference READ : @ 170 
-#  READ_RST = 0 | READ_EN = 0 | READ_DATA =   x | READ_EMPTY = 1 |
-#  time :                  170 | reference_read_results_stored = 00xxxxxxxx1
 # <----------------------------- READ PASS ----------------------------->
 # <----------------------------- write_reset_seq2 when wr_en = 1 started ----------------------->
 # 
 # <----------------------------- read_reset_seq2 when rd_en = 1 started ----------------------->
 # 
-#  Monitor WRITE : @ 175 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 | 
-#  time :                  175 | monitor_write_results_stored = 00111001010
-#  Reference WRITE : @ 175 
-#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 229 | WRITE_FULL = 0 |
-#  time :                  175 | reference_write_results_stored = 00111001010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 185 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 120 | WRITE_FULL = 0 | 
-#  time :                  185 | monitor_write_results_stored = 01011110000
-#  Reference WRITE : @ 185 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 120 | WRITE_FULL = 0 |
-#  time :                  185 | reference_write_results_stored = 01011110000
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 190 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 120 | READ_EMPTY = 1 | 
-#  time :                  190 | monitor_read_results_stored = 01011110001
-#  Reference READ : @ 190 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 120 | READ_EMPTY = 1 |
-#  time :                  190 | reference_read_results_stored = 01011110001
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 195 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 254 | WRITE_FULL = 0 | 
-#  time :                  195 | monitor_write_results_stored = 01111111100
-#  Reference WRITE : @ 195 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 254 | WRITE_FULL = 0 |
-#  time :                  195 | reference_write_results_stored = 01111111100
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 205 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA =  51 | WRITE_FULL = 0 | 
-#  time :                  205 | monitor_write_results_stored = 01001100110
-#  Reference WRITE : @ 205 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA =  51 | WRITE_FULL = 0 |
-#  time :                  205 | reference_write_results_stored = 01001100110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 210 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA =  51 | READ_EMPTY = 1 | 
-#  time :                  210 | monitor_read_results_stored = 01001100111
-#  Reference READ : @ 210 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA =  51 | READ_EMPTY = 1 |
-#  time :                  210 | reference_read_results_stored = 01001100111
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 215 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 133 | WRITE_FULL = 0 | 
-#  time :                  215 | monitor_write_results_stored = 01100001010
-#  Reference WRITE : @ 215 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 133 | WRITE_FULL = 0 |
-#  time :                  215 | reference_write_results_stored = 01100001010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 225 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 128 | WRITE_FULL = 0 | 
-#  time :                  225 | monitor_write_results_stored = 01100000000
-#  Reference WRITE : @ 225 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 128 | WRITE_FULL = 0 |
-#  time :                  225 | reference_write_results_stored = 01100000000
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 230 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 128 | READ_EMPTY = 1 | 
-#  time :                  230 | monitor_read_results_stored = 01100000001
-#  Reference READ : @ 230 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 128 | READ_EMPTY = 1 |
-#  time :                  230 | reference_read_results_stored = 01100000001
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 235 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 163 | WRITE_FULL = 0 | 
-#  time :                  235 | monitor_write_results_stored = 01101000110
-#  Reference WRITE : @ 235 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 163 | WRITE_FULL = 0 |
-#  time :                  235 | reference_write_results_stored = 01101000110
-# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  write_reset_seq2 when wr_en = 1 ended  ----------------------->
-# 
-#  Monitor WRITE : @ 245 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 | 
-#  time :                  245 | monitor_write_results_stored = 01110011010
-#  Reference WRITE : @ 245 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 |
-#  time :                  245 | reference_write_results_stored = 01110011010
+#  Monitor WRITE : @ 35 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  11 | WRITE_FULL = 0 | 
+#  time :                   35 | monitor_write_results_stored = 00000010110
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference WRITE : @ 35 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  11 | WRITE_FULL = 0 |
+#  time :                   35 | reference_write_results_stored = 00000010110
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 250 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  250 | monitor_read_results_stored = 01110011011
-#  Reference READ : @ 250 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  250 | reference_read_results_stored = 01110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 255 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 | 
-#  time :                  255 | monitor_write_results_stored = 01110011010
-#  Reference WRITE : @ 255 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 |
-#  time :                  255 | reference_write_results_stored = 01110011010
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 45 
+#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA =  51 | WRITE_FULL = 0 | 
+#  time :                   45 | monitor_write_results_stored = 01001100110
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference WRITE : @ 45 
+#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA =  51 | WRITE_FULL = 0 |
+#  time :                   45 | reference_write_results_stored = 01001100110
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 265 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 | 
-#  time :                  265 | monitor_write_results_stored = 01110011010
-#  Reference WRITE : @ 265 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 |
-#  time :                  265 | reference_write_results_stored = 01110011010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 270 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  270 | monitor_read_results_stored = 01110011011
-#  Reference READ : @ 270 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  270 | reference_read_results_stored = 01110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 275 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 | 
-#  time :                  275 | monitor_write_results_stored = 01110011010
-#  Reference WRITE : @ 275 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 |
-#  time :                  275 | reference_write_results_stored = 01110011010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 285 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 | 
-#  time :                  285 | monitor_write_results_stored = 01110011010
-#  Reference WRITE : @ 285 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 |
-#  time :                  285 | reference_write_results_stored = 01110011010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 290 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  290 | monitor_read_results_stored = 01110011011
-#  Reference READ : @ 290 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  290 | reference_read_results_stored = 01110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 295 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 | 
-#  time :                  295 | monitor_write_results_stored = 01110011010
-#  Reference WRITE : @ 295 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 |
-#  time :                  295 | reference_write_results_stored = 01110011010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 305 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 | 
-#  time :                  305 | monitor_write_results_stored = 01110011010
-#  Reference WRITE : @ 305 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 |
-#  time :                  305 | reference_write_results_stored = 01110011010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 310 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  310 | monitor_read_results_stored = 01110011011
-#  Reference READ : @ 310 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  310 | reference_read_results_stored = 01110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 315 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 | 
-#  time :                  315 | monitor_write_results_stored = 01110011010
-#  Reference WRITE : @ 315 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 |
-#  time :                  315 | reference_write_results_stored = 01110011010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 325 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 | 
-#  time :                  325 | monitor_write_results_stored = 01110011010
-#  Reference WRITE : @ 325 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 |
-#  time :                  325 | reference_write_results_stored = 01110011010
-# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  read_reset_seq2 when rd_en = 1 ended  ----------------------->
-# 
-#  Monitor READ : @ 330 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  330 | monitor_read_results_stored = 01110011011
-#  Reference READ : @ 330 
-#  READ_RST = 0 | READ_EN = 1 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  330 | reference_read_results_stored = 01110011011
+#  Monitor READ : @ 50 
+#  READ_RST = 0 | READ_EN = 1 | READ_DATA =  51 | READ_EMPTY = 1 | 
+#  time :                   50 | monitor_read_results_stored = 01001100111
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference READ : @ 50 
+#  READ_RST = 0 | READ_EN = 1 | READ_DATA =  51 | READ_EMPTY = 1 |
+#  time :                   50 | reference_read_results_stored = 01001100111
 # <----------------------------- READ PASS ----------------------------->
 # <----------------------------- write_latch_seq3 started ----------------------->
 # 
 # <----------------------------- read_latch_seq3 started ----------------------->
 # 
-#  Monitor WRITE : @ 335 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 | 
-#  time :                  335 | monitor_write_results_stored = 01110011010
-#  Reference WRITE : @ 335 
-#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA = 205 | WRITE_FULL = 0 |
-#  time :                  335 | reference_write_results_stored = 01110011010
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 345 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 220 | WRITE_FULL = 0 | 
-#  time :                  345 | monitor_write_results_stored = 10110111000
-#  Reference WRITE : @ 345 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 220 | WRITE_FULL = 0 |
-#  time :                  345 | reference_write_results_stored = 10110111000
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 350 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  350 | monitor_read_results_stored = 10110011011
-#  Reference READ : @ 350 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  350 | reference_read_results_stored = 10110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 355 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 203 | WRITE_FULL = 0 | 
-#  time :                  355 | monitor_write_results_stored = 10110010110
-#  Reference WRITE : @ 355 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 203 | WRITE_FULL = 0 |
-#  time :                  355 | reference_write_results_stored = 10110010110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 365 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  40 | WRITE_FULL = 0 | 
-#  time :                  365 | monitor_write_results_stored = 10001010000
-#  Reference WRITE : @ 365 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  40 | WRITE_FULL = 0 |
-#  time :                  365 | reference_write_results_stored = 10001010000
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 370 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  370 | monitor_read_results_stored = 10110011011
-#  Reference READ : @ 370 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  370 | reference_read_results_stored = 10110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 375 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =   3 | WRITE_FULL = 0 | 
-#  time :                  375 | monitor_write_results_stored = 10000000110
-#  Reference WRITE : @ 375 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =   3 | WRITE_FULL = 0 |
-#  time :                  375 | reference_write_results_stored = 10000000110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 385 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 119 | WRITE_FULL = 0 | 
-#  time :                  385 | monitor_write_results_stored = 10011101110
-#  Reference WRITE : @ 385 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 119 | WRITE_FULL = 0 |
-#  time :                  385 | reference_write_results_stored = 10011101110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 390 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  390 | monitor_read_results_stored = 10110011011
-#  Reference READ : @ 390 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  390 | reference_read_results_stored = 10110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 395 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 129 | WRITE_FULL = 0 | 
-#  time :                  395 | monitor_write_results_stored = 10100000010
-#  Reference WRITE : @ 395 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 129 | WRITE_FULL = 0 |
-#  time :                  395 | reference_write_results_stored = 10100000010
-# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  write_latch_seq3 ended  ----------------------->
-# 
-#  Monitor WRITE : @ 405 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
-#  time :                  405 | monitor_write_results_stored = 10000111110
-#  Reference WRITE : @ 405 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
-#  time :                  405 | reference_write_results_stored = 10000111110
+#  Monitor WRITE : @ 55 
+#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA =  51 | WRITE_FULL = 0 | 
+#  time :                   55 | monitor_write_results_stored = 01001100110
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference WRITE : @ 55 
+#  WRITE_RST = 0 | WRITE_EN = 1 | WRITE_DATA =  51 | WRITE_FULL = 0 |
+#  time :                   55 | reference_write_results_stored = 01001100110
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 410 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  410 | monitor_read_results_stored = 10110011011
-#  Reference READ : @ 410 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  410 | reference_read_results_stored = 10110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 415 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
-#  time :                  415 | monitor_write_results_stored = 10000111110
-#  Reference WRITE : @ 415 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
-#  time :                  415 | reference_write_results_stored = 10000111110
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 65 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 224 | WRITE_FULL = 0 | 
+#  time :                   65 | monitor_write_results_stored = 10111000000
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference WRITE : @ 65 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 224 | WRITE_FULL = 0 |
+#  time :                   65 | reference_write_results_stored = 10111000000
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 425 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
-#  time :                  425 | monitor_write_results_stored = 10000111110
-#  Reference WRITE : @ 425 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
-#  time :                  425 | reference_write_results_stored = 10000111110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 430 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  430 | monitor_read_results_stored = 10110011011
-#  Reference READ : @ 430 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  430 | reference_read_results_stored = 10110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 435 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
-#  time :                  435 | monitor_write_results_stored = 10000111110
-#  Reference WRITE : @ 435 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
-#  time :                  435 | reference_write_results_stored = 10000111110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 445 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
-#  time :                  445 | monitor_write_results_stored = 10000111110
-#  Reference WRITE : @ 445 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
-#  time :                  445 | reference_write_results_stored = 10000111110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 450 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  450 | monitor_read_results_stored = 10110011011
-#  Reference READ : @ 450 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  450 | reference_read_results_stored = 10110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 455 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
-#  time :                  455 | monitor_write_results_stored = 10000111110
-#  Reference WRITE : @ 455 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
-#  time :                  455 | reference_write_results_stored = 10000111110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 465 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
-#  time :                  465 | monitor_write_results_stored = 10000111110
-#  Reference WRITE : @ 465 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
-#  time :                  465 | reference_write_results_stored = 10000111110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 470 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  470 | monitor_read_results_stored = 10110011011
-#  Reference READ : @ 470 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  470 | reference_read_results_stored = 10110011011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 475 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
-#  time :                  475 | monitor_write_results_stored = 10000111110
-#  Reference WRITE : @ 475 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
-#  time :                  475 | reference_write_results_stored = 10000111110
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 485 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
-#  time :                  485 | monitor_write_results_stored = 10000111110
-#  Reference WRITE : @ 485 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
-#  time :                  485 | reference_write_results_stored = 10000111110
-# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
 # <-----------------------------  read_latch_seq3 ended  ----------------------->
-# 
-#  Monitor READ : @ 490 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 | 
-#  time :                  490 | monitor_read_results_stored = 10110011011
-#  Reference READ : @ 490 
-#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 205 | READ_EMPTY = 1 |
-#  time :                  490 | reference_read_results_stored = 10110011011
+#  Monitor READ : @ 70 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  51 | READ_EMPTY = 1 | 
+#  time :                   70 | monitor_read_results_stored = 10001100111
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference READ : @ 70 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  51 | READ_EMPTY = 1 |
+#  time :                   70 | reference_read_results_stored = 10001100111
 # <----------------------------- READ PASS ----------------------------->
-# <----------------------------- write_normal_op_seq4 started ----------------------->
+# <----------------------------- write_seq4 started ----------------------->
 # 
-# <----------------------------- read_normal_op_seq4 started ----------------------->
+# <----------------------------- read_seq4 started ----------------------->
 # 
-#  Monitor WRITE : @ 495 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
-#  time :                  495 | monitor_write_results_stored = 10000111110
-#  Reference WRITE : @ 495 
-#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
-#  time :                  495 | reference_write_results_stored = 10000111110
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 75 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 224 | WRITE_FULL = 0 | 
+#  time :                   75 | monitor_write_results_stored = 10111000000
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference WRITE : @ 75 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 224 | WRITE_FULL = 0 |
+#  time :                   75 | reference_write_results_stored = 10111000000
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 505 
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 85 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 157 | WRITE_FULL = 0 | 
-#  time :                  505 | monitor_write_results_stored = 11100111010
-# wptr = 00001 , rptr = 00000
-#  Reference WRITE : @ 505 
+#  time :                   85 | monitor_write_results_stored = 11100111010
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference WRITE : @ 85 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 157 | WRITE_FULL = 0 |
-#  time :                  505 | reference_write_results_stored = 11100111010
+#  time :                   85 | reference_write_results_stored = 11100111010
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 510 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 1 | 
-#  time :                  510 | monitor_read_results_stored = 11100111011
-# wptr = 00001 , rptr = 00001
-#  Reference READ : @ 510 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 1 |
-#  time :                  510 | reference_read_results_stored = 11100111011
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 515 
+#  DUT : write_ptr = 0001 , read_ptr = 0000
+#  Monitor READ : @ 90 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 1 | 
+#  time :                   90 | monitor_read_results_stored = 10100111011
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference READ : @ 90 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
+#  time :                   90 | reference_read_results_stored = 10100111010
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0001 , read_ptr = 0000
+#  Monitor WRITE : @ 95 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 220 | WRITE_FULL = 0 | 
-#  time :                  515 | monitor_write_results_stored = 11110111000
-# wptr = 00010 , rptr = 00001
-#  Reference WRITE : @ 515 
+#  time :                   95 | monitor_write_results_stored = 11110111000
+#  REF : wptr = 0010 , rptr = 0000
+#  Reference WRITE : @ 95 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 220 | WRITE_FULL = 0 |
-#  time :                  515 | reference_write_results_stored = 11110111000
+#  time :                   95 | reference_write_results_stored = 11110111000
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 525 
+#  DUT : write_ptr = 0010 , read_ptr = 0000
+#  DUT : write_ptr = 0010 , read_ptr = 0000
+#  Monitor WRITE : @ 105 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 218 | WRITE_FULL = 0 | 
-#  time :                  525 | monitor_write_results_stored = 11110110100
-# wptr = 00011 , rptr = 00001
-#  Reference WRITE : @ 525 
+#  time :                  105 | monitor_write_results_stored = 11110110100
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference WRITE : @ 105 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 218 | WRITE_FULL = 0 |
-#  time :                  525 | reference_write_results_stored = 11110110100
+#  time :                  105 | reference_write_results_stored = 11110110100
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 530 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 1 | 
-#  time :                  530 | monitor_read_results_stored = 11100111011
-# wptr = 00011 , rptr = 00010
-#  Reference READ : @ 530 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 0 |
-#  time :                  530 | reference_read_results_stored = 11100111010
+#  DUT : write_ptr = 0011 , read_ptr = 0000
+#  Monitor READ : @ 110 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 1 | 
+#  time :                  110 | monitor_read_results_stored = 10100111011
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference READ : @ 110 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
+#  time :                  110 | reference_read_results_stored = 10100111010
 # <----------------------------- READ FAIL ----------------------------->
-#  Monitor WRITE : @ 535 
+#  DUT : write_ptr = 0011 , read_ptr = 0000
+#  Monitor WRITE : @ 115 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  11 | WRITE_FULL = 0 | 
-#  time :                  535 | monitor_write_results_stored = 11000010110
-# wptr = 00100 , rptr = 00010
-#  Reference WRITE : @ 535 
+#  time :                  115 | monitor_write_results_stored = 11000010110
+#  REF : wptr = 0100 , rptr = 0000
+#  Reference WRITE : @ 115 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  11 | WRITE_FULL = 0 |
-#  time :                  535 | reference_write_results_stored = 11000010110
+#  time :                  115 | reference_write_results_stored = 11000010110
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 545 
+#  DUT : write_ptr = 0100 , read_ptr = 0000
+#  DUT : write_ptr = 0100 , read_ptr = 0000
+#  Monitor WRITE : @ 125 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 153 | WRITE_FULL = 0 | 
-#  time :                  545 | monitor_write_results_stored = 11100110010
-# wptr = 00101 , rptr = 00010
-#  Reference WRITE : @ 545 
+#  time :                  125 | monitor_write_results_stored = 11100110010
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference WRITE : @ 125 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 153 | WRITE_FULL = 0 |
-#  time :                  545 | reference_write_results_stored = 11100110010
+#  time :                  125 | reference_write_results_stored = 11100110010
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 550 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 1 | 
-#  time :                  550 | monitor_read_results_stored = 11100111011
-# wptr = 00101 , rptr = 00011
-#  Reference READ : @ 550 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 0 |
-#  time :                  550 | reference_read_results_stored = 11100111010
+#  DUT : write_ptr = 0101 , read_ptr = 0000
+#  Monitor READ : @ 130 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 1 | 
+#  time :                  130 | monitor_read_results_stored = 10100111011
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference READ : @ 130 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
+#  time :                  130 | reference_read_results_stored = 10100111010
 # <----------------------------- READ FAIL ----------------------------->
-#  Monitor WRITE : @ 555 
+#  DUT : write_ptr = 0101 , read_ptr = 0000
+#  Monitor WRITE : @ 135 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 243 | WRITE_FULL = 0 | 
-#  time :                  555 | monitor_write_results_stored = 11111100110
-# wptr = 00110 , rptr = 00011
-#  Reference WRITE : @ 555 
+#  time :                  135 | monitor_write_results_stored = 11111100110
+#  REF : wptr = 0110 , rptr = 0000
+#  Reference WRITE : @ 135 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 243 | WRITE_FULL = 0 |
-#  time :                  555 | reference_write_results_stored = 11111100110
+#  time :                  135 | reference_write_results_stored = 11111100110
 # <----------------------------- WRITE PASS ----------------------------->
-# <-----------------------------  write_normal_op_seq4 ended  ----------------------->
-# 
-#  Monitor WRITE : @ 565 
+#  DUT : write_ptr = 0110 , read_ptr = 0000
+#  DUT : write_ptr = 0110 , read_ptr = 0000
+# <-----------------------------  write_seq4 ended  ----------------------->
+#  Monitor WRITE : @ 145 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
-#  time :                  565 | monitor_write_results_stored = 11100101100
-# wptr = 00111 , rptr = 00011
-#  Reference WRITE : @ 565 
+#  time :                  145 | monitor_write_results_stored = 11100101100
+#  REF : wptr = 0111 , rptr = 0000
+#  Reference WRITE : @ 145 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
-#  time :                  565 | reference_write_results_stored = 11100101100
+#  time :                  145 | reference_write_results_stored = 11100101100
 # <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 570 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 0 | 
-#  time :                  570 | monitor_read_results_stored = 11100111010
-# wptr = 00111 , rptr = 00100
-#  Reference READ : @ 570 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 0 |
-#  time :                  570 | reference_read_results_stored = 11100111010
+#  DUT : write_ptr = 0111 , read_ptr = 0000
+#  Monitor READ : @ 150 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 | 
+#  time :                  150 | monitor_read_results_stored = 10100111010
+#  REF : wptr = 0111 , rptr = 0000
+#  Reference READ : @ 150 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
+#  time :                  150 | reference_read_results_stored = 10100111010
 # <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 575 
+#  DUT : write_ptr = 0111 , read_ptr = 0000
+#  Monitor WRITE : @ 155 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
-#  time :                  575 | monitor_write_results_stored = 11100101100
-# wptr = 01000 , rptr = 00100
-#  Reference WRITE : @ 575 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
-#  time :                  575 | reference_write_results_stored = 11100101100
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 585 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
-#  time :                  585 | monitor_write_results_stored = 11100101100
-# wptr = 01001 , rptr = 00100
-#  Reference WRITE : @ 585 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
-#  time :                  585 | reference_write_results_stored = 11100101100
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 590 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 220 | READ_EMPTY = 0 | 
-#  time :                  590 | monitor_read_results_stored = 11110111000
-# wptr = 01001 , rptr = 00101
-#  Reference READ : @ 590 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 220 | READ_EMPTY = 0 |
-#  time :                  590 | reference_read_results_stored = 11110111000
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 595 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
-#  time :                  595 | monitor_write_results_stored = 11100101100
-# wptr = 01010 , rptr = 00101
-#  Reference WRITE : @ 595 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
-#  time :                  595 | reference_write_results_stored = 11100101100
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 605 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
-#  time :                  605 | monitor_write_results_stored = 11100101100
-# wptr = 01011 , rptr = 00101
-#  Reference WRITE : @ 605 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
-#  time :                  605 | reference_write_results_stored = 11100101100
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 610 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 218 | READ_EMPTY = 0 | 
-#  time :                  610 | monitor_read_results_stored = 11110110100
-# wptr = 01011 , rptr = 00110
-#  Reference READ : @ 610 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 218 | READ_EMPTY = 0 |
-#  time :                  610 | reference_read_results_stored = 11110110100
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 615 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
-#  time :                  615 | monitor_write_results_stored = 11100101100
-# wptr = 01100 , rptr = 00110
-#  Reference WRITE : @ 615 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
-#  time :                  615 | reference_write_results_stored = 11100101100
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 625 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
-#  time :                  625 | monitor_write_results_stored = 11100101100
-# wptr = 01101 , rptr = 00110
-#  Reference WRITE : @ 625 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
-#  time :                  625 | reference_write_results_stored = 11100101100
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor READ : @ 630 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  11 | READ_EMPTY = 0 | 
-#  time :                  630 | monitor_read_results_stored = 11000010110
-# wptr = 01101 , rptr = 00111
-#  Reference READ : @ 630 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  11 | READ_EMPTY = 0 |
-#  time :                  630 | reference_read_results_stored = 11000010110
-# <----------------------------- READ PASS ----------------------------->
-#  Monitor WRITE : @ 635 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
-#  time :                  635 | monitor_write_results_stored = 11100101100
-# wptr = 01110 , rptr = 00111
-#  Reference WRITE : @ 635 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
-#  time :                  635 | reference_write_results_stored = 11100101100
-# <----------------------------- WRITE PASS ----------------------------->
-#  Monitor WRITE : @ 645 
-#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
-#  time :                  645 | monitor_write_results_stored = 11100101100
-# wptr = 01111 , rptr = 00111
-#  Reference WRITE : @ 645 
+#  time :                  155 | monitor_write_results_stored = 11100101100
+#  REF : wptr = 1000 , rptr = 0000
+#  Reference WRITE : @ 155 
 #  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 1 |
-#  time :                  645 | reference_write_results_stored = 11100101101
+#  time :                  155 | reference_write_results_stored = 11100101101
 # <----------------------------- WRITE FAIL ----------------------------->
-# <-----------------------------  read_normal_op_seq4 ended  ----------------------->
-# 
-#  Monitor READ : @ 650 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 153 | READ_EMPTY = 0 | 
-#  time :                  650 | monitor_read_results_stored = 11100110010
-# wptr = 01111 , rptr = 01000
-#  Reference READ : @ 650 
-#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 153 | READ_EMPTY = 0 |
-#  time :                  650 | reference_read_results_stored = 11100110010
+#  DUT : write_ptr = 1000 , read_ptr = 0000
+#  DUT : write_ptr = 1000 , read_ptr = 0000
+#  Monitor WRITE : @ 165 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
+#  time :                  165 | monitor_write_results_stored = 11100101100
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference WRITE : @ 165 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
+#  time :                  165 | reference_write_results_stored = 11100101100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1001 , read_ptr = 0000
+#  Monitor READ : @ 170 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 | 
+#  time :                  170 | monitor_read_results_stored = 10100111010
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference READ : @ 170 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
+#  time :                  170 | reference_read_results_stored = 10100111010
 # <----------------------------- READ PASS ----------------------------->
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 650: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# WRITE_Passes = 63 | WRITE_Fails = 1 | READ_Passes = 30 | READ_Fails = 2
-# UVM_INFO async_fifo_subscriber.sv(72) @ 650: uvm_test_top.env.sub [async_fifo_subscriber] [WRITE_MONITOR]  Coverage ------> 72.11%
-# UVM_INFO async_fifo_subscriber.sv(73) @ 650: uvm_test_top.env.sub [async_fifo_subscriber] [READ_MONITOR]   Coverage ------> 80.70%
+#  DUT : write_ptr = 1001 , read_ptr = 0000
+#  Monitor WRITE : @ 175 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
+#  time :                  175 | monitor_write_results_stored = 11100101100
+#  REF : wptr = 0010 , rptr = 0000
+#  Reference WRITE : @ 175 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
+#  time :                  175 | reference_write_results_stored = 11100101100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1010 , read_ptr = 0000
+#  DUT : write_ptr = 1010 , read_ptr = 0000
+#  Monitor WRITE : @ 185 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
+#  time :                  185 | monitor_write_results_stored = 11100101100
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference WRITE : @ 185 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
+#  time :                  185 | reference_write_results_stored = 11100101100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1011 , read_ptr = 0000
+#  Monitor READ : @ 190 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 | 
+#  time :                  190 | monitor_read_results_stored = 10100111010
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference READ : @ 190 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
+#  time :                  190 | reference_read_results_stored = 10100111010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 1011 , read_ptr = 0000
+#  Monitor WRITE : @ 195 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
+#  time :                  195 | monitor_write_results_stored = 11100101100
+#  REF : wptr = 0100 , rptr = 0000
+#  Reference WRITE : @ 195 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
+#  time :                  195 | reference_write_results_stored = 11100101100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1100 , read_ptr = 0000
+#  DUT : write_ptr = 1100 , read_ptr = 0000
+#  Monitor WRITE : @ 205 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
+#  time :                  205 | monitor_write_results_stored = 11100101100
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference WRITE : @ 205 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
+#  time :                  205 | reference_write_results_stored = 11100101100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1101 , read_ptr = 0000
+#  Monitor READ : @ 210 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 | 
+#  time :                  210 | monitor_read_results_stored = 10100111010
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference READ : @ 210 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
+#  time :                  210 | reference_read_results_stored = 10100111010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 1101 , read_ptr = 0000
+#  Monitor WRITE : @ 215 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
+#  time :                  215 | monitor_write_results_stored = 11100101100
+#  REF : wptr = 0110 , rptr = 0000
+#  Reference WRITE : @ 215 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
+#  time :                  215 | reference_write_results_stored = 11100101100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1110 , read_ptr = 0000
+#  DUT : write_ptr = 1110 , read_ptr = 0000
+#  Monitor WRITE : @ 225 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
+#  time :                  225 | monitor_write_results_stored = 11100101100
+#  REF : wptr = 0111 , rptr = 0000
+#  Reference WRITE : @ 225 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 |
+#  time :                  225 | reference_write_results_stored = 11100101100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1111 , read_ptr = 0000
+# <-----------------------------  read_seq4 ended  ----------------------->
+#  Monitor READ : @ 230 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 | 
+#  time :                  230 | monitor_read_results_stored = 10100111010
+#  REF : wptr = 0111 , rptr = 0000
+#  Reference READ : @ 230 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 157 | READ_EMPTY = 0 |
+#  time :                  230 | reference_read_results_stored = 10100111010
+# <----------------------------- READ PASS ----------------------------->
+# <----------------------------- read_seq5 started ----------------------->
+# 
+# <----------------------------- write_seq5 started ----------------------->
+# 
+#  DUT : write_ptr = 1111 , read_ptr = 0000
+#  Monitor WRITE : @ 235 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 0 | 
+#  time :                  235 | monitor_write_results_stored = 11100101100
+#  REF : wptr = 1000 , rptr = 0000
+#  Reference WRITE : @ 235 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 150 | WRITE_FULL = 1 |
+#  time :                  235 | reference_write_results_stored = 11100101101
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 245 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 203 | WRITE_FULL = 1 | 
+#  time :                  245 | monitor_write_results_stored = 10110010111
+#  REF : wptr = 1000 , rptr = 0000
+#  Reference WRITE : @ 245 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 203 | WRITE_FULL = 1 |
+#  time :                  245 | reference_write_results_stored = 10110010111
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 250 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 0 | 
+#  time :                  250 | monitor_read_results_stored = 11100111010
+#  REF : wptr = 1000 , rptr = 0001
+#  Reference READ : @ 250 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 157 | READ_EMPTY = 0 |
+#  time :                  250 | reference_read_results_stored = 11100111010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0001
+#  Monitor WRITE : @ 255 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 195 | WRITE_FULL = 1 | 
+#  time :                  255 | monitor_write_results_stored = 10110000111
+#  REF : wptr = 1000 , rptr = 0001
+#  Reference WRITE : @ 255 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 195 | WRITE_FULL = 0 |
+#  time :                  255 | reference_write_results_stored = 10110000110
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0001
+#  DUT : write_ptr = 0000 , read_ptr = 0001
+#  Monitor WRITE : @ 265 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  70 | WRITE_FULL = 1 | 
+#  time :                  265 | monitor_write_results_stored = 10010001101
+#  REF : wptr = 1000 , rptr = 0001
+#  Reference WRITE : @ 265 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  70 | WRITE_FULL = 0 |
+#  time :                  265 | reference_write_results_stored = 10010001100
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0001
+#  Monitor READ : @ 270 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 220 | READ_EMPTY = 0 | 
+#  time :                  270 | monitor_read_results_stored = 11110111000
+#  REF : wptr = 1000 , rptr = 0010
+#  Reference READ : @ 270 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 220 | READ_EMPTY = 0 |
+#  time :                  270 | reference_read_results_stored = 11110111000
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 275 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  15 | WRITE_FULL = 1 | 
+#  time :                  275 | monitor_write_results_stored = 10000011111
+#  REF : wptr = 1000 , rptr = 0010
+#  Reference WRITE : @ 275 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  15 | WRITE_FULL = 0 |
+#  time :                  275 | reference_write_results_stored = 10000011110
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 285 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 147 | WRITE_FULL = 0 | 
+#  time :                  285 | monitor_write_results_stored = 10100100110
+#  REF : wptr = 1000 , rptr = 0010
+#  Reference WRITE : @ 285 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 147 | WRITE_FULL = 0 |
+#  time :                  285 | reference_write_results_stored = 10100100110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 290 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 218 | READ_EMPTY = 0 | 
+#  time :                  290 | monitor_read_results_stored = 11110110100
+#  REF : wptr = 1000 , rptr = 0011
+#  Reference READ : @ 290 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 218 | READ_EMPTY = 0 |
+#  time :                  290 | reference_read_results_stored = 11110110100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  Monitor WRITE : @ 295 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  51 | WRITE_FULL = 0 | 
+#  time :                  295 | monitor_write_results_stored = 10001100110
+#  REF : wptr = 1000 , rptr = 0011
+#  Reference WRITE : @ 295 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  51 | WRITE_FULL = 0 |
+#  time :                  295 | reference_write_results_stored = 10001100110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+# <-----------------------------  write_seq5 ended  ----------------------->
+#  Monitor WRITE : @ 305 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
+#  time :                  305 | monitor_write_results_stored = 10100011110
+#  REF : wptr = 1000 , rptr = 0011
+#  Reference WRITE : @ 305 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
+#  time :                  305 | reference_write_results_stored = 10100011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  Monitor READ : @ 310 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  11 | READ_EMPTY = 0 | 
+#  time :                  310 | monitor_read_results_stored = 11000010110
+#  REF : wptr = 1000 , rptr = 0100
+#  Reference READ : @ 310 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  11 | READ_EMPTY = 0 |
+#  time :                  310 | reference_read_results_stored = 11000010110
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0100
+#  Monitor WRITE : @ 315 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
+#  time :                  315 | monitor_write_results_stored = 10100011110
+#  REF : wptr = 1000 , rptr = 0100
+#  Reference WRITE : @ 315 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
+#  time :                  315 | reference_write_results_stored = 10100011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0100
+#  DUT : write_ptr = 0000 , read_ptr = 0100
+#  Monitor WRITE : @ 325 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
+#  time :                  325 | monitor_write_results_stored = 10100011110
+#  REF : wptr = 1000 , rptr = 0100
+#  Reference WRITE : @ 325 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
+#  time :                  325 | reference_write_results_stored = 10100011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0100
+#  Monitor READ : @ 330 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 153 | READ_EMPTY = 0 | 
+#  time :                  330 | monitor_read_results_stored = 11100110010
+#  REF : wptr = 1000 , rptr = 0101
+#  Reference READ : @ 330 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 153 | READ_EMPTY = 0 |
+#  time :                  330 | reference_read_results_stored = 11100110010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0101
+#  Monitor WRITE : @ 335 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
+#  time :                  335 | monitor_write_results_stored = 10100011110
+#  REF : wptr = 1000 , rptr = 0101
+#  Reference WRITE : @ 335 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
+#  time :                  335 | reference_write_results_stored = 10100011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0101
+#  DUT : write_ptr = 0000 , read_ptr = 0101
+#  Monitor WRITE : @ 345 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
+#  time :                  345 | monitor_write_results_stored = 10100011110
+#  REF : wptr = 1000 , rptr = 0101
+#  Reference WRITE : @ 345 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
+#  time :                  345 | reference_write_results_stored = 10100011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0101
+#  Monitor READ : @ 350 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 243 | READ_EMPTY = 0 | 
+#  time :                  350 | monitor_read_results_stored = 11111100110
+#  REF : wptr = 1000 , rptr = 0110
+#  Reference READ : @ 350 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 243 | READ_EMPTY = 0 |
+#  time :                  350 | reference_read_results_stored = 11111100110
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0110
+#  Monitor WRITE : @ 355 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
+#  time :                  355 | monitor_write_results_stored = 10100011110
+#  REF : wptr = 1000 , rptr = 0110
+#  Reference WRITE : @ 355 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
+#  time :                  355 | reference_write_results_stored = 10100011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0110
+#  DUT : write_ptr = 0000 , read_ptr = 0110
+#  Monitor WRITE : @ 365 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
+#  time :                  365 | monitor_write_results_stored = 10100011110
+#  REF : wptr = 1000 , rptr = 0110
+#  Reference WRITE : @ 365 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
+#  time :                  365 | reference_write_results_stored = 10100011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0110
+#  Monitor READ : @ 370 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
+#  time :                  370 | monitor_read_results_stored = 11100101100
+#  REF : wptr = 1000 , rptr = 0111
+#  Reference READ : @ 370 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
+#  time :                  370 | reference_read_results_stored = 11100101100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0111
+#  Monitor WRITE : @ 375 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
+#  time :                  375 | monitor_write_results_stored = 10100011110
+#  REF : wptr = 1000 , rptr = 0111
+#  Reference WRITE : @ 375 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
+#  time :                  375 | reference_write_results_stored = 10100011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0111
+#  DUT : write_ptr = 0000 , read_ptr = 0111
+#  Monitor WRITE : @ 385 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
+#  time :                  385 | monitor_write_results_stored = 10100011110
+#  REF : wptr = 1000 , rptr = 0111
+#  Reference WRITE : @ 385 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
+#  time :                  385 | reference_write_results_stored = 10100011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0111
+# <-----------------------------  read_seq5 ended  ----------------------->
+#  Monitor READ : @ 390 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
+#  time :                  390 | monitor_read_results_stored = 11100101100
+#  REF : wptr = 1000 , rptr = 1000
+#  Reference READ : @ 390 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 1 |
+#  time :                  390 | reference_read_results_stored = 11100101101
+# <----------------------------- READ FAIL ----------------------------->
+# <----------------------------- write_seq6 started ----------------------->
+# 
+# <----------------------------- read_seq6 started ----------------------->
+# 
+#  DUT : write_ptr = 0000 , read_ptr = 1000
+#  Monitor WRITE : @ 395 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 | 
+#  time :                  395 | monitor_write_results_stored = 10100011110
+#  REF : wptr = 1000 , rptr = 1000
+#  Reference WRITE : @ 395 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 143 | WRITE_FULL = 0 |
+#  time :                  395 | reference_write_results_stored = 10100011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1000
+#  DUT : write_ptr = 0000 , read_ptr = 1000
+#  Monitor WRITE : @ 405 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  61 | WRITE_FULL = 0 | 
+#  time :                  405 | monitor_write_results_stored = 11001111010
+#  REF : wptr = 0001 , rptr = 1000
+#  Reference WRITE : @ 405 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  61 | WRITE_FULL = 0 |
+#  time :                  405 | reference_write_results_stored = 11001111010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0001 , read_ptr = 1000
+#  Monitor READ : @ 410 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
+#  time :                  410 | monitor_read_results_stored = 11100101100
+#  REF : wptr = 0001 , rptr = 0001
+#  Reference READ : @ 410 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 1 |
+#  time :                  410 | reference_read_results_stored = 11100101101
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0001 , read_ptr = 1001
+#  Monitor WRITE : @ 415 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 145 | WRITE_FULL = 0 | 
+#  time :                  415 | monitor_write_results_stored = 11100100010
+#  REF : wptr = 0010 , rptr = 0001
+#  Reference WRITE : @ 415 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 145 | WRITE_FULL = 0 |
+#  time :                  415 | reference_write_results_stored = 11100100010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0010 , read_ptr = 1001
+#  DUT : write_ptr = 0010 , read_ptr = 1001
+#  Monitor WRITE : @ 425 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 145 | WRITE_FULL = 0 | 
+#  time :                  425 | monitor_write_results_stored = 11100100010
+#  REF : wptr = 0011 , rptr = 0001
+#  Reference WRITE : @ 425 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 145 | WRITE_FULL = 0 |
+#  time :                  425 | reference_write_results_stored = 11100100010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0011 , read_ptr = 1001
+#  Monitor READ : @ 430 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
+#  time :                  430 | monitor_read_results_stored = 11100101100
+#  REF : wptr = 0011 , rptr = 0010
+#  Reference READ : @ 430 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
+#  time :                  430 | reference_read_results_stored = 11100101100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0011 , read_ptr = 1010
+#  Monitor WRITE : @ 435 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  46 | WRITE_FULL = 0 | 
+#  time :                  435 | monitor_write_results_stored = 11001011100
+#  REF : wptr = 0100 , rptr = 0010
+#  Reference WRITE : @ 435 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  46 | WRITE_FULL = 0 |
+#  time :                  435 | reference_write_results_stored = 11001011100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0100 , read_ptr = 1010
+#  DUT : write_ptr = 0100 , read_ptr = 1010
+#  Monitor WRITE : @ 445 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 210 | WRITE_FULL = 0 | 
+#  time :                  445 | monitor_write_results_stored = 11110100100
+#  REF : wptr = 0101 , rptr = 0010
+#  Reference WRITE : @ 445 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 210 | WRITE_FULL = 0 |
+#  time :                  445 | reference_write_results_stored = 11110100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0101 , read_ptr = 1010
+#  Monitor READ : @ 450 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
+#  time :                  450 | monitor_read_results_stored = 11100101100
+#  REF : wptr = 0101 , rptr = 0011
+#  Reference READ : @ 450 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
+#  time :                  450 | reference_read_results_stored = 11100101100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0101 , read_ptr = 1011
+#  Monitor WRITE : @ 455 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 208 | WRITE_FULL = 0 | 
+#  time :                  455 | monitor_write_results_stored = 11110100000
+#  REF : wptr = 0110 , rptr = 0011
+#  Reference WRITE : @ 455 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 208 | WRITE_FULL = 0 |
+#  time :                  455 | reference_write_results_stored = 11110100000
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0110 , read_ptr = 1011
+#  DUT : write_ptr = 0110 , read_ptr = 1011
+# <-----------------------------  write_seq6 ended  ----------------------->
+#  Monitor WRITE : @ 465 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  88 | WRITE_FULL = 0 | 
+#  time :                  465 | monitor_write_results_stored = 11010110000
+#  REF : wptr = 0111 , rptr = 0011
+#  Reference WRITE : @ 465 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  88 | WRITE_FULL = 0 |
+#  time :                  465 | reference_write_results_stored = 11010110000
+# <----------------------------- WRITE PASS ----------------------------->
+# <----------------------------- write_reset_seq1 started ---------------------------------->
+# 
+#  DUT : write_ptr = 0000 , read_ptr = 1011
+#  Monitor READ : @ 470 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
+#  time :                  470 | monitor_read_results_stored = 11100101100
+#  REF : wptr = 0111 , rptr = 0100
+#  Reference READ : @ 470 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
+#  time :                  470 | reference_read_results_stored = 11100101100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1100
+# <-----------------------------  write_reset_seq1 ended  ---------------------------------->
+# 
+#  Monitor WRITE : @ 475 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  475 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 0100
+#  Reference WRITE : @ 475 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  475 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1100
+#  DUT : write_ptr = 0000 , read_ptr = 1100
+#  Monitor WRITE : @ 485 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  485 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 0100
+#  Reference WRITE : @ 485 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  485 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1100
+#  Monitor READ : @ 490 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
+#  time :                  490 | monitor_read_results_stored = 11100101100
+#  REF : wptr = 0000 , rptr = 0101
+#  Reference READ : @ 490 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
+#  time :                  490 | reference_read_results_stored = 11100101100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1101
+#  Monitor WRITE : @ 495 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  495 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 0101
+#  Reference WRITE : @ 495 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  495 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1101
+#  DUT : write_ptr = 0000 , read_ptr = 1101
+#  Monitor WRITE : @ 505 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  505 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 0101
+#  Reference WRITE : @ 505 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  505 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1101
+#  Monitor READ : @ 510 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
+#  time :                  510 | monitor_read_results_stored = 11100101100
+#  REF : wptr = 0000 , rptr = 0110
+#  Reference READ : @ 510 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
+#  time :                  510 | reference_read_results_stored = 11100101100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1110
+#  Monitor WRITE : @ 515 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  515 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 0110
+#  Reference WRITE : @ 515 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  515 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1110
+#  DUT : write_ptr = 0000 , read_ptr = 1110
+#  Monitor WRITE : @ 525 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  525 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 0110
+#  Reference WRITE : @ 525 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  525 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1110
+#  Monitor READ : @ 530 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
+#  time :                  530 | monitor_read_results_stored = 11100101100
+#  REF : wptr = 0000 , rptr = 0111
+#  Reference READ : @ 530 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 |
+#  time :                  530 | reference_read_results_stored = 11100101100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1111
+#  Monitor WRITE : @ 535 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  535 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 0111
+#  Reference WRITE : @ 535 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  535 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1111
+#  DUT : write_ptr = 0000 , read_ptr = 1111
+#  Monitor WRITE : @ 545 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  545 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 0111
+#  Reference WRITE : @ 545 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  545 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1111
+# <-----------------------------  read_seq6 ended  ----------------------->
+#  Monitor READ : @ 550 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 0 | 
+#  time :                  550 | monitor_read_results_stored = 11100101100
+#  REF : wptr = 0000 , rptr = 1000
+#  Reference READ : @ 550 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 150 | READ_EMPTY = 1 |
+#  time :                  550 | reference_read_results_stored = 11100101101
+# <----------------------------- READ FAIL ----------------------------->
+# <----------------------------- read_reset_seq1 started ---------------------------------->
+# 
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 555 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  555 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 1000
+#  Reference WRITE : @ 555 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  555 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 565 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  565 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 1000
+#  Reference WRITE : @ 565 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  565 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+# <-----------------------------  read_reset_seq1 ended  ---------------------------------->
+# 
+#  Monitor READ : @ 570 
+#  READ_RST = 0 | READ_EN = 0 | READ_DATA =  61 | READ_EMPTY = 1 | 
+#  time :                  570 | monitor_read_results_stored = 00001111011
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference READ : @ 570 
+#  READ_RST = 0 | READ_EN = 0 | READ_DATA =  61 | READ_EMPTY = 1 |
+#  time :                  570 | reference_read_results_stored = 00001111011
+# <----------------------------- READ PASS ----------------------------->
+# <----------------------------- write_seq7 started ----------------------->
+# 
+# <----------------------------- read_seq7 started ----------------------->
+# 
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 575 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  575 | monitor_write_results_stored = 00101001010
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference WRITE : @ 575 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  575 | reference_write_results_stored = 00101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 585 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  75 | WRITE_FULL = 0 | 
+#  time :                  585 | monitor_write_results_stored = 11010010110
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference WRITE : @ 585 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  75 | WRITE_FULL = 0 |
+#  time :                  585 | reference_write_results_stored = 11010010110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0001 , read_ptr = 0000
+#  Monitor READ : @ 590 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  75 | READ_EMPTY = 1 | 
+#  time :                  590 | monitor_read_results_stored = 10010010111
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference READ : @ 590 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  75 | READ_EMPTY = 0 |
+#  time :                  590 | reference_read_results_stored = 10010010110
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0001 , read_ptr = 0000
+#  Monitor WRITE : @ 595 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  39 | WRITE_FULL = 0 | 
+#  time :                  595 | monitor_write_results_stored = 11001001110
+#  REF : wptr = 0010 , rptr = 0000
+#  Reference WRITE : @ 595 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  39 | WRITE_FULL = 0 |
+#  time :                  595 | reference_write_results_stored = 11001001110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0010 , read_ptr = 0000
+#  DUT : write_ptr = 0010 , read_ptr = 0000
+#  Monitor WRITE : @ 605 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 175 | WRITE_FULL = 0 | 
+#  time :                  605 | monitor_write_results_stored = 11101011110
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference WRITE : @ 605 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 175 | WRITE_FULL = 0 |
+#  time :                  605 | reference_write_results_stored = 11101011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 610 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  75 | READ_EMPTY = 1 | 
+#  time :                  610 | monitor_read_results_stored = 10010010111
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference READ : @ 610 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  75 | READ_EMPTY = 0 |
+#  time :                  610 | reference_read_results_stored = 10010010110
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 615 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  39 | WRITE_FULL = 0 | 
+#  time :                  615 | monitor_write_results_stored = 00001001110
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference WRITE : @ 615 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  39 | WRITE_FULL = 0 |
+#  time :                  615 | reference_write_results_stored = 00001001110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 625 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 146 | WRITE_FULL = 0 | 
+#  time :                  625 | monitor_write_results_stored = 11100100100
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference WRITE : @ 625 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 146 | WRITE_FULL = 0 |
+#  time :                  625 | reference_write_results_stored = 11100100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0001 , read_ptr = 0000
+#  Monitor READ : @ 630 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  630 | monitor_read_results_stored = 10100100101
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference READ : @ 630 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  630 | reference_read_results_stored = 10100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0001 , read_ptr = 0000
+#  Monitor WRITE : @ 635 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 216 | WRITE_FULL = 0 | 
+#  time :                  635 | monitor_write_results_stored = 11110110000
+#  REF : wptr = 0010 , rptr = 0000
+#  Reference WRITE : @ 635 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 216 | WRITE_FULL = 0 |
+#  time :                  635 | reference_write_results_stored = 11110110000
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0010 , read_ptr = 0000
+#  DUT : write_ptr = 0010 , read_ptr = 0000
+#  Monitor WRITE : @ 645 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  35 | WRITE_FULL = 0 | 
+#  time :                  645 | monitor_write_results_stored = 11001000110
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference WRITE : @ 645 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  35 | WRITE_FULL = 0 |
+#  time :                  645 | reference_write_results_stored = 11001000110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0011 , read_ptr = 0000
+#  Monitor READ : @ 650 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 | 
+#  time :                  650 | monitor_read_results_stored = 10100100100
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference READ : @ 650 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  650 | reference_read_results_stored = 10100100100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0011 , read_ptr = 0000
+# <-----------------------------  write_seq7 ended  ----------------------->
+#  Monitor WRITE : @ 655 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  655 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 0100 , rptr = 0000
+#  Reference WRITE : @ 655 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
+#  time :                  655 | reference_write_results_stored = 11101000010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0100 , read_ptr = 0000
+#  DUT : write_ptr = 0100 , read_ptr = 0000
+#  Monitor WRITE : @ 665 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  665 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference WRITE : @ 665 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
+#  time :                  665 | reference_write_results_stored = 11101000010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0101 , read_ptr = 0000
+#  Monitor READ : @ 670 
+#  READ_RST = 0 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  670 | monitor_read_results_stored = 00100100101
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference READ : @ 670 
+#  READ_RST = 0 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 |
+#  time :                  670 | reference_read_results_stored = 00100100101
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0101 , read_ptr = 0000
+#  Monitor WRITE : @ 675 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  675 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 0110 , rptr = 0000
+#  Reference WRITE : @ 675 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
+#  time :                  675 | reference_write_results_stored = 11101000010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0110 , read_ptr = 0000
+#  DUT : write_ptr = 0110 , read_ptr = 0000
+#  Monitor WRITE : @ 685 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  685 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 0111 , rptr = 0000
+#  Reference WRITE : @ 685 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
+#  time :                  685 | reference_write_results_stored = 11101000010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0111 , read_ptr = 0000
+#  Monitor READ : @ 690 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  690 | monitor_read_results_stored = 10100100101
+#  REF : wptr = 0111 , rptr = 0000
+#  Reference READ : @ 690 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  690 | reference_read_results_stored = 10100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0111 , read_ptr = 0000
+#  Monitor WRITE : @ 695 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  695 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 1000 , rptr = 0000
+#  Reference WRITE : @ 695 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 1 |
+#  time :                  695 | reference_write_results_stored = 11101000011
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 1000 , read_ptr = 0000
+#  DUT : write_ptr = 1000 , read_ptr = 0000
+#  Monitor WRITE : @ 705 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  705 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference WRITE : @ 705 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
+#  time :                  705 | reference_write_results_stored = 11101000010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1001 , read_ptr = 0000
+#  Monitor READ : @ 710 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  710 | monitor_read_results_stored = 10100100101
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference READ : @ 710 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  710 | reference_read_results_stored = 10100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 1001 , read_ptr = 0000
+#  Monitor WRITE : @ 715 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  715 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 0010 , rptr = 0000
+#  Reference WRITE : @ 715 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
+#  time :                  715 | reference_write_results_stored = 11101000010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1010 , read_ptr = 0000
+#  DUT : write_ptr = 1010 , read_ptr = 0000
+#  Monitor WRITE : @ 725 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  725 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference WRITE : @ 725 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
+#  time :                  725 | reference_write_results_stored = 11101000010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1011 , read_ptr = 0000
+#  Monitor READ : @ 730 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  730 | monitor_read_results_stored = 10100100101
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference READ : @ 730 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  730 | reference_read_results_stored = 10100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 1011 , read_ptr = 0000
+#  Monitor WRITE : @ 735 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  735 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 0100 , rptr = 0000
+#  Reference WRITE : @ 735 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
+#  time :                  735 | reference_write_results_stored = 11101000010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1100 , read_ptr = 0000
+#  DUT : write_ptr = 1100 , read_ptr = 0000
+#  Monitor WRITE : @ 745 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  745 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference WRITE : @ 745 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
+#  time :                  745 | reference_write_results_stored = 11101000010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1101 , read_ptr = 0000
+# <-----------------------------  read_seq7 ended  ----------------------->
+#  Monitor READ : @ 750 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 | 
+#  time :                  750 | monitor_read_results_stored = 10100100100
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference READ : @ 750 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  750 | reference_read_results_stored = 10100100100
+# <----------------------------- READ PASS ----------------------------->
+# <----------------------------- read_seq8 started ----------------------->
+# 
+# <----------------------------- write_seq8 started ----------------------->
+# 
+#  DUT : write_ptr = 1101 , read_ptr = 0000
+#  Monitor WRITE : @ 755 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 | 
+#  time :                  755 | monitor_write_results_stored = 11101000010
+#  REF : wptr = 0110 , rptr = 0000
+#  Reference WRITE : @ 755 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 161 | WRITE_FULL = 0 |
+#  time :                  755 | reference_write_results_stored = 11101000010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1110 , read_ptr = 0000
+#  DUT : write_ptr = 1110 , read_ptr = 0000
+#  Monitor WRITE : @ 765 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 142 | WRITE_FULL = 0 | 
+#  time :                  765 | monitor_write_results_stored = 10100011100
+#  REF : wptr = 0110 , rptr = 0000
+#  Reference WRITE : @ 765 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 142 | WRITE_FULL = 0 |
+#  time :                  765 | reference_write_results_stored = 10100011100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1110 , read_ptr = 0000
+#  Monitor READ : @ 770 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 | 
+#  time :                  770 | monitor_read_results_stored = 11100100100
+#  REF : wptr = 0110 , rptr = 0001
+#  Reference READ : @ 770 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  770 | reference_read_results_stored = 11100100100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 1110 , read_ptr = 0001
+#  Monitor WRITE : @ 775 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 216 | WRITE_FULL = 0 | 
+#  time :                  775 | monitor_write_results_stored = 10110110000
+#  REF : wptr = 0110 , rptr = 0001
+#  Reference WRITE : @ 775 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 216 | WRITE_FULL = 0 |
+#  time :                  775 | reference_write_results_stored = 10110110000
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1110 , read_ptr = 0001
+#  DUT : write_ptr = 1110 , read_ptr = 0001
+#  Monitor WRITE : @ 785 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  58 | WRITE_FULL = 0 | 
+#  time :                  785 | monitor_write_results_stored = 10001110100
+#  REF : wptr = 0110 , rptr = 0001
+#  Reference WRITE : @ 785 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  58 | WRITE_FULL = 0 |
+#  time :                  785 | reference_write_results_stored = 10001110100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0001
+#  Monitor READ : @ 790 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 216 | READ_EMPTY = 0 | 
+#  time :                  790 | monitor_read_results_stored = 11110110000
+#  REF : wptr = 0110 , rptr = 0010
+#  Reference READ : @ 790 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 216 | READ_EMPTY = 0 |
+#  time :                  790 | reference_read_results_stored = 11110110000
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 795 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  39 | WRITE_FULL = 0 | 
+#  time :                  795 | monitor_write_results_stored = 00001001110
+#  REF : wptr = 0000 , rptr = 0010
+#  Reference WRITE : @ 795 
+#  WRITE_RST = 0 | WRITE_EN = 0 | WRITE_DATA =  39 | WRITE_FULL = 0 |
+#  time :                  795 | reference_write_results_stored = 00001001110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 805 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 127 | WRITE_FULL = 0 | 
+#  time :                  805 | monitor_write_results_stored = 10011111110
+#  REF : wptr = 0000 , rptr = 0010
+#  Reference WRITE : @ 805 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 127 | WRITE_FULL = 0 |
+#  time :                  805 | reference_write_results_stored = 10011111110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 810 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  35 | READ_EMPTY = 0 | 
+#  time :                  810 | monitor_read_results_stored = 11001000110
+#  REF : wptr = 0000 , rptr = 0011
+#  Reference READ : @ 810 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  35 | READ_EMPTY = 0 |
+#  time :                  810 | reference_read_results_stored = 11001000110
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  Monitor WRITE : @ 815 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 118 | WRITE_FULL = 0 | 
+#  time :                  815 | monitor_write_results_stored = 10011101100
+#  REF : wptr = 0000 , rptr = 0011
+#  Reference WRITE : @ 815 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 118 | WRITE_FULL = 0 |
+#  time :                  815 | reference_write_results_stored = 10011101100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  Monitor WRITE : @ 825 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 | 
+#  time :                  825 | monitor_write_results_stored = 10101001010
+#  REF : wptr = 0000 , rptr = 0011
+#  Reference WRITE : @ 825 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 165 | WRITE_FULL = 0 |
+#  time :                  825 | reference_write_results_stored = 10101001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  Monitor READ : @ 830 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 161 | READ_EMPTY = 0 | 
+#  time :                  830 | monitor_read_results_stored = 11101000010
+#  REF : wptr = 0000 , rptr = 0100
+#  Reference READ : @ 830 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 161 | READ_EMPTY = 0 |
+#  time :                  830 | reference_read_results_stored = 11101000010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 835 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 220 | WRITE_FULL = 0 | 
+#  time :                  835 | monitor_write_results_stored = 10110111000
+#  REF : wptr = 0000 , rptr = 0100
+#  Reference WRITE : @ 835 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 220 | WRITE_FULL = 0 |
+#  time :                  835 | reference_write_results_stored = 10110111000
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 845 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  51 | WRITE_FULL = 0 | 
+#  time :                  845 | monitor_write_results_stored = 10001100110
+#  REF : wptr = 0000 , rptr = 0100
+#  Reference WRITE : @ 845 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  51 | WRITE_FULL = 0 |
+#  time :                  845 | reference_write_results_stored = 10001100110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 850 
+#  READ_RST = 0 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  850 | monitor_read_results_stored = 00100100101
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference READ : @ 850 
+#  READ_RST = 0 | READ_EN = 0 | READ_DATA = 146 | READ_EMPTY = 1 |
+#  time :                  850 | reference_read_results_stored = 00100100101
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 855 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 192 | WRITE_FULL = 0 | 
+#  time :                  855 | monitor_write_results_stored = 10110000000
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference WRITE : @ 855 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 192 | WRITE_FULL = 0 |
+#  time :                  855 | reference_write_results_stored = 10110000000
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 865 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 176 | WRITE_FULL = 0 | 
+#  time :                  865 | monitor_write_results_stored = 10101100000
+#  REF : wptr = 0000 , rptr = 0000
+#  Reference WRITE : @ 865 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 176 | WRITE_FULL = 0 |
+#  time :                  865 | reference_write_results_stored = 10101100000
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 870 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  870 | monitor_read_results_stored = 11100100101
+#  REF : wptr = 0000 , rptr = 0001
+#  Reference READ : @ 870 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  870 | reference_read_results_stored = 11100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+# <-----------------------------  write_seq8 ended  ----------------------->
+#  Monitor WRITE : @ 875 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  875 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0001
+#  Reference WRITE : @ 875 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  875 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 885 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  885 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0001
+#  Reference WRITE : @ 885 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  885 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 890 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  890 | monitor_read_results_stored = 11100100101
+#  REF : wptr = 0000 , rptr = 0010
+#  Reference READ : @ 890 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  890 | reference_read_results_stored = 11100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 895 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  895 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0010
+#  Reference WRITE : @ 895 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  895 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 905 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  905 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0010
+#  Reference WRITE : @ 905 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  905 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 910 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  910 | monitor_read_results_stored = 11100100101
+#  REF : wptr = 0000 , rptr = 0011
+#  Reference READ : @ 910 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  910 | reference_read_results_stored = 11100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 915 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  915 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0011
+#  Reference WRITE : @ 915 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  915 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 925 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  925 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0011
+#  Reference WRITE : @ 925 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  925 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 930 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  930 | monitor_read_results_stored = 11100100101
+#  REF : wptr = 0000 , rptr = 0100
+#  Reference READ : @ 930 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  930 | reference_read_results_stored = 11100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 935 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  935 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0100
+#  Reference WRITE : @ 935 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  935 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 945 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  945 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0100
+#  Reference WRITE : @ 945 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  945 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 950 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  950 | monitor_read_results_stored = 11100100101
+#  REF : wptr = 0000 , rptr = 0101
+#  Reference READ : @ 950 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  950 | reference_read_results_stored = 11100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 955 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  955 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0101
+#  Reference WRITE : @ 955 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  955 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 965 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  965 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0101
+#  Reference WRITE : @ 965 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  965 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 970 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  970 | monitor_read_results_stored = 11100100101
+#  REF : wptr = 0000 , rptr = 0110
+#  Reference READ : @ 970 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  970 | reference_read_results_stored = 11100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 975 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  975 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0110
+#  Reference WRITE : @ 975 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  975 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 985 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  985 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0110
+#  Reference WRITE : @ 985 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  985 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 990 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                  990 | monitor_read_results_stored = 11100100101
+#  REF : wptr = 0000 , rptr = 0111
+#  Reference READ : @ 990 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 0 |
+#  time :                  990 | reference_read_results_stored = 11100100100
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 995 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                  995 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0111
+#  Reference WRITE : @ 995 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                  995 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 1005 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                 1005 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 0111
+#  Reference WRITE : @ 1005 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 |
+#  time :                 1005 | reference_write_results_stored = 10001000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+# <-----------------------------  read_seq8 ended  ----------------------->
+#  Monitor READ : @ 1010 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 | 
+#  time :                 1010 | monitor_read_results_stored = 11100100101
+#  REF : wptr = 0000 , rptr = 1000
+#  Reference READ : @ 1010 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 146 | READ_EMPTY = 1 |
+#  time :                 1010 | reference_read_results_stored = 11100100101
+# <----------------------------- READ PASS ----------------------------->
+# <----------------------------- read_seq9 started ----------------------->
+# 
+# <----------------------------- write_seq9 started ----------------------->
+# 
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 1015 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 0 | 
+#  time :                 1015 | monitor_write_results_stored = 10001000100
+#  REF : wptr = 0000 , rptr = 1000
+#  Reference WRITE : @ 1015 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  34 | WRITE_FULL = 1 |
+#  time :                 1015 | reference_write_results_stored = 10001000101
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 1025 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  57 | WRITE_FULL = 0 | 
+#  time :                 1025 | monitor_write_results_stored = 11001110010
+#  REF : wptr = 0001 , rptr = 1000
+#  Reference WRITE : @ 1025 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  57 | WRITE_FULL = 0 |
+#  time :                 1025 | reference_write_results_stored = 11001110010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0001 , read_ptr = 0000
+#  Monitor READ : @ 1030 
+#  READ_RST = 0 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 1 | 
+#  time :                 1030 | monitor_read_results_stored = 00001110011
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference READ : @ 1030 
+#  READ_RST = 0 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 1 |
+#  time :                 1030 | reference_read_results_stored = 00001110011
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0001 , read_ptr = 0000
+#  Monitor WRITE : @ 1035 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 131 | WRITE_FULL = 0 | 
+#  time :                 1035 | monitor_write_results_stored = 11100000110
+#  REF : wptr = 0010 , rptr = 0000
+#  Reference WRITE : @ 1035 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 131 | WRITE_FULL = 0 |
+#  time :                 1035 | reference_write_results_stored = 11100000110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0010 , read_ptr = 0000
+#  DUT : write_ptr = 0010 , read_ptr = 0000
+#  Monitor WRITE : @ 1045 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 217 | WRITE_FULL = 0 | 
+#  time :                 1045 | monitor_write_results_stored = 11110110010
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference WRITE : @ 1045 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 217 | WRITE_FULL = 0 |
+#  time :                 1045 | reference_write_results_stored = 11110110010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0011 , read_ptr = 0000
+#  Monitor READ : @ 1050 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 1 | 
+#  time :                 1050 | monitor_read_results_stored = 10001110011
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference READ : @ 1050 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
+#  time :                 1050 | reference_read_results_stored = 10001110010
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0011 , read_ptr = 0000
+#  Monitor WRITE : @ 1055 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  99 | WRITE_FULL = 0 | 
+#  time :                 1055 | monitor_write_results_stored = 11011000110
+#  REF : wptr = 0100 , rptr = 0000
+#  Reference WRITE : @ 1055 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  99 | WRITE_FULL = 0 |
+#  time :                 1055 | reference_write_results_stored = 11011000110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0100 , read_ptr = 0000
+#  DUT : write_ptr = 0100 , read_ptr = 0000
+#  Monitor WRITE : @ 1065 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 120 | WRITE_FULL = 0 | 
+#  time :                 1065 | monitor_write_results_stored = 11011110000
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference WRITE : @ 1065 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 120 | WRITE_FULL = 0 |
+#  time :                 1065 | reference_write_results_stored = 11011110000
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0101 , read_ptr = 0000
+#  Monitor READ : @ 1070 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 1 | 
+#  time :                 1070 | monitor_read_results_stored = 10001110011
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference READ : @ 1070 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
+#  time :                 1070 | reference_read_results_stored = 10001110010
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0101 , read_ptr = 0000
+#  Monitor WRITE : @ 1075 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  27 | WRITE_FULL = 0 | 
+#  time :                 1075 | monitor_write_results_stored = 11000110110
+#  REF : wptr = 0110 , rptr = 0000
+#  Reference WRITE : @ 1075 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  27 | WRITE_FULL = 0 |
+#  time :                 1075 | reference_write_results_stored = 11000110110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0110 , read_ptr = 0000
+#  DUT : write_ptr = 0110 , read_ptr = 0000
+#  Monitor WRITE : @ 1085 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 194 | WRITE_FULL = 0 | 
+#  time :                 1085 | monitor_write_results_stored = 11110000100
+#  REF : wptr = 0111 , rptr = 0000
+#  Reference WRITE : @ 1085 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 194 | WRITE_FULL = 0 |
+#  time :                 1085 | reference_write_results_stored = 11110000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0111 , read_ptr = 0000
+#  Monitor READ : @ 1090 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 1 | 
+#  time :                 1090 | monitor_read_results_stored = 10001110011
+#  REF : wptr = 0111 , rptr = 0000
+#  Reference READ : @ 1090 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
+#  time :                 1090 | reference_read_results_stored = 10001110010
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0111 , read_ptr = 0000
+#  Monitor WRITE : @ 1095 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 174 | WRITE_FULL = 0 | 
+#  time :                 1095 | monitor_write_results_stored = 11101011100
+#  REF : wptr = 1000 , rptr = 0000
+#  Reference WRITE : @ 1095 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 174 | WRITE_FULL = 1 |
+#  time :                 1095 | reference_write_results_stored = 11101011101
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 1000 , read_ptr = 0000
+#  DUT : write_ptr = 1000 , read_ptr = 0000
+#  Monitor WRITE : @ 1105 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 206 | WRITE_FULL = 0 | 
+#  time :                 1105 | monitor_write_results_stored = 11110011100
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference WRITE : @ 1105 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 206 | WRITE_FULL = 0 |
+#  time :                 1105 | reference_write_results_stored = 11110011100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1001 , read_ptr = 0000
+#  Monitor READ : @ 1110 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
+#  time :                 1110 | monitor_read_results_stored = 10001110010
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference READ : @ 1110 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
+#  time :                 1110 | reference_read_results_stored = 10001110010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 1001 , read_ptr = 0000
+#  Monitor WRITE : @ 1115 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  10 | WRITE_FULL = 0 | 
+#  time :                 1115 | monitor_write_results_stored = 10000010100
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference WRITE : @ 1115 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  10 | WRITE_FULL = 0 |
+#  time :                 1115 | reference_write_results_stored = 10000010100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1001 , read_ptr = 0000
+#  DUT : write_ptr = 1001 , read_ptr = 0000
+#  Monitor WRITE : @ 1125 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 155 | WRITE_FULL = 0 | 
+#  time :                 1125 | monitor_write_results_stored = 10100110110
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference WRITE : @ 1125 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 155 | WRITE_FULL = 0 |
+#  time :                 1125 | reference_write_results_stored = 10100110110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1001 , read_ptr = 0000
+#  Monitor READ : @ 1130 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
+#  time :                 1130 | monitor_read_results_stored = 10001110010
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference READ : @ 1130 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
+#  time :                 1130 | reference_read_results_stored = 10001110010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 1001 , read_ptr = 0000
+#  Monitor WRITE : @ 1135 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 101 | WRITE_FULL = 0 | 
+#  time :                 1135 | monitor_write_results_stored = 11011001010
+#  REF : wptr = 0010 , rptr = 0000
+#  Reference WRITE : @ 1135 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 101 | WRITE_FULL = 0 |
+#  time :                 1135 | reference_write_results_stored = 11011001010
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1010 , read_ptr = 0000
+#  DUT : write_ptr = 1010 , read_ptr = 0000
+#  Monitor WRITE : @ 1145 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  95 | WRITE_FULL = 0 | 
+#  time :                 1145 | monitor_write_results_stored = 11010111110
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference WRITE : @ 1145 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  95 | WRITE_FULL = 0 |
+#  time :                 1145 | reference_write_results_stored = 11010111110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1011 , read_ptr = 0000
+#  Monitor READ : @ 1150 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
+#  time :                 1150 | monitor_read_results_stored = 10001110010
+#  REF : wptr = 0011 , rptr = 0000
+#  Reference READ : @ 1150 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
+#  time :                 1150 | reference_read_results_stored = 10001110010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 1011 , read_ptr = 0000
+#  Monitor WRITE : @ 1155 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 202 | WRITE_FULL = 0 | 
+#  time :                 1155 | monitor_write_results_stored = 11110010100
+#  REF : wptr = 0100 , rptr = 0000
+#  Reference WRITE : @ 1155 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 202 | WRITE_FULL = 0 |
+#  time :                 1155 | reference_write_results_stored = 11110010100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1100 , read_ptr = 0000
+#  DUT : write_ptr = 1100 , read_ptr = 0000
+#  Monitor WRITE : @ 1165 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  96 | WRITE_FULL = 0 | 
+#  time :                 1165 | monitor_write_results_stored = 11011000000
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference WRITE : @ 1165 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  96 | WRITE_FULL = 0 |
+#  time :                 1165 | reference_write_results_stored = 11011000000
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1101 , read_ptr = 0000
+#  Monitor READ : @ 1170 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
+#  time :                 1170 | monitor_read_results_stored = 10001110010
+#  REF : wptr = 0101 , rptr = 0000
+#  Reference READ : @ 1170 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
+#  time :                 1170 | reference_read_results_stored = 10001110010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 1101 , read_ptr = 0000
+#  Monitor WRITE : @ 1175 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 162 | WRITE_FULL = 0 | 
+#  time :                 1175 | monitor_write_results_stored = 11101000100
+#  REF : wptr = 0110 , rptr = 0000
+#  Reference WRITE : @ 1175 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 162 | WRITE_FULL = 0 |
+#  time :                 1175 | reference_write_results_stored = 11101000100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1110 , read_ptr = 0000
+#  DUT : write_ptr = 1110 , read_ptr = 0000
+#  Monitor WRITE : @ 1185 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 175 | WRITE_FULL = 0 | 
+#  time :                 1185 | monitor_write_results_stored = 11101011110
+#  REF : wptr = 0111 , rptr = 0000
+#  Reference WRITE : @ 1185 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA = 175 | WRITE_FULL = 0 |
+#  time :                 1185 | reference_write_results_stored = 11101011110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 1111 , read_ptr = 0000
+#  Monitor READ : @ 1190 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
+#  time :                 1190 | monitor_read_results_stored = 10001110010
+#  REF : wptr = 0111 , rptr = 0000
+#  Reference READ : @ 1190 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
+#  time :                 1190 | reference_read_results_stored = 10001110010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 1111 , read_ptr = 0000
+#  Monitor WRITE : @ 1195 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  54 | WRITE_FULL = 0 | 
+#  time :                 1195 | monitor_write_results_stored = 11001101100
+#  REF : wptr = 1000 , rptr = 0000
+#  Reference WRITE : @ 1195 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  54 | WRITE_FULL = 1 |
+#  time :                 1195 | reference_write_results_stored = 11001101101
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 1205 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  67 | WRITE_FULL = 1 | 
+#  time :                 1205 | monitor_write_results_stored = 11010000111
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference WRITE : @ 1205 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  67 | WRITE_FULL = 0 |
+#  time :                 1205 | reference_write_results_stored = 11010000110
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 1210 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 | 
+#  time :                 1210 | monitor_read_results_stored = 10001110010
+#  REF : wptr = 0001 , rptr = 0000
+#  Reference READ : @ 1210 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA =  57 | READ_EMPTY = 0 |
+#  time :                 1210 | reference_read_results_stored = 10001110010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 1215 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  28 | WRITE_FULL = 1 | 
+#  time :                 1215 | monitor_write_results_stored = 11000111001
+#  REF : wptr = 0010 , rptr = 0000
+#  Reference WRITE : @ 1215 
+#  WRITE_RST = 1 | WRITE_EN = 1 | WRITE_DATA =  28 | WRITE_FULL = 0 |
+#  time :                 1215 | reference_write_results_stored = 11000111000
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor WRITE : @ 1225 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 101 | WRITE_FULL = 1 | 
+#  time :                 1225 | monitor_write_results_stored = 10011001011
+#  REF : wptr = 0010 , rptr = 0000
+#  Reference WRITE : @ 1225 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 101 | WRITE_FULL = 0 |
+#  time :                 1225 | reference_write_results_stored = 10011001010
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0000
+#  Monitor READ : @ 1230 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  57 | READ_EMPTY = 0 | 
+#  time :                 1230 | monitor_read_results_stored = 11001110010
+#  REF : wptr = 0010 , rptr = 0001
+#  Reference READ : @ 1230 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  57 | READ_EMPTY = 0 |
+#  time :                 1230 | reference_read_results_stored = 11001110010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0001
+#  Monitor WRITE : @ 1235 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 226 | WRITE_FULL = 1 | 
+#  time :                 1235 | monitor_write_results_stored = 10111000101
+#  REF : wptr = 0010 , rptr = 0001
+#  Reference WRITE : @ 1235 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 226 | WRITE_FULL = 0 |
+#  time :                 1235 | reference_write_results_stored = 10111000100
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0001
+#  DUT : write_ptr = 0000 , read_ptr = 0001
+#  Monitor WRITE : @ 1245 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 227 | WRITE_FULL = 1 | 
+#  time :                 1245 | monitor_write_results_stored = 10111000111
+#  REF : wptr = 0010 , rptr = 0001
+#  Reference WRITE : @ 1245 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 227 | WRITE_FULL = 0 |
+#  time :                 1245 | reference_write_results_stored = 10111000110
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0001
+#  Monitor READ : @ 1250 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 131 | READ_EMPTY = 0 | 
+#  time :                 1250 | monitor_read_results_stored = 11100000110
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1250 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 131 | READ_EMPTY = 1 |
+#  time :                 1250 | reference_read_results_stored = 11100000111
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1255 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  74 | WRITE_FULL = 1 | 
+#  time :                 1255 | monitor_write_results_stored = 10010010101
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1255 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  74 | WRITE_FULL = 0 |
+#  time :                 1255 | reference_write_results_stored = 10010010100
+# <----------------------------- WRITE FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1265 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 | 
+#  time :                 1265 | monitor_write_results_stored = 10000111110
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1265 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  31 | WRITE_FULL = 0 |
+#  time :                 1265 | reference_write_results_stored = 10000111110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 1270 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
+#  time :                 1270 | monitor_read_results_stored = 10110110010
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1270 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
+#  time :                 1270 | reference_read_results_stored = 10110110011
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1275 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  72 | WRITE_FULL = 0 | 
+#  time :                 1275 | monitor_write_results_stored = 10010010000
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1275 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  72 | WRITE_FULL = 0 |
+#  time :                 1275 | reference_write_results_stored = 10010010000
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1285 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 110 | WRITE_FULL = 0 | 
+#  time :                 1285 | monitor_write_results_stored = 10011011100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1285 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 110 | WRITE_FULL = 0 |
+#  time :                 1285 | reference_write_results_stored = 10011011100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 1290 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
+#  time :                 1290 | monitor_read_results_stored = 10110110010
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1290 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
+#  time :                 1290 | reference_read_results_stored = 10110110011
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1295 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  18 | WRITE_FULL = 0 | 
+#  time :                 1295 | monitor_write_results_stored = 10000100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1295 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  18 | WRITE_FULL = 0 |
+#  time :                 1295 | reference_write_results_stored = 10000100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1305 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 211 | WRITE_FULL = 0 | 
+#  time :                 1305 | monitor_write_results_stored = 10110100110
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1305 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA = 211 | WRITE_FULL = 0 |
+#  time :                 1305 | reference_write_results_stored = 10110100110
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 1310 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
+#  time :                 1310 | monitor_read_results_stored = 10110110010
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1310 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
+#  time :                 1310 | reference_read_results_stored = 10110110011
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+# <-----------------------------  write_seq9 ended  ----------------------->
+#  Monitor WRITE : @ 1315 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1315 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1315 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1315 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1325 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1325 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1325 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1325 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 1330 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
+#  time :                 1330 | monitor_read_results_stored = 10110110010
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1330 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
+#  time :                 1330 | reference_read_results_stored = 10110110011
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1335 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1335 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1335 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1335 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1345 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1345 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1345 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1345 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 1350 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
+#  time :                 1350 | monitor_read_results_stored = 10110110010
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1350 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
+#  time :                 1350 | reference_read_results_stored = 10110110011
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1355 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1355 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1355 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1355 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1365 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1365 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1365 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1365 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 1370 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
+#  time :                 1370 | monitor_read_results_stored = 10110110010
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1370 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
+#  time :                 1370 | reference_read_results_stored = 10110110011
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1375 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1375 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1375 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1375 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1385 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1385 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1385 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1385 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 1390 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
+#  time :                 1390 | monitor_read_results_stored = 10110110010
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1390 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
+#  time :                 1390 | reference_read_results_stored = 10110110011
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1395 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1395 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1395 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1395 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1405 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1405 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1405 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1405 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 1410 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
+#  time :                 1410 | monitor_read_results_stored = 10110110010
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1410 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
+#  time :                 1410 | reference_read_results_stored = 10110110011
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1415 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1415 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1415 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1415 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1425 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1425 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1425 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1425 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 1430 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 0 | 
+#  time :                 1430 | monitor_read_results_stored = 10110110010
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1430 
+#  READ_RST = 1 | READ_EN = 0 | READ_DATA = 217 | READ_EMPTY = 1 |
+#  time :                 1430 | reference_read_results_stored = 10110110011
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1435 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1435 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1435 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1435 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor WRITE : @ 1445 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1445 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1445 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1445 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0010
+#  Monitor READ : @ 1450 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 217 | READ_EMPTY = 0 | 
+#  time :                 1450 | monitor_read_results_stored = 11110110010
+#  REF : wptr = 0010 , rptr = 0011
+#  Reference READ : @ 1450 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 217 | READ_EMPTY = 0 |
+#  time :                 1450 | reference_read_results_stored = 11110110010
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  Monitor WRITE : @ 1455 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1455 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0011
+#  Reference WRITE : @ 1455 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1455 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  Monitor WRITE : @ 1465 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1465 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0011
+#  Reference WRITE : @ 1465 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1465 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0011
+#  Monitor READ : @ 1470 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  99 | READ_EMPTY = 0 | 
+#  time :                 1470 | monitor_read_results_stored = 11011000110
+#  REF : wptr = 0010 , rptr = 0100
+#  Reference READ : @ 1470 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  99 | READ_EMPTY = 0 |
+#  time :                 1470 | reference_read_results_stored = 11011000110
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0100
+#  Monitor WRITE : @ 1475 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1475 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0100
+#  Reference WRITE : @ 1475 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1475 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0100
+#  DUT : write_ptr = 0000 , read_ptr = 0100
+#  Monitor WRITE : @ 1485 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1485 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0100
+#  Reference WRITE : @ 1485 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1485 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0100
+#  Monitor READ : @ 1490 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 120 | READ_EMPTY = 0 | 
+#  time :                 1490 | monitor_read_results_stored = 11011110000
+#  REF : wptr = 0010 , rptr = 0101
+#  Reference READ : @ 1490 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 120 | READ_EMPTY = 0 |
+#  time :                 1490 | reference_read_results_stored = 11011110000
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0101
+#  Monitor WRITE : @ 1495 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1495 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0101
+#  Reference WRITE : @ 1495 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1495 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0101
+#  DUT : write_ptr = 0000 , read_ptr = 0101
+#  Monitor WRITE : @ 1505 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1505 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0101
+#  Reference WRITE : @ 1505 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1505 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0101
+#  Monitor READ : @ 1510 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  27 | READ_EMPTY = 0 | 
+#  time :                 1510 | monitor_read_results_stored = 11000110110
+#  REF : wptr = 0010 , rptr = 0110
+#  Reference READ : @ 1510 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  27 | READ_EMPTY = 0 |
+#  time :                 1510 | reference_read_results_stored = 11000110110
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0110
+#  Monitor WRITE : @ 1515 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1515 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0110
+#  Reference WRITE : @ 1515 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1515 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0110
+#  DUT : write_ptr = 0000 , read_ptr = 0110
+#  Monitor WRITE : @ 1525 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1525 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0110
+#  Reference WRITE : @ 1525 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1525 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0110
+#  Monitor READ : @ 1530 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 194 | READ_EMPTY = 0 | 
+#  time :                 1530 | monitor_read_results_stored = 11110000100
+#  REF : wptr = 0010 , rptr = 0111
+#  Reference READ : @ 1530 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 194 | READ_EMPTY = 0 |
+#  time :                 1530 | reference_read_results_stored = 11110000100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0111
+#  Monitor WRITE : @ 1535 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1535 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0111
+#  Reference WRITE : @ 1535 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1535 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0111
+#  DUT : write_ptr = 0000 , read_ptr = 0111
+#  Monitor WRITE : @ 1545 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1545 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0111
+#  Reference WRITE : @ 1545 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1545 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 0111
+#  Monitor READ : @ 1550 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 174 | READ_EMPTY = 0 | 
+#  time :                 1550 | monitor_read_results_stored = 11101011100
+#  REF : wptr = 0010 , rptr = 1000
+#  Reference READ : @ 1550 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 174 | READ_EMPTY = 0 |
+#  time :                 1550 | reference_read_results_stored = 11101011100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1000
+#  Monitor WRITE : @ 1555 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1555 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 1000
+#  Reference WRITE : @ 1555 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1555 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1000
+#  DUT : write_ptr = 0000 , read_ptr = 1000
+#  Monitor WRITE : @ 1565 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1565 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 1000
+#  Reference WRITE : @ 1565 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1565 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1000
+#  Monitor READ : @ 1570 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 206 | READ_EMPTY = 0 | 
+#  time :                 1570 | monitor_read_results_stored = 11110011100
+#  REF : wptr = 0010 , rptr = 0001
+#  Reference READ : @ 1570 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 206 | READ_EMPTY = 0 |
+#  time :                 1570 | reference_read_results_stored = 11110011100
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1001
+#  Monitor WRITE : @ 1575 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1575 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0001
+#  Reference WRITE : @ 1575 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1575 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1001
+#  DUT : write_ptr = 0000 , read_ptr = 1001
+#  Monitor WRITE : @ 1585 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1585 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0001
+#  Reference WRITE : @ 1585 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1585 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1001
+#  Monitor READ : @ 1590 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 101 | READ_EMPTY = 0 | 
+#  time :                 1590 | monitor_read_results_stored = 11011001010
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference READ : @ 1590 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 101 | READ_EMPTY = 1 |
+#  time :                 1590 | reference_read_results_stored = 11011001011
+# <----------------------------- READ FAIL ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1010
+#  Monitor WRITE : @ 1595 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1595 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1595 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1595 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1010
+#  DUT : write_ptr = 0000 , read_ptr = 1010
+#  Monitor WRITE : @ 1605 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1605 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0010
+#  Reference WRITE : @ 1605 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1605 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1010
+#  Monitor READ : @ 1610 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  95 | READ_EMPTY = 0 | 
+#  time :                 1610 | monitor_read_results_stored = 11010111110
+#  REF : wptr = 0010 , rptr = 0011
+#  Reference READ : @ 1610 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA =  95 | READ_EMPTY = 0 |
+#  time :                 1610 | reference_read_results_stored = 11010111110
+# <----------------------------- READ PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1011
+#  Monitor WRITE : @ 1615 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1615 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0011
+#  Reference WRITE : @ 1615 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1615 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1011
+#  DUT : write_ptr = 0000 , read_ptr = 1011
+#  Monitor WRITE : @ 1625 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 | 
+#  time :                 1625 | monitor_write_results_stored = 10001100100
+#  REF : wptr = 0010 , rptr = 0011
+#  Reference WRITE : @ 1625 
+#  WRITE_RST = 1 | WRITE_EN = 0 | WRITE_DATA =  50 | WRITE_FULL = 0 |
+#  time :                 1625 | reference_write_results_stored = 10001100100
+# <----------------------------- WRITE PASS ----------------------------->
+#  DUT : write_ptr = 0000 , read_ptr = 1011
+# <-----------------------------  read_seq9 ended  ----------------------->
+#  Monitor READ : @ 1630 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 202 | READ_EMPTY = 0 | 
+#  time :                 1630 | monitor_read_results_stored = 11110010100
+#  REF : wptr = 0010 , rptr = 0100
+#  Reference READ : @ 1630 
+#  READ_RST = 1 | READ_EN = 1 | READ_DATA = 202 | READ_EMPTY = 0 |
+#  time :                 1630 | reference_read_results_stored = 11110010100
+# <----------------------------- READ PASS ----------------------------->
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1630: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+#  WRITE_Passes = 147 | WRITE_Fails = 15 | READ_Passes = 48 | READ_Fails = 33
+# 
+# UVM_INFO async_fifo_subscriber.sv(72) @ 1630: uvm_test_top.env.sub [async_fifo_subscriber] [WRITE_MONITOR]  Coverage ------> 100.00%
+# UVM_INFO async_fifo_subscriber.sv(73) @ 1630: uvm_test_top.env.sub [async_fifo_subscriber] [READ_MONITOR]   Coverage ------> 100.00%
 # 
 # --- UVM Report Summary ---
 # 
@@ -800,7 +2409,7 @@
 # [TEST_DONE]     1
 # [async_fifo_subscriber]     2
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 650 ns  Iteration: 68  Instance: /top
+#    Time: 1630 ns  Iteration: 68  Instance: /top
 # Saving coverage database on exit...
-# End time: 14:55:10 on Oct 03,2025, Elapsed time: 0:00:05
+# End time: 16:28:45 on Oct 04,2025, Elapsed time: 0:00:05
 # Errors: 0, Warnings: 0

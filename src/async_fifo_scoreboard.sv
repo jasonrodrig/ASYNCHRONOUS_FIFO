@@ -14,8 +14,8 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 
 	// mimicing the memory funactionlaity using register 	
 	reg [ `DATA_WIDTH - 1 : 0 ] fifo [ `FIFO_DEPTH - 1 : 0 ];
-	reg [ ADDR_WIDTH : 0 ] write_ptr = 'b0;
-	reg [ ADDR_WIDTH : 0 ] read_ptr = 'b0;
+	reg [ ADDR_WIDTH  : 0 ] write_ptr = 'b0;
+	reg [ ADDR_WIDTH  : 0 ] read_ptr = 'b0;
 
 	// declration for temporary reference outputs
 	logic [ `DATA_WIDTH - 1 : 0 ] ref_read_data ;
@@ -71,7 +71,7 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 
 	function void report_phase(uvm_phase phase);
 		super.report_phase(phase);
-		$display("WRITE_Passes = %0d | WRITE_Fails = %0d | READ_Passes = %0d | READ_Fails = %0d", 
+		$display("\n WRITE_Passes = %0d | WRITE_Fails = %0d | READ_Passes = %0d | READ_Fails = %0d\n", 
 			        WRITE_PASS, WRITE_FAIL, READ_PASS , READ_FAIL);
 	endfunction
 
@@ -151,6 +151,7 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			write_ptr = 'b0;
 			ref_write_full = 'b0;
 			write_flag = 1;
+			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
 		// write enable condition
@@ -159,15 +160,18 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			ref_write_full = 'bx;
 			fifo[ write_ptr[ ADDR_WIDTH - 1 : 0 ] ] = write_seq.write_data; 
 			write_ptr = write_ptr + 1 ;
+			if(write_ptr > 8) write_ptr = 1;
 			ref_write_full = ( ( ~write_ptr[3] == read_ptr[3] ) && ( write_ptr[2:0] == read_ptr[2:0] ) ) ? 1 : 0 ;
-		  $display("wptr = %b , rptr = %b", write_ptr,read_ptr);
+		  $display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
 		else begin
       write_flag = 1;
 			ref_write_full = 'bx;
 			write_ptr = write_ptr;	
-      ref_write_full = ( ( ~write_ptr[3] == read_ptr[3] ) && ( write_ptr[2:0] == read_ptr[2:0] ) ) ? 1 : 0 ;
+      if(write_ptr > 8) write_ptr = 1;
+			ref_write_full = ( ( ~write_ptr[3] == read_ptr[3] ) && ( write_ptr[2:0] == read_ptr[2:0] ) ) ? 1 : 0 ;
+  		$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);	
 		end
 
 		$display(" Reference WRITE : @ %0t \n WRITE_RST = %b | WRITE_EN = %b | WRITE_DATA = %d | WRITE_FULL = %b |",
@@ -189,6 +193,7 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			read_ptr = 'b0;
 			ref_read_data = 'b0;
 			ref_read_empty = 'b1;
+      $display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
 		// read enable condition
@@ -198,8 +203,9 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			ref_read_data  = 'bx;
 			ref_read_data = fifo[ read_ptr[ ADDR_WIDTH - 1 : 0 ] ]; 
 			read_ptr = read_ptr + 1 ;
-			ref_read_empty = ( read_ptr == write_ptr ) ? 1 : 0 ;
-			$display("wptr = %b , rptr = %b", write_ptr,read_ptr);
+    	if(read_ptr > 8 ) read_ptr = 1;	
+			ref_read_empty = ( read_ptr[2:0] == write_ptr[2:0] ) ? 1 : 0 ;
+			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
 		else begin
@@ -208,7 +214,9 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			ref_read_data  = 'bx;
 			ref_read_data  =  fifo[ read_ptr[ ADDR_WIDTH - 1 : 0 ] ];
 			read_ptr = read_ptr ;
-			ref_read_empty = ( read_ptr == write_ptr ) ? 1 : 0 ;
+			if(read_ptr > 8 ) read_ptr = 1; 
+			ref_read_empty = ( read_ptr[2:0] == write_ptr[2:0] ) ? 1 : 0 ;
+   		$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);	
 		end
 
 		$display(" Reference READ : @ %0t \n READ_RST = %b | READ_EN = %b | READ_DATA = %d | READ_EMPTY = %b |",
