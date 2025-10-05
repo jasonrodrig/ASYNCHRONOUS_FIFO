@@ -3,6 +3,17 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 	`uvm_object_utils(async_fifo_virtual_sequence)
 	`uvm_declare_p_sequencer(async_fifo_virtual_sequencer)
 
+  bit testcase1 = 0;
+  bit testcase2 = 0;
+  bit testcase3 = 0;
+  bit testcase4 = 0;
+  bit testcase5 = 0;
+  bit testcase6 = 0;
+  bit testcase7 = 0;
+  bit testcase8 = 0;
+  bit testcase9 = 0;
+  bit run_all_test = 0;
+ 
 	write_sequence1 wr_seq1;
 	read_sequence1 rd_seq1;
 	write_sequence2 wr_seq2;
@@ -47,6 +58,7 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 	task body();
 
 		//write_rst = 0 when write_en = 0 & read_rst = 0 when read_en = 0
+		if( testcase1 == 1 || run_all_test == 1) begin
 		fork
 			begin
 				wr_seq1.start(p_sequencer.write_seqr);
@@ -55,8 +67,9 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				rd_seq1.start(p_sequencer.read_seqr);
 			end
 		join
-
+    end
 		//write_rst = 0 when write_en = 1 & read_rst = 0 when read_en = 1  
+		if (testcase2 == 1 || run_all_test == 1) begin
 		fork
 			begin
 				wr_seq2.start(p_sequencer.write_seqr);
@@ -65,9 +78,10 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				rd_seq2.start(p_sequencer.read_seqr);
 			end
 		join
+		end
 
 		// write_rst = 1 and write_en = 0 & read_rst = 1 when read_en =0
-
+	  if (testcase3 == 1 || run_all_test == 1) begin		
 		fork
 			begin
 				wr_seq3.start(p_sequencer.write_seqr);
@@ -76,9 +90,9 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				rd_seq3.start(p_sequencer.read_seqr);
 			end
 		join
-
+  	end
 		// write_rst = 1 & write_en = 1 when read_rst = 1 & read_en =0
-
+  	if (testcase4 == 1 || run_all_test == 1) begin
 		fork
 			begin
 				wr_seq4.start(p_sequencer.write_seqr);
@@ -87,9 +101,9 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				rd_seq4.start(p_sequencer.read_seqr);
 			end
 		join
-
+		end
 		// read_rst = 1 & read_en = 1 when write_rst = 1 & write_en =0
-
+    if (testcase5 == 1 || run_all_test == 1) begin
 		fork
 			begin
 				rd_seq5.start(p_sequencer.read_seqr);
@@ -98,10 +112,10 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				wr_seq5.start(p_sequencer.write_seqr);
 			end
 		join
-
+		end
 		// 1st reset the write and read pointers and then perform 
 		// read_rst = 1 & read_en = 1 when write_rst = 1 & write_en = 1
-
+    if (testcase6 == 1 || run_all_test == 1) begin
 		fork
 			begin
 				wr_seq6.start(p_sequencer.write_seqr);
@@ -112,8 +126,9 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				rd_seq1.start(p_sequencer.read_seqr);
 			end
 		join
-
+		end
 		// mid break write operation sequence
+	  if (testcase7 == 1 || run_all_test == 1) begin
 		fork
 			begin
 				wr_seq7.start(p_sequencer.write_seqr);
@@ -122,8 +137,11 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				rd_seq7.start(p_sequencer.read_seqr);
 			end
 		join
+		end
 
 		// mid break read operation sequence
+		
+	  if (testcase8 == 1 || run_all_test == 1) begin
 		fork
 			begin
 				rd_seq8.start(p_sequencer.read_seqr);
@@ -132,8 +150,10 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				wr_seq8.start(p_sequencer.write_seqr);
 			end
 		join
+		end
 
 		// wrap around condition sequence
+	  if (testcase9 == 1 || run_all_test == 1) begin
 		fork
 			begin
 				rd_seq9.start(p_sequencer.read_seqr);
@@ -142,6 +162,7 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				wr_seq9.start(p_sequencer.write_seqr);
 			end
 		join
+    end
 
 	endtask
 

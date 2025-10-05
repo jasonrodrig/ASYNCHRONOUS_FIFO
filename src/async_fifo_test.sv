@@ -17,6 +17,18 @@ class async_fifo_test extends uvm_test;
 
 	virtual task run_phase(uvm_phase phase);
 		phase.raise_objection(this);
+		// test_case selector choice 
+	//	v_seq.testcase1 = 1;	
+	//	v_seq.testcase1 = 1;
+	//	v_seq.testcase2 = 1;
+	//	v_seq.testcase3 = 1;
+	//	v_seq.testcase4 = 1;
+	//	v_seq.testcase5 = 1;
+	//	v_seq.testcase6 = 1;
+	//	v_seq.testcase7 = 1;
+	//	v_seq.testcase8 = 1;
+	//	v_seq.testcase9 = 1;
+		v_seq.run_all_test = 1 ;
 		v_seq.start(env.v_seqr);
 		phase.drop_objection(this);
 	endtask

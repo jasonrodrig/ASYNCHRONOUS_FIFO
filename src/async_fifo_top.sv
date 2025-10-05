@@ -61,7 +61,6 @@ module top;
 	end
 
 	initial begin
-
 		run_test("async_fifo_test");
 		#1000 $finish;
 	end
