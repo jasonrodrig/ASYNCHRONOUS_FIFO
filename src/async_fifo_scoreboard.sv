@@ -72,7 +72,7 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 	function void report_phase(uvm_phase phase);
 		super.report_phase(phase);
 		$display("\n WRITE_Passes = %0d | WRITE_Fails = %0d | READ_Passes = %0d | READ_Fails = %0d\n", 
-			        WRITE_PASS, WRITE_FAIL, READ_PASS , READ_FAIL);
+			WRITE_PASS, WRITE_FAIL, READ_PASS , READ_FAIL);
 	endfunction
 
 	//--------------------------------------------------------------//
@@ -162,16 +162,16 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			write_ptr = write_ptr + 1 ;
 			if(write_ptr > 16) write_ptr = 1;
 			ref_write_full = ( ( ~write_ptr[4] == read_ptr[4] ) && ( write_ptr[3:0] == read_ptr[3:0] ) ) ? 1 : 0 ;
-		  $display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
+			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
 		else begin
-      write_flag = 1;
+			write_flag = 1;
 			ref_write_full = 'bx;
 			write_ptr = write_ptr;	
-      if(write_ptr > 16) write_ptr = 1;
+			if(write_ptr > 16) write_ptr = 1;
 			ref_write_full = ( ( ~write_ptr[4] == read_ptr[4] ) && ( write_ptr[3:0] == read_ptr[3:0] ) ) ? 1 : 0 ;
-  		$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);	
+			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);	
 		end
 
 		$display(" Reference WRITE : @ %0t \n WRITE_RST = %b | WRITE_EN = %b | WRITE_DATA = %d | WRITE_FULL = %b |",
@@ -189,11 +189,11 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 	task async_fifo_read_reference_model(input async_fifo_read_sequence_item read_seq);
 		// reset condition
 		if(read_seq.read_rst == 0 && read_seq.read_en == 0 )begin
-		  read_flag = 1;
+			read_flag = 1;
 			read_ptr = 'b0;
 			ref_read_data = 'b0;
 			ref_read_empty = 'b1;
-      $display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
+			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
 		// read enable condition
@@ -203,7 +203,7 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			ref_read_data  = 'bx;
 			ref_read_data = fifo[ read_ptr[ ADDR_WIDTH - 1 : 0 ] ]; 
 			read_ptr = read_ptr + 1 ;
-    	if(read_ptr > 16 ) read_ptr = 1;	
+			if(read_ptr > 16 ) read_ptr = 1;	
 			ref_read_empty = ( read_ptr[3:0] == write_ptr[3:0] ) ? 1 : 0 ;
 			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
@@ -216,7 +216,7 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			read_ptr = read_ptr ;
 			if(read_ptr > 16 ) read_ptr = 1; 
 			ref_read_empty = ( read_ptr[3:0] == write_ptr[3:0] ) ? 1 : 0 ;
-   		$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);	
+			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);	
 		end
 
 		$display(" Reference READ : @ %0t \n READ_RST = %b | READ_EN = %b | READ_DATA = %d | READ_EMPTY = %b |",
@@ -234,30 +234,30 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 	task comparision_report();
 
 		if(write_flag == 1) begin
-		if( monitor_write_results === reference_write_results ) begin
-			$display("<----------------------------- WRITE PASS ----------------------------->" );
-			WRITE_PASS++;
-			write_flag = 0;
-		end
-		else begin
-			$display("<----------------------------- WRITE FAIL ----------------------------->" );
-			WRITE_FAIL++;
-			write_flag = 0;
-		end
+			if( monitor_write_results === reference_write_results ) begin
+				$display("<----------------------------- WRITE PASS ----------------------------->" );
+				WRITE_PASS++;
+				write_flag = 0;
+			end
+			else begin
+				$display("<----------------------------- WRITE FAIL ----------------------------->" );
+				WRITE_FAIL++;
+				write_flag = 0;
+			end
 		end
 
 		if(read_flag == 1)begin
-		if( monitor_read_results === reference_read_results )begin
-			$display("<----------------------------- READ PASS ----------------------------->" );
-			READ_PASS++;
-			read_flag = 0;
-		end
+			if( monitor_read_results === reference_read_results )begin
+				$display("<----------------------------- READ PASS ----------------------------->" );
+				READ_PASS++;
+				read_flag = 0;
+			end
 
-		else begin
-			$display("<----------------------------- READ FAIL ----------------------------->" );
-			READ_FAIL++;
-			read_flag = 0;
-		end
+			else begin
+				$display("<----------------------------- READ FAIL ----------------------------->" );
+				READ_FAIL++;
+				read_flag = 0;
+			end
 		end
 	endtask
 

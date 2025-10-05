@@ -1,5 +1,5 @@
 class async_fifo_read_driver extends uvm_driver#(async_fifo_read_sequence_item);
-	
+
 	`uvm_component_utils(async_fifo_read_driver)
 	virtual async_fifo_interface vif;
 	async_fifo_read_sequence_item req;
@@ -15,8 +15,8 @@ class async_fifo_read_driver extends uvm_driver#(async_fifo_read_sequence_item);
 	endfunction
 
 	task run_phase(uvm_phase phase);
-  @(vif.async_fifo_read_driver_cb);
-	forever begin
+		@(vif.async_fifo_read_driver_cb);
+		forever begin
 			seq_item_port.get_next_item(req);
 			read_drive();
 			seq_item_port.item_done();

@@ -32,20 +32,20 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 		rd_seq3 =	read_sequence3::type_id::create("rd_seq3");
 		wr_seq4 =	write_sequence4::type_id::create("wr_seq4");
 		rd_seq4 =	read_sequence4::type_id::create("rd_seq4");
-	  wr_seq5 =	write_sequence5::type_id::create("wr_seq5");
+		wr_seq5 =	write_sequence5::type_id::create("wr_seq5");
 		rd_seq5 =	read_sequence5::type_id::create("rd_seq5");
-    wr_seq6 =	write_sequence6::type_id::create("wr_seq6");
+		wr_seq6 =	write_sequence6::type_id::create("wr_seq6");
 		rd_seq6 =	read_sequence6::type_id::create("rd_seq6");
-    wr_seq7 =	write_sequence7::type_id::create("wr_seq7");
+		wr_seq7 =	write_sequence7::type_id::create("wr_seq7");
 		rd_seq7 =	read_sequence7::type_id::create("rd_seq7");
-    wr_seq8 =	write_sequence8::type_id::create("wr_seq8");
+		wr_seq8 =	write_sequence8::type_id::create("wr_seq8");
 		rd_seq8 =	read_sequence8::type_id::create("rd_seq8");
-	  wr_seq9 =	write_sequence9::type_id::create("wr_seq9");
+		wr_seq9 =	write_sequence9::type_id::create("wr_seq9");
 		rd_seq9 =	read_sequence9::type_id::create("rd_seq9");
 	endfunction 
 
 	task body();
-		
+
 		//write_rst = 0 when write_en = 0 & read_rst = 0 when read_en = 0
 		fork
 			begin
@@ -76,8 +76,8 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				rd_seq3.start(p_sequencer.read_seqr);
 			end
 		join
-		
-	  // write_rst = 1 & write_en = 1 when read_rst = 1 & read_en =0
+
+		// write_rst = 1 & write_en = 1 when read_rst = 1 & read_en =0
 
 		fork
 			begin
@@ -114,7 +114,7 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 		join
 
 		// mid break write operation sequence
-    fork
+		fork
 			begin
 				wr_seq7.start(p_sequencer.write_seqr);
 			end
@@ -122,9 +122,9 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				rd_seq7.start(p_sequencer.read_seqr);
 			end
 		join
-  	
+
 		// mid break read operation sequence
-  	fork
+		fork
 			begin
 				rd_seq8.start(p_sequencer.read_seqr);
 			end
@@ -132,9 +132,9 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				wr_seq8.start(p_sequencer.write_seqr);
 			end
 		join
-   
+
 		// wrap around condition sequence
-  	fork
+		fork
 			begin
 				rd_seq9.start(p_sequencer.read_seqr);
 			end
@@ -142,7 +142,7 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				wr_seq9.start(p_sequencer.write_seqr);
 			end
 		join
- 	
+
 	endtask
 
 endclass

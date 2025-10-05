@@ -3,7 +3,7 @@ class async_fifo_write_sequence_item extends uvm_sequence_item;
 	rand logic write_rst;
 	rand logic write_en;
 	rand logic [ `DATA_WIDTH - 1 : 0 ] write_data;
-	     logic write_full;
+	logic write_full;
 
 	`uvm_object_utils_begin(async_fifo_write_sequence_item)
 	`uvm_field_int(write_rst   , UVM_ALL_ON)

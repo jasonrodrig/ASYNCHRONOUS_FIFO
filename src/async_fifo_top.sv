@@ -37,7 +37,7 @@ module top;
 		.read_data(vif.read_data),
 		.write_full(vif.write_full),
 		.read_empty(vif.read_empty),
-	  .write_ptr(dut.raddr),
+		.write_ptr(dut.raddr),
 		.read_ptr(dut.waddr)
 	);
 
@@ -61,7 +61,7 @@ module top;
 	end
 
 	initial begin
-		
+
 		run_test("async_fifo_test");
 		#1000 $finish;
 	end

@@ -6,7 +6,7 @@ class async_fifo_environment extends uvm_env;
 	async_fifo_read_agent  rd_agt;
 	async_fifo_subscriber  sub;
 	async_fifo_scoreboard  scb;
-  async_fifo_virtual_sequencer v_seqr;
+	async_fifo_virtual_sequencer v_seqr;
 
 	function new(string name = "async_fifo_environment" , uvm_component parent);
 		super.new(name, parent);
@@ -18,8 +18,7 @@ class async_fifo_environment extends uvm_env;
 		rd_agt = async_fifo_read_agent::type_id::create("rd_agt",this);
 		sub    = async_fifo_subscriber::type_id::create("sub",this);
 		scb    = async_fifo_scoreboard::type_id::create("scb",this);
-	  v_seqr = async_fifo_virtual_sequencer::type_id::create("v_seqr",this);
-		
+		v_seqr = async_fifo_virtual_sequencer::type_id::create("v_seqr",this);
 		set_config_int("wr_agt", "is_active", UVM_ACTIVE);
 		set_config_int("rd_agt", "is_active", UVM_ACTIVE);
 	endfunction
@@ -30,10 +29,8 @@ class async_fifo_environment extends uvm_env;
 		wr_agt.write_mon.write_mon_port.connect(sub.cov_write_mon_port);
 		rd_agt.read_mon.read_mon_port.connect(scb.read_scb_port);
 		rd_agt.read_mon.read_mon_port.connect(sub.cov_read_mon_port);
- 
-  v_seqr.write_seqr = wr_agt.write_seqr;
-	v_seqr.read_seqr  = rd_agt.read_seqr;	
-
+		v_seqr.write_seqr = wr_agt.write_seqr;
+		v_seqr.read_seqr  = rd_agt.read_seqr;	
 	endfunction
 
 endclass

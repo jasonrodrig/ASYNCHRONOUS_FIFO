@@ -10,9 +10,9 @@ class async_fifo_subscriber extends uvm_component;
 	async_fifo_write_sequence_item write_seq;
 	async_fifo_read_sequence_item read_seq;
 
-//	int wr_rst, wr_en, wr_data, wr_full;
-//	int rd_rst, rd_en, rd_data, rd_empty;
-	
+	//	int wr_rst, wr_en, wr_data, wr_full;
+	//	int rd_rst, rd_en, rd_data, rd_empty;
+
 	real write_mon_cov_results, read_mon_cov_results ;
 
 	covergroup write_coverage;
@@ -21,7 +21,7 @@ class async_fifo_subscriber extends uvm_component;
 		WRITE_ENABLE : coverpoint write_seq.write_en   { bins wr_en[]   = { 0 , 1 } ; }
 		WRITE_DATA   : coverpoint write_seq.write_data { bins wr_data   = { [ 0 : 255 ] } ; }
 		WRITE_FULL   : coverpoint write_seq.write_full { bins wr_full[] = { 0 , 1 } ; }
-    WRITE_RESETXWRITE_ENABLE : cross WRITE_RESET , WRITE_ENABLE ;
+		WRITE_RESETXWRITE_ENABLE : cross WRITE_RESET , WRITE_ENABLE ;
 	endgroup
 
 	covergroup read_coverage;
