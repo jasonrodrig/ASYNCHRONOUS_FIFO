@@ -160,8 +160,8 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			ref_write_full = 'bx;
 			fifo[ write_ptr[ ADDR_WIDTH - 1 : 0 ] ] = write_seq.write_data; 
 			write_ptr = write_ptr + 1 ;
-			if(write_ptr > 8) write_ptr = 1;
-			ref_write_full = ( ( ~write_ptr[3] == read_ptr[3] ) && ( write_ptr[2:0] == read_ptr[2:0] ) ) ? 1 : 0 ;
+			if(write_ptr > 16) write_ptr = 1;
+			ref_write_full = ( ( ~write_ptr[4] == read_ptr[4] ) && ( write_ptr[3:0] == read_ptr[3:0] ) ) ? 1 : 0 ;
 		  $display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
@@ -169,8 +169,8 @@ class async_fifo_scoreboard extends uvm_scoreboard;
       write_flag = 1;
 			ref_write_full = 'bx;
 			write_ptr = write_ptr;	
-      if(write_ptr > 8) write_ptr = 1;
-			ref_write_full = ( ( ~write_ptr[3] == read_ptr[3] ) && ( write_ptr[2:0] == read_ptr[2:0] ) ) ? 1 : 0 ;
+      if(write_ptr > 16) write_ptr = 1;
+			ref_write_full = ( ( ~write_ptr[4] == read_ptr[4] ) && ( write_ptr[3:0] == read_ptr[3:0] ) ) ? 1 : 0 ;
   		$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);	
 		end
 
@@ -203,8 +203,8 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			ref_read_data  = 'bx;
 			ref_read_data = fifo[ read_ptr[ ADDR_WIDTH - 1 : 0 ] ]; 
 			read_ptr = read_ptr + 1 ;
-    	if(read_ptr > 8 ) read_ptr = 1;	
-			ref_read_empty = ( read_ptr[2:0] == write_ptr[2:0] ) ? 1 : 0 ;
+    	if(read_ptr > 16 ) read_ptr = 1;	
+			ref_read_empty = ( read_ptr[3:0] == write_ptr[3:0] ) ? 1 : 0 ;
 			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
@@ -214,8 +214,8 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 			ref_read_data  = 'bx;
 			ref_read_data  =  fifo[ read_ptr[ ADDR_WIDTH - 1 : 0 ] ];
 			read_ptr = read_ptr ;
-			if(read_ptr > 8 ) read_ptr = 1; 
-			ref_read_empty = ( read_ptr[2:0] == write_ptr[2:0] ) ? 1 : 0 ;
+			if(read_ptr > 16 ) read_ptr = 1; 
+			ref_read_empty = ( read_ptr[3:0] == write_ptr[3:0] ) ? 1 : 0 ;
    		$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);	
 		end
 

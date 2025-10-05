@@ -101,7 +101,7 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 
 		// 1st reset the write and read pointers and then perform 
 		// read_rst = 1 & read_en = 1 when write_rst = 1 & write_en = 1
-///*
+
 		fork
 			begin
 				wr_seq6.start(p_sequencer.write_seqr);
@@ -142,7 +142,7 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 				wr_seq9.start(p_sequencer.write_seqr);
 			end
 		join
-// */	
+ 	
 	endtask
 
 endclass

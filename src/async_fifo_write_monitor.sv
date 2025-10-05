@@ -31,6 +31,7 @@ class async_fifo_write_monitor extends uvm_monitor;
 		write_seq.write_en   = vif.async_fifo_write_monitor_cb.write_en;
    	write_seq.write_data = vif.async_fifo_write_monitor_cb.write_data;
 		write_seq.write_full = vif.async_fifo_write_monitor_cb.write_full;
+		//$display(" WRITE MONITOR WRITE_RST = %B ,WRITE_EN =%B ,WRITE_DATA = %D ,WRITE_FULL = %B",vif.write_rst,vif.write_en,vif.write_data,vif.write_full);
 		write_mon_port.write(write_seq);
 	endtask
 

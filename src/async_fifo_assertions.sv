@@ -22,8 +22,8 @@ interface async_fifo_assertions(
 	input	[ `DATA_WIDTH - 1 : 0 ] read_data;
 	input	write_full;
 	input	read_empty;
-	input [ ADDR_WIDTH : 0 ]write_ptr;
-	input [ ADDR_WIDTH : 0 ]read_ptr;
+	input [ ADDR_WIDTH - 1 : 0 ]write_ptr;
+	input [ ADDR_WIDTH - 1 : 0 ]read_ptr;
 
 //always@(write_clk or read_clk) $display(" ASSERTION : write_ptr = %b , read_ptr = %b", write_ptr , read_ptr );
 	property p1;
@@ -106,7 +106,8 @@ interface async_fifo_assertions(
 
 	property p8;
 		@(posedge write_clk)
- 	   ( ( ~write_ptr[3] == read_ptr[3] ) && ( write_ptr[2:0] == read_ptr[2:0] ) ) |-> ( write_full )  ;
+		//( ( ~write_ptr[3] == read_ptr[3] ) && ( write_ptr[2:0] == read_ptr[2:0] ) ) |-> ( write_full )  ;
+		  ( write_ptr == `FIFO_DEPTH - 1 ) |-> ( write_full );
 	endproperty
 
 	is_write_full_check_8:
@@ -117,7 +118,7 @@ interface async_fifo_assertions(
 
 	property p9;
 		@(posedge read_clk)
-	   ( write_ptr[2:0] == read_ptr[2:0] ) |-> ( read_empty );
+	   ( write_ptr[3:0] == read_ptr[3:0] ) |-> ( read_empty );
 	endproperty
 
 	is_read_empty_check_9:
