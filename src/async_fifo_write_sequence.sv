@@ -210,23 +210,31 @@ endclass
 
 
 //regression test ->
-/*
+
 class async_fifo_write_regression extends uvm_sequence#(async_fifo_write_sequence_item);
 	`uvm_object_utils(async_fifo_write_regression)
 
-	write_rst_sequence wr_rst;
-	write_sequence wr_seq;
-	//async_fifo_write_sequence write_seq;
+	write_sequence1 wr_seq1;
+	write_sequence2 wr_seq2;
+	write_sequence3 wr_seq3;
+	write_sequence4 wr_seq4;
+	write_sequence5 wr_seq5;
+	write_sequence6 wr_seq6;
+	write_sequence7 wr_seq7;
 
 	function new(string name = "async_fifo_write_regression");
 		super.new(name);
 	endfunction
 
 	task body();
-		`uvm_do(wr_rst);
-		//`uvm_do(write_seq);
-		`uvm_do(wr_seq);
+		`uvm_do(wr_seq1);
+		`uvm_do(wr_seq2);
+		`uvm_do(wr_seq3);
+   	`uvm_do(wr_seq4);
+		`uvm_do(wr_seq5);
+		`uvm_do(wr_seq6);
+    `uvm_do(wr_seq7);
 	endtask
 endclass
 
-*/
+

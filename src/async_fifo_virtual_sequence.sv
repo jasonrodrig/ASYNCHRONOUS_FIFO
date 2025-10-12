@@ -182,7 +182,8 @@ class async_fifo_virtual_sequence extends uvm_sequence;
    write_sequence7 wr_seq7;
    //write_sequence8 wr_seq8; 
 	 //write_sequence9 wr_seq9;
-   
+   async_fifo_write_regression wr_reg;
+	 
 	 read_sequence1 rd_seq1;
    read_sequence2 rd_seq2; 
 	 read_sequence3 rd_seq3;
@@ -192,7 +193,7 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 	 read_sequence7 rd_seq7;
    //read_sequence8 rd_seq8; 
 	 //read_sequence9 rd_seq9;
-	
+   async_fifo_read_regression rd_reg;
 
   function new(string name = "async_fifo_virtual_sequence");
     super.new(name);
@@ -346,23 +347,33 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 */
   task run_testcase7();
 
-  	//wr_seq1 = write_sequence1::type_id::create("wr_seq1");
-    //rd_seq1 = read_sequence1::type_id::create("rd_seq1");
-
     wr_seq7 = write_sequence7::type_id::create("wr_seq7");
     rd_seq7 = read_sequence7::type_id::create("rd_seq7");
 
     `uvm_info(get_type_name(), ">>> Running Testcase 7 <<<", UVM_MEDIUM)
     fork
 			begin
-			//wr_seq1.start(p_sequencer.write_seqr);	
       wr_seq7.start(p_sequencer.write_seqr);
 			end
 			begin
-      // rd_seq1.start(p_sequencer.read_seqr);
 			 rd_seq7.start(p_sequencer.read_seqr);
 			end
     join
   endtask
+
+	task run_all();
+    wr_reg = async_fifo_write_regression::type_id::create("wr_reg");
+    rd_reg = async_fifo_read_regression::type_id::create("rd_reg");
+
+    `uvm_info(get_type_name(), ">>> Running Regrssion test <<<", UVM_MEDIUM)
+    fork
+			begin
+      wr_reg.start(p_sequencer.write_seqr);
+			end
+			begin
+			rd_reg.start(p_sequencer.read_seqr);
+			end
+    join
+	endtask
 
 endclass

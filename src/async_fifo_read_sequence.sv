@@ -216,23 +216,30 @@ endclass
 
 //regression test ->
 
-/*
 class async_fifo_read_regression extends uvm_sequence#(async_fifo_read_sequence_item);
 	`uvm_object_utils(async_fifo_read_regression)
 
-	read_rst_sequence rd_rst;
-	//async_fifo_read_sequence read_seq;
-  read_sequence rd_seq;
-
+	read_sequence1 rd_seq1;
+	read_sequence2 rd_seq2;
+  read_sequence3 rd_seq3;
+	read_sequence4 rd_seq4;
+	read_sequence5 rd_seq5;
+  read_sequence6 rd_seq6;
+	read_sequence7 rd_seq7;
+	
 	function new(string name = "async_fifo_read_regression");
 		super.new(name);
 	endfunction
 
 	task body();
-		`uvm_do(rd_rst);
-	 //`uvm_do(read_seq);
-		`uvm_do(rd_seq);
+		`uvm_do(rd_seq1);
+	  `uvm_do(rd_seq2);
+		`uvm_do(rd_seq3);
+  	`uvm_do(rd_seq4);
+	  `uvm_do(rd_seq5);
+		`uvm_do(rd_seq6);
+    `uvm_do(rd_seq7);
 	endtask
 endclass
-*/
+
 

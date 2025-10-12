@@ -1,10 +1,129 @@
 # vsim -vopt work.top -voptargs="+acc=npr" -assertdebug -l simulation.log -coverage -c -do "coverage save -onexit -assert -directive -cvg -codeAll coverage.ucdb; run -all; exit" 
-# Start time: 21:17:17 on Oct 12,2025
+# Start time: 21:50:42 on Oct 12,2025
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Error: (vopt-13130) Failed to find design unit top.
-#         Searched libraries:
-#             work
-# Optimization failed
-# Error loading design
-# End time: 21:17:17 on Oct 12,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
+# //  Questa Sim
+# //  Version 10.6c linux Jul 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.async_fifo_interface(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.async_fifo_pkg(fast)
+# Loading work.async_fifo_top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.async_fifo_interface(fast)
+# Loading work.FIFO(fast)
+# Loading work.two_ff_sync(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.rptr_empty(fast)
+# Loading work.wptr_full(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /tools/mentor/questasim_10.6c/questasim/uvm-1.1d/linux/uvm_dpi.so
+# coverage save -onexit -assert -directive -cvg -codeAll coverage.ucdb
+#  run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test async_fifo_test...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ----------------------------------------------------------------------
+# Name                       Type                            Size  Value
+# ----------------------------------------------------------------------
+# uvm_test_top               async_fifo_test                 -     @471 
+#   env                      async_fifo_environment          -     @478 
+#     rd_agt                 async_fifo_read_agent           -     @496 
+#       read_driv            async_fifo_read_driver          -     @772 
+#         rsp_port           uvm_analysis_port               -     @787 
+#         seq_item_port      uvm_seq_item_pull_port          -     @779 
+#       read_mon             async_fifo_read_monitor         -     @795 
+#         read_mon_port      uvm_analysis_port               -     @802 
+#       read_seqr            async_fifo_read_sequencer       -     @663 
+#         rsp_export         uvm_analysis_export             -     @670 
+#         seq_item_export    uvm_seq_item_pull_imp           -     @764 
+#         arbitration_queue  array                           0     -    
+#         lock_queue         array                           0     -    
+#         num_last_reqs      integral                        32    'd1  
+#         num_last_rsps      integral                        32    'd1  
+#     scb                    async_fifo_scoreboard           -     @526 
+#       read_scb_port        uvm_analysis_imp_read_mon_scb   -     @541 
+#       write_scb_port       uvm_analysis_imp_write_mon_scb  -     @533 
+#     sub                    async_fifo_subscriber           -     @503 
+#       cov_read_mon_port    uvm_analysis_imp_read_mon_cg    -     @518 
+#       cov_write_mon_port   uvm_analysis_imp_write_mon_cg   -     @510 
+#     v_seqr                 async_fifo_virtual_sequencer    -     @549 
+#       rsp_export           uvm_analysis_export             -     @556 
+#       seq_item_export      uvm_seq_item_pull_imp           -     @650 
+#       arbitration_queue    array                           0     -    
+#       lock_queue           array                           0     -    
+#       num_last_reqs        integral                        32    'd1  
+#       num_last_rsps        integral                        32    'd1  
+#     wr_agt                 async_fifo_write_agent          -     @489 
+#       write_driv           async_fifo_write_driver         -     @936 
+#         rsp_port           uvm_analysis_port               -     @951 
+#         seq_item_port      uvm_seq_item_pull_port          -     @943 
+#       write_mon            async_fifo_write_monitor        -     @959 
+#         write_mon_port     uvm_analysis_port               -     @966 
+#       write_seqr           async_fifo_write_sequencer      -     @827 
+#         rsp_export         uvm_analysis_export             -     @834 
+#         seq_item_export    uvm_seq_item_pull_imp           -     @928 
+#         arbitration_queue  array                           0     -    
+#         lock_queue         array                           0     -    
+#         num_last_reqs      integral                        32    'd1  
+#         num_last_rsps      integral                        32    'd1  
+# ----------------------------------------------------------------------
+# 
+# 
+# ========= FINAL SCOREBOARD REPORT =========
+# 
+# WRITE_PASS=0 | WRITE_FAIL=0 | READ_PASS=0 | READ_FAIL=0
+# ==========================================
+# 
+# UVM_INFO async_fifo_subscriber.sv(72) @ 0: uvm_test_top.env.sub [async_fifo_subscriber] [WRITE_MONITOR]  Coverage ------> 0.00%
+# UVM_INFO async_fifo_subscriber.sv(73) @ 0: uvm_test_top.env.sub [async_fifo_subscriber] [READ_MONITOR]   Coverage ------> 0.00%
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    6
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [UVMTOP]     1
+# [async_fifo_subscriber]     2
+# ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 0 ns  Iteration: 215  Instance: /top
+# Saving coverage database on exit...
+# End time: 21:50:46 on Oct 12,2025, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0

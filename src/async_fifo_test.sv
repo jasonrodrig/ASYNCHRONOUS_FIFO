@@ -226,4 +226,21 @@ class async_fifo_test7 extends async_fifo_test;
   endtask
 endclass
 
+class async_fifo_regression_test extends async_fifo_test;
+  `uvm_component_utils(async_fifo_regression_test)
+
+  function new(string name = "async_fifo_regression_test", uvm_component parent = null);
+    super.new(name, parent);
+  endfunction
+
+  virtual task run_phase(uvm_phase phase);
+    super.run_phase(phase);
+    phase.raise_objection(this);
+    if (v_seq == null) `uvm_fatal("REGRESSION TEST", "v_seq is null — build_phase failed")
+    v_seq.p_sequencer = env.v_seqr;
+    v_seq.run_all();
+    phase.drop_objection(this);
+  endtask
+endclass
+
 
