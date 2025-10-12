@@ -1,21 +1,11 @@
 QuestaSim vlog 10.6c Compiler 2017.07 Jul 25 2017
-Start time: 00:34:21 on Oct 06,2025
+Start time: 21:17:16 on Oct 12,2025
 vlog -sv "+acc" "+cover" "+fcover" -l async_fifo_top.log async_fifo_top.sv 
 ** Note: (vlog-2286) async_fifo_packages.sv(1): Using implicit +incdir+/tools/mentor/questasim_10.6c/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
--- Compiling package async_fifo_top_sv_unit
--- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
--- Importing package async_fifo_pkg
--- Compiling module FIFO_memory
--- Compiling module rptr_empty
--- Compiling module wptr_full
--- Compiling module two_ff_sync
--- Compiling module FIFO
--- Compiling interface async_fifo_interface
--- Compiling package async_fifo_pkg
--- Compiling interface async_fifo_assertions
--- Compiling module top
-
-Top level modules:
-	top
-End time: 00:34:22 on Oct 06,2025, Elapsed time: 0:00:01
-Errors: 0, Warnings: 0
+** Error: ** while parsing file included at async_fifo_top.sv(4)
+** while parsing file included at async_fifo_packages.sv(22)
+** while parsing macro expansion: 'uvm_component_utils' starting at async_fifo_test.sv(213)
+** at async_fifo_test.sv(213): (vlog-2730) Undefined variable: 'async_fifo_test9'.
+** Error: async_fifo_top.sv(8): (vlog-13006) Could not find the package (async_fifo_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+End time: 21:17:16 on Oct 12,2025, Elapsed time: 0:00:00
+Errors: 2, Warnings: 0

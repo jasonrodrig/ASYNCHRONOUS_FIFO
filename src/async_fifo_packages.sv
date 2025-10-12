@@ -15,7 +15,7 @@ package async_fifo_pkg;
   `include "async_fifo_write_agent.sv"
   `include "async_fifo_read_agent.sv"
   `include "async_fifo_subscriber.sv"
-  `include "async_fifo_scoreboard.sv"
+  `include "scoreboard.sv"
   `include "async_fifo_virtual_sequencer.sv"
   `include "async_fifo_environment.sv"
   `include "async_fifo_virtual_sequence.sv"

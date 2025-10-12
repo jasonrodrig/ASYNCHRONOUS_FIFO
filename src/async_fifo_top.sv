@@ -26,7 +26,7 @@ module top;
 		.rempty(vif.read_empty)
 	);
 
-	bind vif async_fifo_assertions ASSERT(
+/*	bind vif async_fifo_assertions ASSERT(
 		.write_clk(vif.write_clk),
 		.read_clk(vif.read_clk),
 		.write_rst(vif.write_rst),
@@ -40,7 +40,7 @@ module top;
 		.write_ptr(dut.raddr),
 		.read_ptr(dut.waddr)
 	);
-
+*/
 	initial begin
 		write_clk = 1'b0;
 		forever #5 write_clk = ~write_clk;

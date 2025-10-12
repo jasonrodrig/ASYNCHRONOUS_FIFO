@@ -1,0 +1,1520 @@
+# vsim -c work.top "+UVM_TESTNAME=async_fifo_test7" -do "run -all; quit" 
+# Start time: 21:19:59 on Oct 12,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim
+# //  Version 10.6c linux Jul 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.async_fifo_interface(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.async_fifo_pkg(fast)
+# Loading work.async_fifo_top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /tools/mentor/questasim_10.6c/questasim/uvm-1.1d/linux/uvm_dpi.so
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test async_fifo_test7...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ----------------------------------------------------------------------
+# Name                       Type                            Size  Value
+# ----------------------------------------------------------------------
+# uvm_test_top               async_fifo_test7                -     @471 
+#   env                      async_fifo_environment          -     @478 
+#     rd_agt                 async_fifo_read_agent           -     @496 
+#       read_driv            async_fifo_read_driver          -     @772 
+#         rsp_port           uvm_analysis_port               -     @787 
+#         seq_item_port      uvm_seq_item_pull_port          -     @779 
+#       read_mon             async_fifo_read_monitor         -     @795 
+#         read_mon_port      uvm_analysis_port               -     @802 
+#       read_seqr            async_fifo_read_sequencer       -     @663 
+#         rsp_export         uvm_analysis_export             -     @670 
+#         seq_item_export    uvm_seq_item_pull_imp           -     @764 
+#         arbitration_queue  array                           0     -    
+#         lock_queue         array                           0     -    
+#         num_last_reqs      integral                        32    'd1  
+#         num_last_rsps      integral                        32    'd1  
+#     scb                    async_fifo_scoreboard           -     @526 
+#       read_scb_port        uvm_analysis_imp_read_mon_scb   -     @541 
+#       write_scb_port       uvm_analysis_imp_write_mon_scb  -     @533 
+#     sub                    async_fifo_subscriber           -     @503 
+#       cov_read_mon_port    uvm_analysis_imp_read_mon_cg    -     @518 
+#       cov_write_mon_port   uvm_analysis_imp_write_mon_cg   -     @510 
+#     v_seqr                 async_fifo_virtual_sequencer    -     @549 
+#       rsp_export           uvm_analysis_export             -     @556 
+#       seq_item_export      uvm_seq_item_pull_imp           -     @650 
+#       arbitration_queue    array                           0     -    
+#       lock_queue           array                           0     -    
+#       num_last_reqs        integral                        32    'd1  
+#       num_last_rsps        integral                        32    'd1  
+#     wr_agt                 async_fifo_write_agent          -     @489 
+#       write_driv           async_fifo_write_driver         -     @936 
+#         rsp_port           uvm_analysis_port               -     @951 
+#         seq_item_port      uvm_seq_item_pull_port          -     @943 
+#       write_mon            async_fifo_write_monitor        -     @959 
+#         write_mon_port     uvm_analysis_port               -     @966 
+#       write_seqr           async_fifo_write_sequencer      -     @827 
+#         rsp_export         uvm_analysis_export             -     @834 
+#         seq_item_export    uvm_seq_item_pull_imp           -     @928 
+#         arbitration_queue  array                           0     -    
+#         lock_queue         array                           0     -    
+#         num_last_reqs      integral                        32    'd1  
+#         num_last_rsps      integral                        32    'd1  
+# ----------------------------------------------------------------------
+# 
+# UVM_INFO async_fifo_virtual_sequence.sv(355) @ 0: reporter@@v_seq [async_fifo_virtual_sequence] >>> Running Testcase 7 <<<
+# 
+#  DUT : @10 | read_data =   x
+# 
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 15 | RST=0 | EN=0 | DATA=176 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=1 | WRITE_FAIL=0 | READ_PASS=0 | READ_FAIL=0 | FIFO_SIZE=0
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 25 | RST=1 | EN=1 | DATA=75 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=2 | WRITE_FAIL=0 | READ_PASS=0 | READ_FAIL=0 | FIFO_SIZE=1
+# 
+# 
+#  DUT : @30 | read_data =   x
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 30 | RST=0 | EN=0 | READ_DATA=x | EMPTY=0
+# <============================ READ PASS ===========================>
+# <------------------------------------------------------------------------------------------>
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=2 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=1
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 35 | RST=1 | EN=1 | DATA=39 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=3 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=2
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 45 | RST=1 | EN=1 | DATA=175 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=4 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=3
+# 
+# 
+#  DUT : @50 | read_data =   x
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 50 | RST=1 | EN=0 | READ_DATA=x | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=4 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=3
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 55 | RST=1 | EN=1 | DATA=39 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=5 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=4
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 65 | RST=1 | EN=1 | DATA=146 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=6 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=5
+# 
+# 
+#  DUT : @70 | read_data =   x
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 70 | RST=1 | EN=0 | READ_DATA=x | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=6 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=5
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 75 | RST=1 | EN=1 | DATA=216 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=7 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=6
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 85 | RST=1 | EN=1 | DATA=35 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=8 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=7
+# 
+# 
+#  DUT : @90 | read_data =   x
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 90 | RST=1 | EN=0 | READ_DATA=x | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=8 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=7
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 95 | RST=1 | EN=1 | DATA=161 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 105 | RST=1 | EN=0 | DATA=132 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# 
+#  DUT : @110 | read_data =   x
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 110 | RST=1 | EN=0 | READ_DATA=x | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 115 | RST=1 | EN=0 | DATA=229 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 125 | RST=1 | EN=0 | DATA=149 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# 
+#  DUT : @130 | read_data =   x
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 130 | RST=1 | EN=0 | READ_DATA=x | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 135 | RST=1 | EN=0 | DATA=137 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 145 | RST=1 | EN=0 | DATA=67 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# 
+#  DUT : @150 | read_data =   x
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 150 | RST=1 | EN=0 | READ_DATA=x | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 155 | RST=1 | EN=0 | DATA=40 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 165 | RST=1 | EN=0 | DATA=181 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# 
+#  DUT : @170 | read_data =   x
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 170 | RST=1 | EN=0 | READ_DATA=x | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 175 | RST=1 | EN=0 | DATA=7 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=9 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 185 | RST=1 | EN=1 | DATA=254 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=10 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=9
+# 
+# 
+#  DUT : @190 | read_data =   x
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 190 | RST=1 | EN=0 | READ_DATA=x | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=10 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=9
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 195 | RST=1 | EN=1 | DATA=73 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=11 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=10
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 205 | RST=1 | EN=1 | DATA=91 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=12 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=11
+# 
+# 
+#  DUT : @210 | read_data =   x
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 210 | RST=1 | EN=1 | READ_DATA=x | EMPTY=0
+# UVM_INFO scoreboard.sv(142) @ 210: uvm_test_top.env.scb [SCOREBOARD] Skipping first read transaction to align latency
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=12 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=11
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 215 | RST=1 | EN=1 | DATA=251 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=13 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=12
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 225 | RST=1 | EN=1 | DATA=59 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=14 | WRITE_FAIL=0 | READ_PASS=1 | READ_FAIL=0 | FIFO_SIZE=13
+# 
+# 
+#  DUT : @230 | read_data =  75
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 230 | RST=1 | EN=1 | READ_DATA=75 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 230: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=75 | Received=75
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=14 | WRITE_FAIL=0 | READ_PASS=2 | READ_FAIL=0 | FIFO_SIZE=12
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 235 | RST=1 | EN=1 | DATA=3 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=15 | WRITE_FAIL=0 | READ_PASS=2 | READ_FAIL=0 | FIFO_SIZE=13
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 245 | RST=1 | EN=1 | DATA=177 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=16 | WRITE_FAIL=0 | READ_PASS=2 | READ_FAIL=0 | FIFO_SIZE=14
+# 
+# 
+#  DUT : @250 | read_data =  39
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 250 | RST=1 | EN=1 | READ_DATA=39 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 250: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=39 | Received=39
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=16 | WRITE_FAIL=0 | READ_PASS=3 | READ_FAIL=0 | FIFO_SIZE=13
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 255 | RST=1 | EN=1 | DATA=198 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=17 | WRITE_FAIL=0 | READ_PASS=3 | READ_FAIL=0 | FIFO_SIZE=14
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 265 | RST=1 | EN=1 | DATA=90 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=18 | WRITE_FAIL=0 | READ_PASS=3 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @270 | read_data = 175
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 270 | RST=1 | EN=1 | READ_DATA=175 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 270: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=175 | Received=175
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=18 | WRITE_FAIL=0 | READ_PASS=4 | READ_FAIL=0 | FIFO_SIZE=14
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 275 | RST=1 | EN=1 | DATA=82 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=19 | WRITE_FAIL=0 | READ_PASS=4 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 285 | RST=1 | EN=1 | DATA=247 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=20 | WRITE_FAIL=0 | READ_PASS=4 | READ_FAIL=0 | FIFO_SIZE=16
+# 
+# 
+#  DUT : @290 | read_data =  39
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 290 | RST=1 | EN=1 | READ_DATA=39 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 290: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=39 | Received=39
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=20 | WRITE_FAIL=0 | READ_PASS=5 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 295 | RST=1 | EN=1 | DATA=51 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=21 | WRITE_FAIL=0 | READ_PASS=5 | READ_FAIL=0 | FIFO_SIZE=16
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 305 | RST=1 | EN=1 | DATA=156 | FULL=1
+# <============================ WRITE FAIL ===========================>
+# UVM_ERROR scoreboard.sv(101) @ 305: uvm_test_top.env.scb [SCOREBOARD] monitor_write : FULL = 0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=21 | WRITE_FAIL=1 | READ_PASS=5 | READ_FAIL=0 | FIFO_SIZE=16
+# 
+# 
+#  DUT : @310 | read_data = 146
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 310 | RST=1 | EN=1 | READ_DATA=146 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 310: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=146 | Received=146
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=21 | WRITE_FAIL=1 | READ_PASS=6 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 315 | RST=1 | EN=1 | DATA=34 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=22 | WRITE_FAIL=1 | READ_PASS=6 | READ_FAIL=0 | FIFO_SIZE=16
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 325 | RST=1 | EN=1 | DATA=141 | FULL=1
+# <============================ WRITE FAIL ===========================>
+# UVM_ERROR scoreboard.sv(101) @ 325: uvm_test_top.env.scb [SCOREBOARD] monitor_write : FULL = 0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=22 | WRITE_FAIL=2 | READ_PASS=6 | READ_FAIL=0 | FIFO_SIZE=16
+# 
+# 
+#  DUT : @330 | read_data = 216
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 330 | RST=1 | EN=1 | READ_DATA=216 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 330: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=216 | Received=216
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=22 | WRITE_FAIL=2 | READ_PASS=7 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 335 | RST=1 | EN=1 | DATA=91 | FULL=0
+# <============================ WRITE PASS ===========================>
+# <-------------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=7 | READ_FAIL=0 | FIFO_SIZE=16
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 345 | RST=1 | EN=0 | DATA=202 | FULL=1
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=7 | READ_FAIL=0 | FIFO_SIZE=16
+# 
+# 
+#  DUT : @350 | read_data =  35
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 350 | RST=1 | EN=1 | READ_DATA=35 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 350: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=35 | Received=35
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 355 | RST=1 | EN=0 | DATA=86 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 365 | RST=1 | EN=0 | DATA=86 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @370 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 370 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 375 | RST=1 | EN=0 | DATA=181 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 385 | RST=1 | EN=0 | DATA=8 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @390 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 390 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 395 | RST=1 | EN=0 | DATA=223 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 405 | RST=1 | EN=0 | DATA=237 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @410 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 410 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 415 | RST=1 | EN=0 | DATA=56 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 425 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @430 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 430 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 435 | RST=1 | EN=0 | DATA=52 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 445 | RST=1 | EN=0 | DATA=107 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @450 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 450 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 455 | RST=1 | EN=0 | DATA=190 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 465 | RST=1 | EN=0 | DATA=184 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @470 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 470 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 475 | RST=1 | EN=0 | DATA=129 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 485 | RST=1 | EN=0 | DATA=20 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @490 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 490 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 495 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 505 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @510 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 510 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 515 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 525 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @530 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 530 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 535 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 545 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @550 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 550 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 555 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 565 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @570 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 570 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 575 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 585 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @590 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 590 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 595 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 605 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @610 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 610 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 615 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 625 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @630 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 630 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 635 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 645 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @650 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 650 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 655 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 665 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @670 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 670 | RST=1 | EN=0 | READ_DATA=161 | EMPTY=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 675 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 685 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=8 | READ_FAIL=0 | FIFO_SIZE=15
+# 
+# 
+#  DUT : @690 | read_data = 161
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 690 | RST=1 | EN=1 | READ_DATA=161 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 690: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=161 | Received=161
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=9 | READ_FAIL=0 | FIFO_SIZE=14
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 695 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=9 | READ_FAIL=0 | FIFO_SIZE=14
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 705 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=9 | READ_FAIL=0 | FIFO_SIZE=14
+# 
+# 
+#  DUT : @710 | read_data = 254
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 710 | RST=1 | EN=1 | READ_DATA=254 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 710: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=254 | Received=254
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=10 | READ_FAIL=0 | FIFO_SIZE=13
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 715 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=10 | READ_FAIL=0 | FIFO_SIZE=13
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 725 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=10 | READ_FAIL=0 | FIFO_SIZE=13
+# 
+# 
+#  DUT : @730 | read_data =  73
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 730 | RST=1 | EN=1 | READ_DATA=73 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 730: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=73 | Received=73
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=11 | READ_FAIL=0 | FIFO_SIZE=12
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 735 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=11 | READ_FAIL=0 | FIFO_SIZE=12
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 745 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=11 | READ_FAIL=0 | FIFO_SIZE=12
+# 
+# 
+#  DUT : @750 | read_data =  91
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 750 | RST=1 | EN=1 | READ_DATA=91 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 750: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=91 | Received=91
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=12 | READ_FAIL=0 | FIFO_SIZE=11
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 755 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=12 | READ_FAIL=0 | FIFO_SIZE=11
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 765 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=12 | READ_FAIL=0 | FIFO_SIZE=11
+# 
+# 
+#  DUT : @770 | read_data = 251
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 770 | RST=1 | EN=1 | READ_DATA=251 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 770: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=251 | Received=251
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=13 | READ_FAIL=0 | FIFO_SIZE=10
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 775 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=13 | READ_FAIL=0 | FIFO_SIZE=10
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 785 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=13 | READ_FAIL=0 | FIFO_SIZE=10
+# 
+# 
+#  DUT : @790 | read_data =  59
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 790 | RST=1 | EN=1 | READ_DATA=59 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 790: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=59 | Received=59
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=14 | READ_FAIL=0 | FIFO_SIZE=9
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 795 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=14 | READ_FAIL=0 | FIFO_SIZE=9
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 805 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=14 | READ_FAIL=0 | FIFO_SIZE=9
+# 
+# 
+#  DUT : @810 | read_data =   3
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 810 | RST=1 | EN=1 | READ_DATA=3 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 810: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=3 | Received=3
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=15 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 815 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=15 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 825 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=15 | READ_FAIL=0 | FIFO_SIZE=8
+# 
+# 
+#  DUT : @830 | read_data = 177
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 830 | RST=1 | EN=1 | READ_DATA=177 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 830: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=177 | Received=177
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=16 | READ_FAIL=0 | FIFO_SIZE=7
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 835 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=16 | READ_FAIL=0 | FIFO_SIZE=7
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 845 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=16 | READ_FAIL=0 | FIFO_SIZE=7
+# 
+# 
+#  DUT : @850 | read_data = 198
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 850 | RST=1 | EN=1 | READ_DATA=198 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 850: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=198 | Received=198
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=17 | READ_FAIL=0 | FIFO_SIZE=6
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 855 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=17 | READ_FAIL=0 | FIFO_SIZE=6
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 865 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=17 | READ_FAIL=0 | FIFO_SIZE=6
+# 
+# 
+#  DUT : @870 | read_data =  90
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 870 | RST=1 | EN=1 | READ_DATA=90 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 870: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=90 | Received=90
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=18 | READ_FAIL=0 | FIFO_SIZE=5
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 875 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=18 | READ_FAIL=0 | FIFO_SIZE=5
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 885 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=18 | READ_FAIL=0 | FIFO_SIZE=5
+# 
+# 
+#  DUT : @890 | read_data =  82
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 890 | RST=1 | EN=1 | READ_DATA=82 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 890: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=82 | Received=82
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=19 | READ_FAIL=0 | FIFO_SIZE=4
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 895 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=19 | READ_FAIL=0 | FIFO_SIZE=4
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 905 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=19 | READ_FAIL=0 | FIFO_SIZE=4
+# 
+# 
+#  DUT : @910 | read_data = 247
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 910 | RST=1 | EN=1 | READ_DATA=247 | EMPTY=0
+# <============================ READ PASS ===========================>
+# UVM_INFO scoreboard.sv(171) @ 910: uvm_test_top.env.scb [SCOREBOARD] READ PASS: Expected=247 | Received=247
+# <----------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=0 | FIFO_SIZE=3
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 915 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=0 | FIFO_SIZE=3
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 925 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=0 | FIFO_SIZE=3
+# 
+# 
+#  DUT : @930 | read_data = 156
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 930 | RST=1 | EN=1 | READ_DATA=156 | EMPTY=0
+# <============================ READ FAIL ===========================>
+# UVM_ERROR scoreboard.sv(179) @ 930: uvm_test_top.env.scb [SCOREBOARD] READ FAIL: Expected=51 | Received=156
+# <-------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=1 | FIFO_SIZE=2
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 935 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=1 | FIFO_SIZE=2
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 945 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=1 | FIFO_SIZE=2
+# 
+# 
+#  DUT : @950 | read_data = 141
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 950 | RST=1 | EN=1 | READ_DATA=141 | EMPTY=0
+# <============================ READ FAIL ===========================>
+# UVM_ERROR scoreboard.sv(179) @ 950: uvm_test_top.env.scb [SCOREBOARD] READ FAIL: Expected=34 | Received=141
+# <-------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=2 | FIFO_SIZE=1
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 955 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=2 | FIFO_SIZE=1
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 965 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=2 | FIFO_SIZE=1
+# 
+# 
+#  DUT : @970 | read_data = 141
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 970 | RST=1 | EN=1 | READ_DATA=141 | EMPTY=0
+# <============================ READ FAIL ===========================>
+# UVM_ERROR scoreboard.sv(179) @ 970: uvm_test_top.env.scb [SCOREBOARD] READ FAIL: Expected=91 | Received=141
+# <-------------------------------------------------------------------------------------->
+# 
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=3 | FIFO_SIZE=0
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 975 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=3 | FIFO_SIZE=0
+# 
+# <-------------------------------------------------------------------------------------------->
+# 
+# WRITE_MON: 985 | RST=1 | EN=0 | DATA=82 | FULL=0
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=20 | READ_FAIL=3 | FIFO_SIZE=0
+# 
+# 
+#  DUT : @990 | read_data = 141
+# 
+# 
+# <------------------------------------------------------------------------------------------>
+# 
+#  READ_MON: 990 | RST=1 | EN=1 | READ_DATA=141 | EMPTY=1
+# 
+# --- SCOREBOARD STATUS ---
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=21 | READ_FAIL=3 | FIFO_SIZE=0
+# 
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 990: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# ========= FINAL SCOREBOARD REPORT =========
+# 
+# WRITE_PASS=23 | WRITE_FAIL=2 | READ_PASS=21 | READ_FAIL=3
+# ==========================================
+# 
+# UVM_INFO async_fifo_subscriber.sv(72) @ 990: uvm_test_top.env.sub [async_fifo_subscriber] [WRITE_MONITOR]  Coverage ------> 95.00%
+# UVM_INFO async_fifo_subscriber.sv(73) @ 990: uvm_test_top.env.sub [async_fifo_subscriber] [READ_MONITOR]   Coverage ------> 95.00%
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   28
+# UVM_WARNING :    0
+# UVM_ERROR :    5
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]    25
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# [async_fifo_subscriber]     2
+# [async_fifo_virtual_sequence]     1
+# ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 990 ns  Iteration: 62  Instance: /top
+# End time: 21:20:02 on Oct 12,2025, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0

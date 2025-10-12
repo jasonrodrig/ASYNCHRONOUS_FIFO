@@ -29,9 +29,9 @@ class read_sequence1 extends uvm_sequence#(async_fifo_read_sequence_item);
 
 	task body();
 		repeat(1)begin	 
-		$display("<----------------------------- read_reset_seq1 started ---------------------------------->\n");
+//		$display("<----------------------------- read_reset_seq1 started ---------------------------------->\n");
 		`uvm_do_with(req,{ req.read_rst == 0 ; req.read_en == 0; })
-		$display("<-----------------------------  read_reset_seq1 ended  ---------------------------------->\n");
+//		$display("<-----------------------------  read_reset_seq1 ended  ---------------------------------->\n");
 	  end
 	endtask
 
@@ -46,11 +46,11 @@ class read_sequence2 extends uvm_sequence#(async_fifo_read_sequence_item);
 	endfunction
 
 	task body();
-		$display("<----------------------------- read_reset_seq2 when rd_en = 1 started ----------------------->\n");
+	//	$display("<----------------------------- read_reset_seq2 when rd_en = 1 started ----------------------->\n");
 		repeat(1) begin
 		`uvm_do_with(req,{ req.read_rst == 0 ; req.read_en == 1; })
 		end
-	  $display("<-----------------------------  read_reset_seq2 when rd_en = 1 ended  ----------------------->");
+	//  $display("<-----------------------------  read_reset_seq2 when rd_en = 1 ended  ----------------------->");
 	endtask
 
 endclass
@@ -64,11 +64,11 @@ class read_sequence3 extends uvm_sequence#(async_fifo_read_sequence_item);
 	endfunction
 
 	task body();
-		$display("<----------------------------- read_latch_seq3 started ----------------------->\n");	
+		//$display("<----------------------------- read_latch_seq3 started ----------------------->\n");	
 		repeat(1) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 0 ; })
 		end
- 	  $display("<-----------------------------  read_latch_seq3 ended  ----------------------->");
+ 	  //$display("<-----------------------------  read_latch_seq3 ended  ----------------------->");
 	endtask
 
 endclass
@@ -83,11 +83,11 @@ class read_sequence4 extends uvm_sequence#(async_fifo_read_sequence_item);
 	endfunction
 
 	task body();
-	  $display("<----------------------------- read_seq4 started ----------------------->\n");
+	 // $display("<----------------------------- read_seq4 started ----------------------->\n");
 		repeat( `N ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 0 ; })
 		end
-    $display("<-----------------------------  read_seq4 ended  ----------------------->");
+   // $display("<-----------------------------  read_seq4 ended  ----------------------->");
 	endtask
 
 endclass
@@ -101,11 +101,15 @@ class read_sequence5 extends uvm_sequence#(async_fifo_read_sequence_item);
 	endfunction
 
 	task body();
-	  $display("<----------------------------- read_seq5 started ----------------------->\n");
-		repeat( `N ) begin
+	 // $display("<----------------------------- read_seq5 started ----------------------->\n");
+	  repeat( `N ) begin
+			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 0 ; })
+		end
+		repeat( `N + 1 ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 1 ; })
 		end
-    $display("<-----------------------------  read_seq5 ended  ----------------------->");
+   // $display("<-----------------------------  read_seq5 ended  ----------------------->");
+	
 	endtask
 
 endclass
@@ -119,16 +123,16 @@ class read_sequence6 extends uvm_sequence#(async_fifo_read_sequence_item);
 	endfunction
 
 	task body();
-	  $display("<----------------------------- read_seq6 started ----------------------->\n");
+	 // $display("<----------------------------- read_seq6 started ----------------------->\n");
 	  //`uvm_do_with(req,{ req.read_rst == 0 ; req.read_en == 0 ; })
 		repeat( `N ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 1 ; })
 		end
-    $display("<-----------------------------  read_seq6 ended  ----------------------->");
+   // $display("<-----------------------------  read_seq6 ended  ----------------------->");
 	endtask
 
 endclass
-
+/*
 class read_sequence7 extends uvm_sequence#(async_fifo_read_sequence_item);
 
 	`uvm_object_utils(read_sequence7)
@@ -138,15 +142,17 @@ class read_sequence7 extends uvm_sequence#(async_fifo_read_sequence_item);
 	endfunction
 
 	task body();
-	  $display("<----------------------------- read_seq7 started ----------------------->\n");
+	 // $display("<----------------------------- read_seq7 started ----------------------->\n");
+	`uvm_do_with(req,{ req.read_rst == 0 ; req.read_en == 0; })
+
 		repeat( `N - 4 ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 0 ; })
 		end
 		`uvm_do_with(req,{ req.read_rst == 0 ; req.read_en == 0 ; })
-		repeat( `N - 4 ) begin
+		repeat( `N  ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 0 ; })
 		end
-    $display("<-----------------------------  read_seq7 ended  ----------------------->");
+   // $display("<-----------------------------  read_seq7 ended  ----------------------->");
 	endtask
 endclass
 
@@ -159,46 +165,49 @@ class read_sequence8 extends uvm_sequence#(async_fifo_read_sequence_item);
 	endfunction
 
 	task body();
-	  $display("<----------------------------- read_seq8 started ----------------------->\n");
-		repeat( `N - 4 ) begin
+	 // $display("<----------------------------- read_seq8 started ----------------------->\n");
+		repeat( 8 ) begin
+			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 0 ; })
+		end
+		repeat( 4 ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 1 ; })
 		end
 		`uvm_do_with(req,{ req.read_rst == 0 ; req.read_en == 0 ; })
-		repeat( `N  ) begin
+		repeat( 8  ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 1 ; })
 		end
-    $display("<-----------------------------  read_seq8 ended  ----------------------->");
+   // $display("<-----------------------------  read_seq8 ended  ----------------------->");
 	endtask
 endclass
+*/
+class read_sequence7 extends uvm_sequence#(async_fifo_read_sequence_item);
 
-class read_sequence9 extends uvm_sequence#(async_fifo_read_sequence_item);
+	`uvm_object_utils(read_sequence7)
 
-	`uvm_object_utils(read_sequence9)
-
-	function new(string name = "read_sequence9");
+	function new(string name = "read_sequence7");
 		super.new(name);
 	endfunction
 
 	task body();
-	  $display("<----------------------------- read_seq9 started ----------------------->\n");
-		`uvm_do_with(req,{ req.read_rst == 0 ; req.read_en == 0 ; })
-		repeat( `N + 1 ) begin
+	 // $display("<----------------------------- read_seq9 started ----------------------->\n");
+	 	`uvm_do_with(req,{ req.read_rst == 0 ; req.read_en == 0 ; })
+		repeat( `N - 8 ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 0 ; })
 		end
 		
-		repeat( `N - 6 ) begin
+		repeat( `N - 8 ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 1 ; })
 		end
   	
-		repeat( `N + 1 ) begin
+		repeat( `N  ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 0 ; })
 		end
 		
-		repeat( `N + 2  ) begin
+		repeat( `N  ) begin
 			`uvm_do_with(req,{ req.read_rst == 1 ; req.read_en == 1 ; })
 		end
 
-	  $display("<-----------------------------  read_seq9 ended  ----------------------->");
+	//  $display("<-----------------------------  read_seq9 ended  ----------------------->");
 	endtask
 
 endclass

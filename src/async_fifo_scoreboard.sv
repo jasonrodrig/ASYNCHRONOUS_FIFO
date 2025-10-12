@@ -30,6 +30,8 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 	bit read_flag = 0;
 	bit write_flag = 0;
 
+	bit [ADDR_WIDTH:0] temp; // remember to remove if it 
+
 	// registering the alu_scoareboard to the factory	
 	`uvm_component_utils(async_fifo_scoreboard)
 
@@ -144,87 +146,129 @@ class async_fifo_scoreboard extends uvm_scoreboard;
 	//             mimicing its functionlaity               //
 	//------------------------------------------------------//
 
+
 	task async_fifo_write_reference_model(input async_fifo_write_sequence_item write_seq);
-		// reset condition
+
+	// Reset condition
+	if (!write_seq.write_rst && !write_seq.write_en) begin
+		write_ptr       = 'b0;
+		ref_write_full  = 0;
+		write_flag      = 1;
+		$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
+	end
+
+		// Write operation
+	else if (write_seq.write_rst && write_seq.write_en) begin
+		write_flag      = 1;
+		fifo[write_ptr[ADDR_WIDTH-1:0]] = write_seq.write_data;
+
+		// Increment pointer if not full
+		if (write_ptr < (`FIFO_DEPTH - 1) && !ref_write_full)
+			write_ptr++;
+
+		// Wrap around
+		if (write_ptr >= `FIFO_DEPTH)
+			write_ptr = 0;
+
+		// Full condition check
+		//ref_write_full = ((~write_ptr[ADDR_WIDTH] == read_ptr[ADDR_WIDTH]) &&
+		//							 (write_ptr[ADDR_WIDTH - 1 :0] == read_ptr[ADDR_WIDTH -1 :0])) ? 1 : 0;
 		//
-		if(write_seq.write_rst == 0 && write_seq.write_en == 0)begin
-			write_ptr = 'b0;
-			ref_write_full = 'b0;
-			write_flag = 1;
-			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
-		end
+		// ref_write_full = ( {~write_ptr[ADDR_WIDTH], write_ptr[ADDR_WIDTH - 1:0] } + 1'b1 ) - (ref_write_full == 0) == read_ptr;
 
-		// write enable condition
-		else if(write_seq.write_en == 1 && write_seq.write_rst == 1 )begin
-			write_flag = 1;
-			ref_write_full = 'bx;
-			fifo[ write_ptr[ ADDR_WIDTH - 1 : 0 ] ] = write_seq.write_data; 
-			write_ptr = write_ptr + 1 ;
-			if(write_ptr > 16) write_ptr = 1;
-			ref_write_full = ( ( ~write_ptr[4] == read_ptr[4] ) && ( write_ptr[3:0] == read_ptr[3:0] ) ) ? 1 : 0 ;
-			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
-		end
 
-		else begin
-			write_flag = 1;
-			ref_write_full = 'bx;
-			write_ptr = write_ptr;	
-			if(write_ptr > 16) write_ptr = 1;
-			ref_write_full = ( ( ~write_ptr[4] == read_ptr[4] ) && ( write_ptr[3:0] == read_ptr[3:0] ) ) ? 1 : 0 ;
-			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);	
-		end
 
-		$display(" Reference WRITE : @ %0t \n WRITE_RST = %b | WRITE_EN = %b | WRITE_DATA = %d | WRITE_FULL = %b |",
-			$time, write_seq.write_rst , write_seq.write_en , write_seq.write_data , ref_write_full );
-		reference_write_results = { write_seq.write_rst , write_seq.write_en , write_seq.write_data , ref_write_full };
-		$display(" time : %t | reference_write_results_stored = %b", $time, reference_write_results); 
+		temp = write_ptr + (ref_write_full == 0);
+		if({~temp[ADDR_WIDTH],temp[ADDR_WIDTH-1:0]} == read_ptr ) 
+			ref_write_full = 1; 
+		else
+			ref_write_full = 0;
+
+		$display("\ntemp:%0b \n",temp);
+		$display(" REF : wptr = %b , rptr = %b ", write_ptr,read_ptr);
+		$display(" ver-f:%0d | wprt: %0b ",ref_write_full,write_ptr+1);
+	end
+
+		// Idle condition
+	else begin
+		write_flag = 1;
+
+		if (write_ptr >= `FIFO_DEPTH)
+			write_ptr = 0;
+
+		//ref_write_full = ((~write_ptr[ADDR_WIDTH] == read_ptr[ADDR_WIDTH]) &&
+		//							 (write_ptr[ADDR_WIDTH - 1 :0] == read_ptr[ADDR_WIDTH - 1 :0])) ? 1 : 0;
+		//ref_write_full = {~write_ptr[ADDR_WIDTH], write_ptr[ADDR_WIDTH - 1 :0] } == 0;
+		$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
+		$display(" ver-f:%0d | wprt: %0b ",ref_write_full,{~write_ptr[3], write_ptr[3 - 1 :0]} +1);
+	end
+
+	// Display and store results
+  $display(" Reference WRITE : @ %0t \n WRITE_RST = %b | WRITE_EN = %b | WRITE_DATA = %d | WRITE_FULL = %b |",
+	  $time, write_seq.write_rst , write_seq.write_en , write_seq.write_data , ref_write_full );
+	reference_write_results = { write_seq.write_rst , write_seq.write_en , write_seq.write_data , ref_write_full };
+	$display(" time : %t | reference_write_results_stored = %b", $time, reference_write_results);
 
 	endtask
 
-	//------------------------------------------------------//
-	//   performs the async_fifo_read_reference model by    //
-	//             mimicing its functionlaity               //
-	//------------------------------------------------------//
 
+	//------------------------------------------------------//
+	//                  READ REFERENCE MODEL                //
+	//------------------------------------------------------//
 	task async_fifo_read_reference_model(input async_fifo_read_sequence_item read_seq);
-		// reset condition
-		if(read_seq.read_rst == 0 && read_seq.read_en == 0 )begin
-			read_flag = 1;
-			read_ptr = 'b0;
-			ref_read_data = 'b0;
-			ref_read_empty = 'b1;
+
+		// Reset condition
+		if (!read_seq.read_rst && !read_seq.read_en) begin
+			read_flag       = 1;
+			read_ptr        = 'b0;
+			ref_read_data   = 'b0;
+			ref_read_empty  = 1;
+
 			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
-		// read enable condition
-		else if(read_seq.read_en ==1 && read_seq.read_rst == 1 )begin
-			read_flag = 1;
-			ref_read_empty = 'bx;
-			ref_read_data  = 'bx;
-			ref_read_data = fifo[ read_ptr[ ADDR_WIDTH - 1 : 0 ] ]; 
-			read_ptr = read_ptr + 1 ;
-			if(read_ptr > 16 ) read_ptr = 1;	
-			ref_read_empty = ( read_ptr[3:0] == write_ptr[3:0] ) ? 1 : 0 ;
+		// Read operation
+		else if (read_seq.read_rst && read_seq.read_en) begin
+			read_flag       = 1;
+			ref_read_data   = fifo[read_ptr[ADDR_WIDTH-1:0]];
+
+			// Increment pointer if not empty
+			if (!ref_read_empty)
+				read_ptr++;
+
+			// Wrap around
+			if (read_ptr >= `FIFO_DEPTH)
+				read_ptr = 0;
+
+			// Empty condition check
+			ref_read_empty = (read_ptr == write_ptr) ? 1 : 0;
 			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
+		// Idle condition
 		else begin
-			read_flag = 1;
-			ref_read_empty = 'bx;
-			ref_read_data  = 'bx;
-			ref_read_data  =  fifo[ read_ptr[ ADDR_WIDTH - 1 : 0 ] ];
-			read_ptr = read_ptr ;
-			if(read_ptr > 16 ) read_ptr = 1; 
-			ref_read_empty = ( read_ptr[3:0] == write_ptr[3:0] ) ? 1 : 0 ;
-			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);	
+			read_flag       = 1;
+			ref_read_data   = fifo[read_ptr[ADDR_WIDTH-1:0]];
+
+			if (read_ptr >= `FIFO_DEPTH)
+				read_ptr = 0;
+
+			ref_read_empty = (read_ptr == write_ptr) ? 1 : 0;
+			$display(" REF : wptr = %b , rptr = %b", write_ptr,read_ptr);
 		end
 
-		$display(" Reference READ : @ %0t \n READ_RST = %b | READ_EN = %b | READ_DATA = %d | READ_EMPTY = %b |",
-			$time, read_seq.read_rst , read_seq.read_en , read_seq.read_data , ref_read_empty );
-		reference_read_results = { read_seq.read_rst , read_seq.read_en , read_seq.read_data , ref_read_empty };
-		$display(" time : %t | reference_read_results_stored = %b", $time, reference_read_results); 
+    $display(" Reference READ : @ %0t \n READ_RST = %b | READ_EN = %b | READ_DATA = %d | READ_EMPTY = %b |",
+				$time, read_seq.read_rst , read_seq.read_en , read_seq.read_data , ref_read_empty );
+
+
+		// Display and store results
+		reference_read_results = {read_seq.read_rst, read_seq.read_en, read_seq.read_data, ref_read_empty};
+		$display(" time : %t | reference_read_results_stored = %b", $time, reference_read_results);
 
 	endtask
+
+
+
 
 	//------------------------------------------------------//
 	// performs the comparsion report by checking bit by    //
